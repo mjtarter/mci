@@ -1,0 +1,357 @@
+/* Bootstrap overwrite styles
+   ========================================================================== */
+
+.container {
+	font-family: 'Archivo Narrow', sans-serif;
+}
+
+h1 {
+	padding:20px 0px;
+}
+
+.modal-content {
+		background-image: url('../img/tan-background.png');
+}
+
+/* Global styles
+   ========================================================================== */
+
+html, 
+body {         
+	color:black;
+	font-family: 'Archivo Narrow', sans-serif;
+	font-size:18px;
+	height:100%;       /* Needed for calc(height) to work */
+	min-width:320px;
+}
+
+a, 
+a:hover {
+	text-decoration:none;
+	color:inherit;
+}
+
+ul {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
+hr {
+	border:0;
+	background-color:white;
+	height:2px;
+}
+
+img {
+	max-width:100%;
+}
+
+section {
+	padding:50px 0;
+  	width:100%;
+ 	z-index:-1;
+}
+
+.button {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	overflow: hidden;
+	margin-top: 12px;
+	min-width: 96px;
+	line-height: 36px;
+	padding: 0 18px;
+	font-size: 18px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 1px #72100d;
+	background-clip: padding-box;
+	border: 1px solid;
+	border-color: #1c65b2 #18589c #18589c;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
+	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
+}
+
+footer {
+	width:100%;
+	background-color:#0099ff;
+	border-top:3px solid black;
+	padding:1em 0 0 0;
+	position:relative;
+}
+
+	footer a, footer a:visited {
+		color:white;
+	}
+	
+		footer a:hover {
+			text-decoration:underline;
+			color:tan;
+			font-weight:700;
+		}
+
+/* Helper Classes
+   ========================================================================== */
+
+.img-center {
+	display:block;
+	margin:0 auto;
+}
+
+.vert-middle {
+	display:table-cell;
+	vertical-align:middle;
+}
+
+.no-margin {
+	margin:0;
+}
+
+.margin-vert-5{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.margin-vert-10{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.margin-hor-5 {
+	margin-right:5px;
+	margin-left:5px;
+}
+
+.margin-hor-10 {
+	margin-right:10px;
+	margin-left:10px;
+}
+
+.pad-0 {
+	padding:0px;
+}
+
+.pad-vert-5 {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+.pad-vert-10 {
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.pad-vert-15 {
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
+.pad-vert-20 {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.pad-hor-5 {
+	padding:0px 5px;
+}
+
+.blue-button {
+	background-color: #00ced1;
+}
+
+	.blue-button:hover {
+		background-color:tan;
+		color:white;
+	}
+
+/* Nav
+   ========================================================================== */
+
+#logo {
+	max-width:345px; 
+	padding:9px 0px;
+	float:left;
+}
+
+#logo-text {
+	margin-top:6px; 
+	margin-bottom:0px;
+}
+
+.slicknav_menu {
+	display:none;
+}
+
+#main-nav {
+	background-color:#00ced1;
+	width:100%;
+	height:80px;
+	border-top:3px solid black;
+	border-bottom:3px solid black;
+}
+
+#menu {
+	float:right;
+}
+
+	#menu li {
+		display:table;
+		float:left;
+		height:50px;
+		margin:12px 0px;
+	}
+
+		#menu li a {
+			color:white;
+			display:table-cell;
+			vertical-align:middle;
+			padding:0 10px;
+			font-size:1.1em;
+		}
+		
+			#menu li a:hover {
+				background-color:tan;
+				border-radius:10px;
+			}
+
+/* Footer
+   ========================================================================== */
+
+.footer-title {
+	background-size:40px 40px;
+	background-repeat:no-repeat;
+	display:inline-block;
+	margin:0 auto 10px auto;
+	padding-left:50px;
+	background-position:center left;
+	font-size:1.6em;
+}
+
+#search-icon {
+	background-image:url('../img/icon-mag-glass.png');
+}
+
+#contact-icon {
+	background-image:url('../img/icon-message.png');
+}
+
+#connect-icon {
+	background-image:url('../img/icon-plug.png');
+}
+
+ul#share-buttons {
+	padding-top:10px;
+}
+
+ul#share-buttons li {
+	float:left;
+	width:20%;
+}
+
+.copyright {
+	width:100%;
+	background-color:black;
+	color:white;
+	margin-top:1em;
+	padding:7px 0;
+	border-top:2px solid white;
+	font-size:.8em;
+	position:absolute;
+	bottom:0;
+	z-index:10;
+}
+
+.copyright-no-sticky {
+	width:100%;
+	background-color:black;
+	color:white;
+	margin-top:1em;
+	padding:7px 0;
+	border-top:2px solid white;
+	font-size:.8em;
+}
+
+/*XXXXXXXXXX Sticky Footer XXXXXXXXXX*/
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -265px; 
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.site-footer, .page-wrap:after {
+  height: 265px; 
+}
+	
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media (max-width: 767px) {
+	
+	html, body {
+		font-size:16px;
+	}
+	
+	#menu, #main-nav {
+		display:none;
+	}
+	
+	.slicknav_menu {
+		display:block;
+		background-color:#00ced1;
+		border-top:3px solid black;
+		border-bottom:3px solid black;
+		background-image:url('../img/mci-logo.png');
+		background-repeat:no-repeat;
+		background-position:0px 17px;
+		background-size: 350px;
+	}
+	
+	.slicknav_menu li a:hover {
+		background-color:tan;
+	}
+}
+
+@media (max-width: 590px) {
+	
+	.hide-mobile {
+		display:none;
+	}
+}
+
+
+@media (max-width: 490px) {
+	
+	.slicknav_menu {
+		background-position:0px 21px;
+		background-size: 210px;
+	}
+}
+
+@media (max-width: 370px) {
+
+	html,body {
+		font-size:14px;
+	}
+}

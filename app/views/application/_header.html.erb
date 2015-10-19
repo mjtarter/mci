@@ -13,12 +13,8 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 		
 		<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/all.min.css" />
-        <!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/ie8.css" /><![endif]-->
+        <%= stylesheet_link_tag('application', :media => 'all') %>
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <!-- xxx Share This Buttons (Social Media Share) xxx -->
         <script type="text/javascript">var switchTo5x=true;</script>
         <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
@@ -28,7 +24,9 @@
     	<!--[if lte IE 7]><script src="js/ie6/warning.js"></script><script>window.onload=function(){e("js/ie6/")}</script><![endif]-->
         <nav id="main-nav">
         	<div class="container">
-        		<div id="logo"><img src="img/mci-logo.png" alt="MyCampus Island logo"><p class="text-center" id="logo-text">The Collegiate Reference For Housing</p></div>
+        		<div id="logo">
+                    <%= link_to(image_tag('mci-logo.png', :alt => 'MyCampus Island logo')) %>
+                    <p class="text-center" id="logo-text">The Collegiate Reference For Housing</p></div>
                 <ul id="menu">
                     <li><a href="#">Home</a></li>
                     <li><a href="housing-search.html">Housing Search</a></li>

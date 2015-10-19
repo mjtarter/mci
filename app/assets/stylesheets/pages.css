@@ -1,0 +1,1318 @@
+/* ==========================================================================
+ 	index.html
+   ========================================================================== */
+
+/* Section: #Top
+   ========================================================================== */			
+
+section#top {
+	height:650px;
+	height: calc(100% - 80px);
+	max-height: 950px;
+	width:100%;
+	background-image:url('../img/moving-couch.jpg');
+ 	-webkit-background-size: 100% 100%;      /* Safari 3.0 */
+	-moz-background-size: 100% 100%;         /* Gecko 1.9.2 (Firefox 3.6) */
+	-o-background-size: 100% 100%;           /* Opera 9.5 */
+	background-size:100% 100%;
+ 	display:table;
+}
+
+#top-content {
+	display:table-cell;
+	vertical-align:middle;
+}
+
+	#top-content .button {
+		line-height:46px; 
+		padding:0 24px;
+	}
+	
+	#top-content h1 {
+		font-weight:700; 
+		text-shadow:1px 2px #00ced1; 
+		font-size:3.333333em;
+	}
+	
+#top-content-text {
+	font-weight:700; 
+	margin-top:25px; 
+	margin-bottom:38px; 
+	font-size:1.7777777em;
+	font-style:italic;
+}
+	
+.button-left {
+	margin-right:20px;
+}
+
+/* Section: #About
+   ========================================================================== */	
+
+#about-title {
+	font-size: 1.444444em;
+    margin-bottom: 10px;
+    font-weight: bold;
+	font-style:italic;
+}
+
+#steps-title {
+	font-size: 1.4444444em;
+    padding: 20px 0px;
+	font-style:italic;
+}
+
+section#about {
+	background-image:url('../img/tan-background.png');
+  	border-top:3px solid black;
+}
+
+	section#about hr {
+		background-color: white;
+  		width: 100px;
+  		margin-right: auto;
+  		margin-left: auto;
+		height:2px;
+	}
+
+ul#steps li img {
+	max-width:40%;
+	display:block;
+	margin:0 auto;
+}
+
+.step {
+	font-weight:700;
+	font-size:1.222222em;
+}
+
+/* Section: #Info
+   ========================================================================== */
+
+#tan-button {
+	background-color: tan;
+}
+
+	#tan-button:hover {
+		background-color:#00ced1;
+		color:white;
+	}
+
+#info-title {
+	font-weight:700;
+	font-size:1.43em;
+}
+
+#housing-info {
+	padding-top:40.5px;
+	padding-bottom:40.5px;
+}
+
+#info-text {
+	font-size:1.111111em;
+}
+
+#info-text button {
+	display:block;
+	margin:10px auto 0px auto;
+}
+
+section#info {
+	background-image:url('../img/blue-background.png');
+  	border-top:2px solid white;
+}
+
+#features {
+	padding-top:25px;
+}
+
+#features li {
+	float:left;
+	width:10.5%;
+	margin:1%;
+	text-align:center;
+}
+
+/* Section: #Encyclopedia
+   ========================================================================== */
+
+section#encyclopedia {
+	height: 750px;
+	width:100%;
+	max-width:1950px;
+	background-image:url('../img/book-shelf.jpg');
+	background-repeat:no-repeat;
+	-webkit-background-size: 100% 100%;      /* Safari 3.0 */
+	-moz-background-size: 100% 100%;         /* Gecko 1.9.2 (Firefox 3.6) */
+	-o-background-size: 100% 100%;           /* Opera 9.5 */
+	background-size:cover;
+	background-position:bottom;
+	font-size:1.2em;
+	border-top:2px solid white;
+}
+
+#encyclopedia-title {
+	font-style:italic;
+	font-size:2.5em;
+	margin-bottom:25px;
+}
+	
+/* Media Queries
+   ========================================================================== */
+
+@media (max-width: 1199px) {
+
+	#housing-info {
+		padding-top:0px;
+		padding-bottom:0px;
+	}
+	
+	#screenshot {
+		padding-top:3px;
+		padding-bottom:3px;
+	}
+}
+
+@media (max-width: 992px) {
+
+	#housing-info {
+		padding-top:10px;
+	}
+	
+	#screenshot {
+		padding-top:0px;
+		padding-bottom:0px;
+	}
+	
+	ul#steps li img {
+		max-width:50%;
+	}
+	
+	#info-title {
+		padding-top:25px;
+	}
+}
+
+@media (max-width: 767px) {
+	
+	#features li {
+		width:23%;
+	}
+	
+	#features li img {
+		padding:0 20%;
+	}
+	
+	ul#steps li img {
+		max-width:25%;
+	}
+	
+	section#top {
+		height:350px;
+	}
+	
+	#top-content h1 {
+		font-size:2.5em;
+	}
+	
+	#top-content-text {
+		font-size:1.5em;
+	}
+	
+	section#encyclopedia {
+		font-size:1.1em;
+	}
+}
+
+@media (max-width: 590px) {
+
+	.mobile-width {
+		width:50%;
+	}
+}
+
+@media (max-width: 490px) {
+	
+	#top-content .button {
+		line-height:36px; 
+		padding:0 8px;
+	}
+	
+	#features li {
+		width:30.66666%;
+	}
+}
+
+/* ==========================================================================
+ 	housing-search.html
+   ========================================================================== */
+
+/* Section: #top-search
+   ========================================================================== */	
+
+
+section#top-search {
+	height:850px;
+	height: 95%;
+	max-height: 950px;
+	min-height:570px;
+	width:100%;
+	background-image:url('../img/kirkwood.jpg');
+	background-repeat:no-repeat;
+	-webkit-background-size: 100% 100%;      /* Safari 3.0 */
+	-moz-background-size: 100% 100%;         /* Gecko 1.9.2 (Firefox 3.6) */
+	-o-background-size: 100% 100%;           /* Opera 9.5 */
+	background-size:cover;
+	background-position:bottom;
+	padding:0px;
+}
+
+#table-container {
+	display:table; 
+	height:850px; 
+	height:95%; 
+	max-height: 950px; 
+	min-height:450px;
+}
+
+#search-title {
+	font-weight:bold;
+	font-style:italic;
+	text-shadow: 1px 2px #00ced1;
+	font-family: Arial Black, Gadget, sans-serif;
+	padding-top:0px;
+	margin-top:0px;
+	padding-bottom:50px;
+}
+
+#search-form {
+	border-radius:10px; 
+	border:2px solid white;
+	background-color:tan;
+	background-color:rgba(210,180,140,.8);
+}
+
+.search-form-col {
+	font-size:.9em;
+	height:130px;
+	text-align:center;
+}
+
+#search-left-col {
+	padding:33px 0px;		/* vertical align middle */
+}
+
+#search-right-col {
+	padding:40px 0px;
+}
+
+.form-box-width {
+	width:60%;
+}
+
+#form-button {
+	padding:0 12px; 
+	min-width:80px;
+}
+
+.ie-hide {
+	display:none;
+}
+
+/* align center */
+.radio-center {
+	width: 200px;
+	height: 1px;
+	margin: 0 auto;
+ }
+
+ #top-search .radio {
+	display:none;		/* Hide radio buttons*/
+}
+
+#top-search label {
+	width: 200px;
+	border-radius: 3px;
+	border: 1px solid #D1D3D4;
+	color:black;
+	text-align:left;
+	margin:0px;
+}
+
+/* hide input */
+#top-search input.radio:empty {
+	margin-left: -999px;
+}
+
+/* style label */
+#top-search input.radio:empty ~ label {
+	position: relative;
+	float: left;
+	line-height: 2em;
+	text-indent: 3.25em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#top-search input.radio:empty ~ label:before {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 2.5em;
+	background: #D1D3D4;
+	border-radius: 3px 0 0 3px;
+}
+
+/* toggle hover */
+#top-search input.radio:hover:not(:checked) ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: white;
+}
+
+#top-search input.radio:hover:not(:checked) ~ label {
+	color: black;
+}
+
+/* toggle on */
+#top-search input.radio:checked ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: white;
+	border-right:1px solid white;
+	background-color: #00ced1;
+}
+
+#top-search input.radio:checked ~ label {
+	color: white;
+	background-color:#00ced1;
+}
+
+/* radio focus */
+#top-search input.radio:focus ~ label:before {
+	box-shadow: 0 0 0 3px #999;
+}
+
+/* Media Queries
+   ========================================================================== */
+
+@media (max-width: 767px) {
+
+	section#top-search, 
+	#table-container {
+		min-height:570px;
+	}
+
+	#search-title {
+		font-size:1.5em;
+		padding-bottom:20px;
+	}
+
+	#search-left-col {
+		height:70px;
+		padding:10px 0px;
+	}
+
+	#search-right-col {
+		height:64px;
+		padding:0px 0px 7px 0px;
+	}
+
+	#mobile-p {
+		padding-bottom:0px;
+	}
+
+	.search-form-col {
+		height:auto;
+	}
+}
+
+/* ==========================================================================
+ 	mapping.php
+   ========================================================================== */
+
+/* Search Bar
+   ========================================================================== */
+
+#search-bar {
+	height:80px;
+	width:100%;
+	background-color:#ede1d1;
+	border-bottom:1px solid black;
+	display:none;
+}
+
+ul#search-table {
+	padding:0;
+}
+
+ul#search-table li {
+	height:80px;
+	float:left;
+	width:15.6666%;
+	margin:0 .5%;
+	padding:0px;
+}
+
+/*xxxxxxxxxxxxxxx li vertical align middle xxxxxxxxxxxxxxx*/
+
+ul#search-table li#search-bar-radio {
+	padding:13px 0px
+}
+
+ul#search-table li.search-bar-dropdown {
+	padding:12px 0px;
+}
+
+ul#search-table li.search-bar-box {
+	padding:9px 0px;
+}
+
+ul#search-table li.search-bar-btn {
+	padding:25.5px 0px;
+}
+
+/*xxxxxxxxxxxxxxx END xxxxxxxxxxxxxxx*/
+
+#search-button {
+	margin:0px;
+	width:50%;
+	min-width:70px;
+	max-width:200px;
+	font-size:15px;
+	padding:0px 8px;
+	line-height:25px;
+}
+
+.button-icon {
+	padding-right:3px; 
+	height:14px;
+}
+
+.form-box {
+	width:85%;
+}
+
+#search-bar-link {
+	color:white;
+	text-decoration:none;
+}
+
+#toggle-btn {
+	z-index:900; 
+	top:10px; 
+	left:100px; 
+	position:relative
+}
+
+#view-btn {
+	z-index:900;
+	top:20px;
+	left:100px;
+	position:relative;
+}
+
+/* Map / InfoWindow
+   ========================================================================== */
+
+#map {
+	width:100%; 
+	height:100%; 
+	min-width:320px;
+	overflow:hidden;
+	position:absolute;
+}
+
+/** FIX for Bootstrap and Google Maps Info window styes problem **/
+img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
+	max-width: none;
+}
+	
+.gm-style-iw {
+	background-color:#ede1d1;
+	margin:0;
+	padding:0;
+	border-radius:12px;
+	border:1px solid silver;
+	padding-left:10px;
+/** Scroll Fix - Hide scrollbars for Google Maps Info window styes problem **/
+	line-height: 1.35;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#gmap-iw-img {
+	border:solid 1px gray;
+	height:200px;
+	width:300px;
+}
+
+#img-container {
+	position:relative;
+}
+
+#iw-overlay {
+	width:300px; 
+	bottom:0px; 
+	height:30px; 
+	background-color:gray;
+  	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	background-color:rgba(0,0,0,.7); 
+	color:white; 
+	font-weight:bold; 
+	position:absolute;
+	margin:0px;
+}
+
+#iw-overlay-table {
+	height:30px;
+	width:100%;
+	font-size:11px;
+}
+
+#iw-overlay .button {
+	vertical-align: middle;
+	margin:0 auto;
+	min-width: 76px;
+	line-height: 24px;
+	padding: 0px;
+	font-size: 14px;
+	display:block;
+	text-align: center;
+}
+
+#listing-btn {
+	vertical-align: middle;
+	display:block;
+	width:120px;
+	margin:5px auto;
+	min-width: 76px;
+	line-height: 24px;
+	padding: 0px 12px;
+	font-size: 14px;
+	text-align: center;
+}
+
+.iw-basic-info {
+	font-family:arial; 
+	width:300px;
+}
+
+.iw-basic-info li {
+	width:33.333%;
+	max-width:100px;
+	float:left;
+	padding:3px 0px;
+}
+
+/* Media Queries
+   ========================================================================== */
+
+@media (max-width: 991px) {
+
+	ul#search-table li#search-bar-radio {
+		width:18%;
+	}
+
+	ul#search-table li {
+		width:15.2%;
+	}
+}
+
+@media (max-width: 767px) {
+	
+	ul#search-table li {
+		width:50%;
+		height:80px;
+		border:solid 1px black;
+		margin:0px;
+	} 
+
+	ul#search-table li#search-bar-radio, ul#search-table li#search-bar-view {
+		height:80px;
+		width:50%;
+	}
+
+	#search-bar {
+		height:240px;
+	}
+}
+
+@media (max-width: 460px) {
+
+/*xxxxxxxxxxxxxxx Modify IW css to prevent break when google api auto resizes IW if map width <460px xxxxxxxxxxxxxxx*/
+
+	.iw-basic-info li {
+		width:50%; 
+		max-width:150px;
+	}
+
+	.iw-basic-info li:nth-child(even) {
+    	text-align:center;
+	}
+
+	.iw-basic-info li:nth-child(odd) {
+	    text-align:center;
+	    clear:both;
+	}
+
+	.iw-basic-info {
+		width:100%;
+	}
+
+	.gm-style-iw {
+		padding-left:6px;
+	}
+
+	#gmap-iw-img {
+		height:auto;
+		width:100%;
+	}
+
+	#iw-overlay {
+		width:100%; 
+	}
+
+	#iw-overlay .button {
+		min-width: 40px;
+		padding: 0px 3px;
+		font-size: 12px;
+	}
+
+/*xxxxxxxxxxxxxxx END xxxxxxxxxxxxxxx*/
+
+}
+
+@media (max-width: 414px) {
+	
+	#toggle-btn,
+	#view-btn {
+		left:40px; 
+		line-height: 24px;
+		padding: 0px 3px;
+		font-size: 14px;
+	}
+}
+
+/* ==========================================================================
+ 	list.php
+   ========================================================================== */
+
+#list-page {
+	background-color:#dbc3a3;
+}
+
+#list-results{
+	padding:0;
+}
+
+#results-title {
+	outline:1px solid black;
+	background-color:#00ced1;
+	font-size:1.8em;
+	margin-bottom:15px;
+}
+
+#view-form {
+	display:inline-block;
+}
+
+#display-buttons {
+	text-align:center;
+	padding-top:3px;
+	padding-bottom:15px;
+}
+
+#results {
+	background-color:#E8D9C5;
+	border:solid black 1px;
+	display:table;
+}
+
+.results-col {
+	display:table-cell;
+	vertical-align:middle;
+	float:none;
+}
+
+#results button {
+	min-width: 76px;
+	line-height: 24px;
+	padding: 2px;
+	font-size: 16px;
+	text-align: center;
+}
+
+#list-photo {
+	width: 100%;
+    max-height: 250px;
+}
+
+.pagination {
+	background-color: #00ced1;
+	margin-top:0;
+	margin-bottom:20px;
+	border:1px solid black;
+	border-radius:0px;
+	padding-right:15px;
+	padding-left:15px;
+}
+
+/* Media Queries
+   ========================================================================== */
+
+@media (max-width: 991px) {
+	.results-col {
+		float:left;
+		display:inherit;
+	}
+
+	#results {
+		display:block;
+		width:inherit;
+		height:inherit;
+	}
+
+	#list-photo {
+		display:block;
+		text-align:center;
+		margin:0 auto;
+		width:auto;
+		max-width: 100%;
+	}
+
+	ul#basic-info-list li {
+		display:inline-block;
+	}
+
+	#basic-info-list {
+		text-align:center;
+	}
+
+	#description {
+		padding:0 7px;
+	}
+
+	#results button {
+		line-height: 24px;
+		padding: 5px 15px;
+		font-size: 16px;
+		text-align: center;
+	}
+}
+
+/* ==========================================================================
+ 	property.php
+   ========================================================================== */
+
+ /* PHP INCLUDE property images >= 5
+   ========================================================================== */
+
+#property-page, #gallery-page, #housing-search-page, #amenities-page, #dorm-page {
+	background-color:tan;
+}
+
+#top-imgs {
+	position:relative;
+	height:500px;
+	max-width:1700px;
+	margin:0 auto;
+}
+
+#top-imgs img {
+	min-width:100%;
+	outline:1px solid #00ced1;
+}
+
+#img-middle {
+	height:500px;
+}
+
+.img-side {
+	height:250px;
+}
+
+ /* PHP INCLUDE property images = 1
+   ========================================================================== */
+
+#top-container {
+	position:relative;
+} 
+
+#main-photo {
+	display:block; 
+	margin:0 auto; 
+	max-height:400px;
+}
+
+ /* Top Images Overlay
+   ========================================================================== */
+
+.info-overlay {
+	width:100%;
+	height:100px;
+  	background-color: rgba(0,0,0,.7);	
+  	z-index:100;
+  	position:absolute;
+  	bottom:0;
+}
+
+#main-photo {
+	display:block; 
+	margin:0 auto; 
+	max-height:400px;
+}
+
+#overlay-tbl {
+	display:table; 
+	height:100px;
+}
+
+.overlay-text {
+	vertical-align:middle; 
+	display:table-cell; 
+	height:100%; 
+	float:none;
+	font-weight:400;
+	font-size:1.3em;
+	color:white;
+}
+
+#property-page .button {
+	margin-top:0px;
+}
+
+.overlay-btn, .overlay-btn a:visited {
+	display:table-cell; 
+	vertical-align:middle; 
+	float:none;
+	color:white;
+}
+
+.info-overlay .glyphicon {
+	color:#00ced1;
+}
+
+ /* Section #property-info
+   ========================================================================== */
+
+.title-box {
+	color: white;
+	background-color: #00ced1;
+	box-shadow: 10px 10px 5px white;
+	font-size: 1.9em;
+	text-align: center;
+	font-weight: 700;
+	padding: 5px 0 5px 0;
+	float:none;
+	margin-bottom:30px;
+}
+
+#at-a-glance,
+.property-about {
+	font-size:1.1em;
+}
+
+ul#basic-info li {
+	width:50%;
+	float:left;
+}
+
+ /* Section #link-boxes
+   ========================================================================== */
+
+#link-boxes {
+	padding:0 0 75px 0px;
+}
+
+#link-boxes hr {
+	margin-bottom:50px; 
+	margin-top:0px
+}
+
+ul#property-boxes li {
+	border-radius: 50px;
+	background-size: 100% 100%;
+	background-position:center;
+	background-repeat:no-repeat;
+	height: 300px;
+	margin:0 2% 0 2%;
+	width:29.3333%;
+	opacity:.8;
+	border:2px solid black;
+}
+
+	ul#property-boxes li:hover {
+		opacity:1;
+  		box-shadow:5px 5px 30px 15px black; 
+	}
+
+
+ul#property-boxes span.glyphicon {
+	font-size:3em; 
+	display:block; 
+	text-align:center;
+}
+
+#amenities-box {
+  background-image: url('../img/pool.jpg');
+}
+
+#map-box {
+  background-image: url('../img/map.jpg');
+}
+
+.box-list-title {
+  text-align: center;
+  margin-top: 25%;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color:gray;
+  background-color: rgba(0,0,0,.7);
+  color: white;
+  font-size: 2em;
+}
+
+.f-left {
+	width:50%;
+	float:left;
+}
+
+.contact-form label {
+	width:110px;
+}
+
+.contact-form textarea {
+	width:80%; 
+	margin-right:auto; 
+	margin-left:auto;
+}
+
+#textModal .modal-header {
+	border-bottom: 1px solid white;
+}
+
+/* Media Queries
+   ========================================================================== */
+
+@media (max-width: 1199px) {
+
+	#top-imgs {
+		height:400px;
+	}
+
+	#img-middle {
+		height:400px;
+	}
+
+	.img-side {
+		height:200px;
+	}
+}
+
+@media (max-width: 991px) {
+
+	#top-imgs {
+		height:350px;
+	}
+
+	#img-middle {
+		height:350px;
+	}
+
+	.img-side {
+		height:175px;
+	}
+
+	ul#property-boxes li {
+		height:220px;
+	}
+}
+
+@media (max-width: 767px) {
+
+	#img-middle {
+		height:280px;
+		width:auto;
+		max-width:auto;
+	}
+
+	#top-imgs img {
+		min-width:inherit;
+		display:block;
+		margin:0 auto;
+	}
+
+	#middle-img-wrapper {
+		float:none;
+	}
+
+	#top-imgs {
+		height:auto;
+	}
+
+	.overlay-text {
+		font-size:.9em;
+	}
+
+	.overlay-btn .button {
+		font-size:.9em;
+		min-width:70px;
+		padding:0px 5px;
+	}
+
+	.info-overlay,
+	#overlay-tbl {
+		height:80px;
+		width:100%;
+	}
+
+	.property-about{
+		margin-top:50px;
+	}
+}
+
+@media (min-width: 450px) and (max-width: 767px) {
+
+	ul#basic-info li {
+		padding-left:10%;
+	}
+}
+
+/* ==========================================================================
+ 	gallery.php
+   ========================================================================== */
+
+.item img {
+	margin:0 auto;
+	max-height:480px;
+	min-height:380px;
+}
+
+.item {
+	height:480px;
+}
+
+/* Media Queries
+   ========================================================================== */
+
+@media (max-width: 767px) {
+
+	.item img {
+		min-height:inherit;
+	}
+
+	.item {
+		height:inherit;
+	}
+}
+
+/* ==========================================================================
+ 	amenities.php
+   ========================================================================== */
+
+ul.amenities-list li {
+	width:50%;
+	float:left;
+	padding:5px 0px;
+}
+
+ul.utilities-list {
+	width:50%;
+	float:left;
+}
+
+ul.utilities-list li {
+	padding:5px 0px;
+}
+
+.amenities {
+	padding:20px 0px;
+}
+
+/* Media Queries
+   ========================================================================== */
+
+@media (min-width: 450px) and (max-width: 767px) {
+
+	ul.amenities-list li {
+		padding-left:10%;
+	}
+
+	ul.utilities-list li {
+		padding-left:20%;
+	}
+}
+
+/* ==========================================================================
+ 	location.php / dorm-location.php
+   ========================================================================== */
+
+#location, #dorm-location {
+	width:100%;
+	height:100%;
+	min-width:320px; 
+	min-height:350px; 
+	overflow:hidden;
+}
+
+/* ==========================================================================
+ 	dorms.html
+   ========================================================================== */
+
+#dorm-map {
+	width:100%;
+	height:500px;
+}
+
+.neighborhood-title {
+	font-size:28px;
+}
+
+#northwest {
+	background-image: url('../img/water-blue-bg.png');
+}
+
+#central {
+	background-image: url('../img/tan-background.png');
+}
+
+#southeast {
+	background-image: url('../img/blue-background.png');
+}
+
+#northwest a,
+#central a,
+#southeast a {
+	text-decoration:underline;
+}
+
+#northwest img, 
+#central img,
+#southeast img {
+	max-height:300px;
+}
+
+#northwest .glyphicon-ok-circle,
+#central .glyphicon-ok-circle,
+#southeast .glyphicon-ok-circle {
+	color:green;
+}
+
+#northwest .glyphicon-remove-circle,
+#central .glyphicon-remove-circle,
+#southeast .glyphicon-remove-circle {
+	color:red;
+}
+
+.pros {
+	clear:both;
+}
+
+.dorms ul li {
+	width:50%;
+	float:left;
+}
+
+@media (max-width: 767px) {
+
+	.dorm-desc {
+		padding-top:15px;
+	}
+}
+
+@media (min-width: 451px) and (max-width: 767px) {
+
+	.dorms {
+		width:80%;
+		margin:0 auto;
+		clear:both;
+	}
+
+	.dorms ul li {
+		width:25%;
+	}
+
+	.pros, .cons {
+		width:50%;
+		float:left;
+	}
+}
+
+@media (max-width: 450px) {
+
+	.pros, .cons, .dorms {
+		width:100%;
+	}
+}
+
+/* ==========================================================================
+ 	dorm-page.php
+   ========================================================================== */
+
+#dorm-page #amenities-box {
+  background-image: url('../photos/dorms/Willkie-6.jpg');
+}
+
+/* ==========================================================================
+ 	dorm-amenities.php
+   ========================================================================== */
+
+@media (min-width: 450px) and (max-width: 767px) {
+
+	#dorm-amenities-page ul.amenities-list li {
+		padding-left:4%;
+	}
+}
+
+/* ==========================================================================
+ 	landlords.html
+   ========================================================================== */
+
+#landlords-page {
+	background-image: url('../img/tan-background.png');
+}
+
+@media (max-width: 767px) {
+
+	#landlord-text {
+		padding:0px;
+	}
+}
+
+/* ==========================================================================
+ 	contact-us.html
+   ========================================================================== */
+
+#contact-page {
+	background-image: url('../img/tan-background.png');
+}
+
+	#contact-page label {
+		border:none;
+		width:120px;
+	}
+
+/* ==========================================================================
+ 	send-form-email.php & message-sent.php
+   ========================================================================== */
+
+body#contact-form {
+	background-image: url('../img/tan-background.png');
+}
+
+#contact-form section p {
+	font-size:1.3em;
+}
+
+#contact-form p a {
+	text-decoration:underline;
+}
+
