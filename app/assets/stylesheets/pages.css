@@ -10,7 +10,7 @@ section#top {
 	height: calc(100% - 80px);
 	max-height: 950px;
 	width:100%;
-	background-image:url('../img/moving-couch.jpg');
+	background-image:url('../assets/moving-couch.jpg');
  	-webkit-background-size: 100% 100%;      /* Safari 3.0 */
 	-moz-background-size: 100% 100%;         /* Gecko 1.9.2 (Firefox 3.6) */
 	-o-background-size: 100% 100%;           /* Opera 9.5 */
@@ -63,7 +63,7 @@ section#top {
 }
 
 section#about {
-	background-image:url('../img/tan-background.png');
+	background-image:url('../assets/tan-background.png');
   	border-top:3px solid black;
 }
 
@@ -118,7 +118,7 @@ ul#steps li img {
 }
 
 section#info {
-	background-image:url('../img/blue-background.png');
+	background-image:url('../assets/blue-background.png');
   	border-top:2px solid white;
 }
 
@@ -140,7 +140,7 @@ section#encyclopedia {
 	height: 750px;
 	width:100%;
 	max-width:1950px;
-	background-image:url('../img/book-shelf.jpg');
+	background-image:url('../assets/book-shelf.jpg');
 	background-repeat:no-repeat;
 	-webkit-background-size: 100% 100%;      /* Safari 3.0 */
 	-moz-background-size: 100% 100%;         /* Gecko 1.9.2 (Firefox 3.6) */

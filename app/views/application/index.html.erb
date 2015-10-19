@@ -1,0 +1,76 @@
+<section id="top">
+	<div class="container text-center" id="top-content">
+        <h1 class="pad-0">B-Town Student Housing Database</h1>
+        <p id="top-content-text">Hundreds of properties each with their own individual pages!</p>
+        <p>
+        	<button onclick="window.location.href='housing-search.html'" class="button button-left blue-button">» &nbsp; Housing Properties</button>
+			<button onclick="window.location.href='dorms.html'" class="button blue-button">» &nbsp; Dorms</button>
+        </p>
+    </div>
+</section>
+
+<section id="about">
+	<div class="container">
+       	<div class="row">
+        	<div class="col-md-6 col-md-offset-3">
+            	<p class="text-center" id="about-title">About</p><hr>
+            	<p class="text-center">MyCampus Island is a revolutionary student housing web-based application just for Indiana University students. The site interacts directly with landlords to provide updated student housing listings that show which properties are available for the upcoming semester. MCI also provides a Student Housing Encyclopedia, which displays in-depth individual pages for EVERY student housing property regardless of whether it is available for the upcoming semester. Enjoy!</p>
+                <p class="text-center" id="steps-title">It's as easy as 1, 2, 3</p>
+            </div>
+        </div>
+        <div class="row">
+        	<ul class="text-center" id="steps">
+            	<li class="col-sm-4">
+                	<%= link_to(image_tag('icon-1')) %>
+                    <p class="step">Enter Search Criteria</p>
+                    <p>Select your preferences to narrow down the results.</p>
+                </li>
+                <li class="col-sm-4">
+                    <%= link_to(image_tag('icon-2')) %>
+                    <p class="step">Browse Results</p>
+                    <p>Every property in the database has its own unique page with a variety of student focused information.</p>
+                </li>
+                <li class="col-sm-4">
+                    <%= link_to(image_tag('icon-3')) %>
+                    <p class="step">Contact Landlord</p>
+                    <p>Set up a tour or get in contact with the property owner.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="info">
+	<div class="container">
+        <div class="row">
+            <%= link_to(image_tag('property-page-screenshot.png', :alt => 'student housing property page', :class => 'col-md-6 img-center', :id => 'features-img')) %>
+            <div class="col-md-6 text-center" id="housing-info">
+                <h2 id="info-title"><i>Revolutionary Housing Information</i></h2>
+                <p id="info-text">MyCampus Island is bringing an immersive platform filled with all the data you can imagine to allow you to make informed decisions about where to spend your college years. Our data is constantly updated and every single property has it's own page allowing for property comparisons. Don't be overwhelmed though, everything is easy to find.
+                    <br> <button onclick="window.location.href='housing-search.html'" class="button" id="tan-button">&#187; &nbsp; Get Started!</button></p>
+            </div>
+        </div>
+        <ul class="clearfix" id="features">
+            <li><%= link_to(image_tag('icon-notepad.png')) %><p class="text-center">Descriptions</p></li>
+            <li><%= link_to(image_tag('icon-price.png')) %><p>Prices</p></li>
+            <li><%= link_to(image_tag('icon-binoculars.png')) %><p>Location</p></li>
+            <li><%= link_to(image_tag('icon-camera.png')) %><p>Images</p></li>
+            <li><%= link_to(image_tag('icon-check.png')) %><p>Amenities</p></li>
+            <li><%= link_to(image_tag('icon-arrows.png')) %><p>Pros / Cons</p></li>
+            <li><%= link_to(image_tag('icon-message.png')) %><p>Property Contact</p></li>
+            <li><%= link_to(image_tag('icon-scale.png')) %><p>Comparisons</p></li>
+        </ul>
+    </div>
+</section>
+
+<section id="encyclopedia" class="hide-mobile">
+	<div class="container">
+    	<p id="encyclopedia-title">The Student Housing Encyclopedia</p>
+        <p><em>Listings are great for students who do things last minute or those in need of a place right now, but what about those who plan ahead? What if you want detailed information about any property or to contact a landlord before the unit is available?</em></p>
+        <p>We combine listings with our proprietary Student Housing Encyclopedia that allows you to get the low down on <strong><u>ANY</u></strong> property. View images, step inside to take a tour, examine detailed property information, and contact the landlord without ever leaving your couch!</p><br>
+        <p style="text-align:center;">
+        	<button onclick="window.location.href='housing-search.html'" class="button button-left blue-button">» &nbsp; Listings</button>
+			<button onclick="window.location.href='housing-search.html'" class="button blue-button">» &nbsp; Encyclopedia</button>
+        </p>
+    </div>
+</section>

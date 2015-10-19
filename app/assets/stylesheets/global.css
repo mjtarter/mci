@@ -235,15 +235,15 @@ footer {
 }
 
 #search-icon {
-	background-image:url('../img/icon-mag-glass.png');
+	background-image:url('../assets/icon-mag-glass.png');
 }
 
 #contact-icon {
-	background-image:url('../img/icon-message.png');
+	background-image:url('../assets/icon-message.png');
 }
 
 #connect-icon {
-	background-image:url('../img/icon-plug.png');
+	background-image:url('../assets/icon-plug.png');
 }
 
 ul#share-buttons {
