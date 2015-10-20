@@ -257,7 +257,7 @@ section#top-search {
 	max-height: 950px;
 	min-height:570px;
 	width:100%;
-	background-image:url('../img/kirkwood.jpg');
+	background-image:url('../assets/kirkwood.jpg');
 	background-repeat:no-repeat;
 	-webkit-background-size: 100% 100%;      /* Safari 3.0 */
 	-moz-background-size: 100% 100%;         /* Gecko 1.9.2 (Firefox 3.6) */

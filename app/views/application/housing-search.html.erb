@@ -5,4 +5,61 @@
 @og_description = "The largest site of Indiana University student living including houses, apartments, and townhomes!"
 %>
 <!-- End Instance Variables !-->
-ss
+
+<section id="top-search">
+    <div id="table-container" class="container">
+        <div class="row vert-middle">
+            <h1 class="text-center" id="search-title">Search from 100's of Apartments &amp; Houses in Bloomington's Online Student Housing Database</h1>
+            <form action="mapping.php" method="GET" id="search-form" class="col-xs-12 col-md-10 col-md-offset-1">
+                <ul class="search-form-col col-sm-4 col-xs-12" id="search-left-col">
+                    <div class="ie-hide">
+                        <input type="radio" name="housing_availability" value="no" checked="yes"> Encyclopedia <br>
+                        <input type="radio" name="housing_availability" value="yes" checked=""> Listings 
+                    </div>
+                    <li class="radio-center">
+                        <input type="radio" class="radio" name="housing_availability" id="radio1" value="no" checked=""> 
+                        <label for="radio1">Encyclopedia <abbr title="All housing in the database, whether listed as currently available or not."><%= link_to(image_tag('icon-tooltip.png', :style => "height:16px;")) %></abbr>
+                        </label>
+                    </li>
+                    <li class="radio-center"><input type="radio" class="radio" name="housing_availability" id="radio2" value="yes"> 
+                        <label for="radio2">Listings <abbr title="Housing that is listed as available for the upcoming school year.">
+                        <%= link_to(image_tag('icon-tooltip.png', :style => "height:16px;")) %></abbr>
+                        </label>
+                    </li>
+                </ul>
+                <ul class="search-form-col col-sm-3 col-xs-12 ptb-15" id="mobile-p">
+                    <li>Type:<br>
+                        <select name="house_type" class="form-box-width">
+                            <option value="e">Any</option>
+                            <option value="house"> House</option> 
+                            <option value="apartment"> Apartment</option>
+                            <option value="townhome"> Townhome</option>
+                        </select>
+                    </li>     
+                    <li class="ptb-5">Bedrooms:<br>
+                        <select name="number_bdrms" class="form-box-width">
+                            <option value="All">Any</option>
+                            <option value="S"> Studio</option>
+                            <option value="1"> 1</option>
+                            <option value="2"> 2</option>
+                            <option value="3"> 3</option>
+                            <option value="4"> 4</option> 
+                            <option value="5"> 5</option>
+                        </select>
+                    </li>                            
+                </ul>
+                <ul class="search-form-col col-sm-3 col-xs-12 ptb-10">
+                    <li>Min Price:<br>
+                        <input type="number" name="min_price" style="width:60%" value="0">
+                    </li>
+                    <li class="ptb-5">Max Price:<br>
+                        <input type="number" name="max_price" style="width:60%" value="10000">
+                    </li>
+                </ul>
+                <ul class="search-form-col col-sm-2 col-xs-12" id="search-right-col">
+                    <li><input type="submit" name="submit" value="Search" class="button blue-button" id="form-button"><li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</section>
