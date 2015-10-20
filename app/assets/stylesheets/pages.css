@@ -814,10 +814,6 @@ img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
  /* PHP INCLUDE property images >= 5
    ========================================================================== */
 
-#property-page, #gallery-page, #housing-search-page, #amenities-page, #dorm-page {
-	background-color:tan;
-}
-
 #top-imgs {
 	position:relative;
 	height:500px;
