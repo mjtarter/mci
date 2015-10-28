@@ -493,31 +493,6 @@ ul#share-buttons li {
 	border-top:2px solid white;
 	font-size:.8em;
 }
-
-/*XXXXXXXXXX Sticky Footer XXXXXXXXXX*/
-
-* {
-  margin: 0;
-}
-
-html, body {
-  height: 100%;
-}
-
-.page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -265px; 
-}
-
-.page-wrap:after {
-  content: "";
-  display: block;
-}
-
-.site-footer, .page-wrap:after {
-  height: 265px; 
-}
 	
 /* Media Queries
    ========================================================================== */

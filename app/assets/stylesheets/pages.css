@@ -1272,8 +1272,8 @@ ul.utilities-list li {
  	landlords.html
    ========================================================================== */
 
-#landlords-page {
-	background-image: url('../img/tan-background.png');
+#landlords-bg {
+	background-image: url('../assets/tan-background.png');
 }
 
 @media (max-width: 767px) {
