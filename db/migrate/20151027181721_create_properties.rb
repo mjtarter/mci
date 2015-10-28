@@ -11,6 +11,7 @@ class CreateProperties < ActiveRecord::Migration
     	t.decimal :price_two, :precision => 6, :scale => 2
     	t.boolean :availability
     	t.integer :floors
+        t.integer :term_number
     	t.string :term
     	t.integer :sqft
     	t.string :description
