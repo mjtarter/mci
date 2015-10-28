@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20151027181721) do
 
   create_table "properties", force: :cascade do |t|
-    t.string   "type",                 limit: 255,                          null: false
+    t.string   "property_type",        limit: 255,                          null: false
     t.string   "address",              limit: 255,                          null: false
     t.decimal  "lat",                              precision: 10
     t.decimal  "lng",                              precision: 10

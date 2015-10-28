@@ -1,0 +1,16 @@
+<%= form_for(:property, :url => {:action => 'create'}, :html => {:class => 'ptb-50'}) do |f| %>
+
+  <div class="form-group">
+    <%= f.label(:property_type, 'Type *') %>
+    <%= f.text_field(:property_type) %>
+  </div>
+  <div class="form-group">
+    <%= f.label(:address, 'Address *') %>
+    <%= f.text_field(:address) %>
+  </div>
+  
+  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+  	Add Property
+  <% end %>
+
+<% end %>
