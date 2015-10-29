@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20151029021500) do
     t.decimal  "price",                            precision: 6,  scale: 2
     t.decimal  "price_two",                        precision: 6,  scale: 2
     t.boolean  "availability"
+    t.date     "date_available"
     t.integer  "floors",               limit: 4
     t.integer  "term_number",          limit: 4
     t.string   "term",                 limit: 255

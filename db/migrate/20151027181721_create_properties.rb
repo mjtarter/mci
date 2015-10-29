@@ -10,6 +10,7 @@ class CreateProperties < ActiveRecord::Migration
     	t.decimal :price, :precision => 6, :scale => 2
     	t.decimal :price_two, :precision => 6, :scale => 2
     	t.boolean :availability
+        t.date :date_available
     	t.integer :floors
         t.integer :term_number
     	t.string :term
