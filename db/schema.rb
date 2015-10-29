@@ -11,7 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027181721) do
+ActiveRecord::Schema.define(version: 20151029021500) do
+
+  create_table "dorms", force: :cascade do |t|
+    t.string   "name",                    limit: 255,                null: false
+    t.decimal  "lat",                                 precision: 10
+    t.decimal  "lng",                                 precision: 10
+    t.string   "location",                limit: 255
+    t.string   "phone",                   limit: 255
+    t.string   "email",                   limit: 255
+    t.string   "address",                 limit: 255
+    t.string   "type",                    limit: 255
+    t.integer  "floors",                  limit: 4
+    t.string   "beds",                    limit: 255
+    t.string   "rooms",                   limit: 255
+    t.string   "bathrooms",               limit: 255
+    t.string   "gender_on_floor",         limit: 255
+    t.string   "description",             limit: 255
+    t.string   "price",                   limit: 255
+    t.string   "parking_zone",            limit: 255
+    t.boolean  "academic_support_center"
+    t.boolean  "computer_lab"
+    t.boolean  "library"
+    t.boolean  "ud_academic_advising"
+    t.boolean  "ac"
+    t.boolean  "carpet_in_room"
+    t.boolean  "dining_onsite"
+    t.boolean  "music_practice_room"
+    t.boolean  "piano"
+    t.boolean  "dance_studio"
+    t.boolean  "exercise_room"
+    t.boolean  "game_room"
+    t.boolean  "laundry_on_floor"
+    t.boolean  "laundry_ground_floor"
+    t.boolean  "quiet_study_area"
+    t.boolean  "community_kitchen"
+    t.boolean  "iu_secure_wifi"
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+  end
 
   create_table "properties", force: :cascade do |t|
     t.string   "property_type",        limit: 255,                          null: false
