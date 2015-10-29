@@ -1,0 +1,34 @@
+<div class="container">
+  <%= form_for(:dorm, :url => {:action => 'create'}, :html => {:class => 'ptb-50'}) do |f| %>
+
+    <div class="form-group">
+      <%= f.label(:dorm_type, 'Type *') %>
+      <%= f.select(:dorm_type, ['House', 'Apartment', 'Townhome', 'Dorm']) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:name, 'Name *') %>
+      <%= f.text_field(:name) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:lat, 'Lat *') %>
+      <%= f.text_field(:lat) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:lng, 'Lng *') %>
+      <%= f.text_field(:lng) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:location, 'Location *') %>
+      <%= f.text_field(:location) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:address, 'Address *') %>
+      <%= f.text_field(:address) %>
+    </div>
+    
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+    	Add Property
+    <% end %>
+
+  <% end %>
+</div>

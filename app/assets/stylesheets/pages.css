@@ -1173,15 +1173,15 @@ ul.utilities-list li {
 }
 
 #northwest {
-	background-image: url('../img/water-blue-bg.png');
+	background-image: url('../assets/water-blue-bg.png');
 }
 
 #central {
-	background-image: url('../img/tan-background.png');
+	background-image: url('../assets/tan-background.png');
 }
 
 #southeast {
-	background-image: url('../img/blue-background.png');
+	background-image: url('../assets/blue-background.png');
 }
 
 #northwest a,

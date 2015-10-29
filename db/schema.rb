@@ -14,14 +14,14 @@
 ActiveRecord::Schema.define(version: 20151029021500) do
 
   create_table "dorms", force: :cascade do |t|
-    t.string   "name",                    limit: 255,                null: false
-    t.decimal  "lat",                                 precision: 10
-    t.decimal  "lng",                                 precision: 10
+    t.string   "name",                    limit: 255,                         null: false
+    t.decimal  "lat",                                 precision: 8, scale: 6
+    t.decimal  "lng",                                 precision: 8, scale: 6
     t.string   "location",                limit: 255
     t.string   "phone",                   limit: 255
     t.string   "email",                   limit: 255
     t.string   "address",                 limit: 255
-    t.string   "type",                    limit: 255
+    t.string   "dorm_type",               limit: 255
     t.integer  "floors",                  limit: 4
     t.string   "beds",                    limit: 255
     t.string   "rooms",                   limit: 255
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 20151029021500) do
     t.boolean  "quiet_study_area"
     t.boolean  "community_kitchen"
     t.boolean  "iu_secure_wifi"
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
   end
 
   create_table "properties", force: :cascade do |t|

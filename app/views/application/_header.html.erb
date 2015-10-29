@@ -19,12 +19,14 @@
 		<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic,700' rel='stylesheet' type='text/css'>
         <%= stylesheet_link_tag('application', :media => 'all') %>
 
+        <!-- xxx Google Maps xxx -->
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <!-- xxx Share This Buttons (Social Media Share) xxx -->
         <script type="text/javascript">var switchTo5x=true;</script>
         <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
         <script type="text/javascript">stLight.options({publisher: "9aa9f18f-1bd3-4e9d-a7d6-4529777ac776", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script>
     </head>
-    <body>
+    <body onload="plot_dorm_data();">
     	<!--[if lte IE 7]><script src="js/ie6/warning.js"></script><script>window.onload=function(){e("js/ie6/")}</script><![endif]-->
         <nav id="main-nav">
         	<div class="container">

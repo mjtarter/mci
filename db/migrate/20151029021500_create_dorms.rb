@@ -2,13 +2,13 @@ class CreateDorms < ActiveRecord::Migration
   def change
     create_table :dorms do |t|
     	t.string :name, :null => false
-    	t.decimal :lat
-    	t.decimal :lng
+    	t.decimal :lat, :precision => 8, :scale => 6
+    	t.decimal :lng, :precision => 8, :scale => 6
     	t.string :location
     	t.string :phone
     	t.string :email
     	t.string :address
-    	t.string :type
+    	t.string :dorm_type
     	t.integer :floors
     	t.string :beds
     	t.string :rooms
