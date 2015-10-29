@@ -2,10 +2,6 @@
   <%= form_for(:dorm, :url => {:action => 'create'}, :html => {:class => 'ptb-50'}) do |f| %>
 
     <div class="form-group">
-      <%= f.label(:dorm_type, 'Type *') %>
-      <%= f.select(:dorm_type, ['House', 'Apartment', 'Townhome', 'Dorm']) %>
-    </div>
-    <div class="form-group">
       <%= f.label(:name, 'Name *') %>
       <%= f.text_field(:name) %>
     </div>
@@ -22,8 +18,20 @@
       <%= f.text_field(:location) %>
     </div>
     <div class="form-group">
+      <%= f.label(:dorm_type, 'Type *') %>
+      <%= f.select(:dorm_type, ['House', 'Apartment', 'Townhome', 'Dorm']) %>
+    </div>
+    <div class="form-group">
       <%= f.label(:address, 'Address *') %>
       <%= f.text_field(:address) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:phone, 'Phone *') %>
+      <%= f.text_field(:phone) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:email, 'Email *') %>
+      <%= f.text_field(:email) %>
     </div>
     
     <%= button_tag(type: 'submit', class: "btn btn-primary") do %>

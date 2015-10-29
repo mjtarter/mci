@@ -1,8 +1,8 @@
 class DormController < ApplicationController
 
 	def index
-  		@dorms = Dorm.with_user_data
- 
+		#Create json file to be used for google map
+  		@dorms = Dorm.all
   		respond_to do |format|
     		format.html # index.html.haml
     		format.json { render :json => @dorms }
@@ -20,7 +20,7 @@ class DormController < ApplicationController
 	private
 
 		def dorm_params
-			params.require(:dorm).permit(:name, :dorm_type, :lat, :lng, :location, :address)
+			params.require(:dorm).permit(:name, :dorm_type, :lat, :lng, :location, :address, :phone, :email)
 		end
 
 end
