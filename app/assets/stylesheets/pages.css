@@ -1315,7 +1315,7 @@ body#contact-form {
 /* ==========================================================================
  	Property/New
    ========================================================================== */
-#price-range, #price-range-remove {
+#price-range, #price-range-remove, #date {
 	display:none;
 }
 
