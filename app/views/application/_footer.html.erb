@@ -1,20 +1,20 @@
         <footer>
             <div class="container">
-                 <%= link_to(image_tag('mci-logo.png', :alt => 'MyCampys Island logo', :class => 'img-center')) %>
+                 <%= image_tag('mci-logo.png', :alt => 'MyCampys Island logo', :class => 'img-center') %>
                 <hr>
                 <div class="row">
                     <div class="col-xs-4 text-center mobile-width">
                         <p class="footer-title" id="search-icon">Search</p>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="housing-search.html">Housing Properties</a></li>
-                            <li><a href="dorms.html">Dorms</a></li>
+                            <li><%= link_to('Home', {:controller => 'application', :action => 'index'}) %></li>
+                            <li><%= link_to('Housing Properties', {:controller => 'application', :action => 'housing-search'}) %></li>
+                            <li><%= link_to('Dorms', {:controller => 'dorm', :action => 'index'}) %></li>
                         </ul>
                     </div>
                     <div class="col-xs-4 text-center mobile-width">
                         <p class="footer-title" id="contact-icon">Contact</p>
                         <ul>
-                            <li><a href="landlords.html">Landlords</a></li>
+                            <li><%= link_to('Landlords', {:controller => 'application', :action => 'landlords'}) %></li>
                             <li><a href="contact-us.html">Contact Us</a></li>
                         </ul>
                     </div>
