@@ -14,7 +14,7 @@ class CreateDorms < ActiveRecord::Migration
     	t.string :rooms
     	t.string :bathrooms
     	t.string :gender_on_floor
-    	t.string :description
+    	t.text :description
     	t.string :price
     	t.string :parking_zone
     	t.boolean :academic_support_center

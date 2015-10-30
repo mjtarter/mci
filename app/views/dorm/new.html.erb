@@ -33,6 +33,156 @@
       <%= f.label(:email, 'Email *') %>
       <%= f.text_field(:email) %>
     </div>
+    <div class="form-group">
+      <%= f.label(:floors, 'Floors *') %>
+      <%= f.select(:floors, 1..25) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:beds, 'Beds *') %>
+      <%= f.text_field(:beds) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:rooms, 'Rooms *') %>
+      <%= f.text_field(:rooms) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:bathrooms, 'Bathrooms *') %>
+      <%= f.text_field(:bathrooms) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:gender_on_floor, 'Gender On Floor *') %>
+      <%= f.text_field(:gender_on_floor) %>
+    </div><div class="form-group">
+      <%= f.label(:description, 'Description') %>
+      <%= f.text_area(:description, :size => "50x5") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:price, 'Price *') %>
+      <%= f.text_field(:price) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:parking_zone, 'Parking Zone *') %>
+      <%= f.text_field(:parking_zone) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:academic_support_center, 'Academic Support Center *') %>
+      <%= f.radio_button(:academic_support_center, true) %>
+      <%= label_tag(:academic_support_center_true, "yes") %>
+      <%= f.radio_button(:academic_support_center, false) %>
+      <%= label_tag(:academic_support_center_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:computer_lab, 'Computer Lab *') %>
+      <%= f.radio_button(:computer_lab, true) %>
+      <%= label_tag(:computer_lab_true, "yes") %>
+      <%= f.radio_button(:computer_lab, false) %>
+      <%= label_tag(:computer_lab_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:library, 'Library *') %>
+      <%= f.radio_button(:library, true) %>
+      <%= label_tag(:library_true, "yes") %>
+      <%= f.radio_button(:library, false) %>
+      <%= label_tag(:library_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:ud_academic_advising, 'UD Academic Advising *') %>
+      <%= f.radio_button(:ud_academic_advising, true) %>
+      <%= label_tag(:ud_academic_advising_true, "yes") %>
+      <%= f.radio_button(:ud_academic_advising, false) %>
+      <%= label_tag(:ud_academic_advising_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:ac, 'AC *') %>
+      <%= f.radio_button(:ac, true) %>
+      <%= label_tag(:ac_true, "yes") %>
+      <%= f.radio_button(:ac, false) %>
+      <%= label_tag(:ac_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:carpet_in_room, 'Carpet In Room *') %>
+      <%= f.radio_button(:carpet_in_room, true) %>
+      <%= label_tag(:carpet_in_room_true, "yes") %>
+      <%= f.radio_button(:carpet_in_room, false) %>
+      <%= label_tag(:carpet_in_room_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:dining_onsite, 'Dining Onsite *') %>
+      <%= f.radio_button(:dining_onsite, true) %>
+      <%= label_tag(:dining_onsite_true, "yes") %>
+      <%= f.radio_button(:dining_onsite, false) %>
+      <%= label_tag(:dining_onsite_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:music_practice_room, 'Music Practice Room *') %>
+      <%= f.radio_button(:music_practice_room, true) %>
+      <%= label_tag(:music_practice_room_true, "yes") %>
+      <%= f.radio_button(:music_practice_room, false) %>
+      <%= label_tag(:music_practice_room_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:piano, 'Piano *') %>
+      <%= f.radio_button(:piano, true) %>
+      <%= label_tag(:piano_true, "yes") %>
+      <%= f.radio_button(:piano, false) %>
+      <%= label_tag(:piano_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:dance_studio, 'Dance Studio *') %>
+      <%= f.radio_button(:dance_studio, true) %>
+      <%= label_tag(:dance_studio_true, "yes") %>
+      <%= f.radio_button(:dance_studio, false) %>
+      <%= label_tag(:dance_studio_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:exercise_room, 'Exercise Room *') %>
+      <%= f.radio_button(:exercise_room, true) %>
+      <%= label_tag(:exercise_room_true, "yes") %>
+      <%= f.radio_button(:exercise_room, false) %>
+      <%= label_tag(:exercise_room_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:game_room, 'Game Room *') %>
+      <%= f.radio_button(:game_room, true) %>
+      <%= label_tag(:game_room_true, "yes") %>
+      <%= f.radio_button(:game_room, false) %>
+      <%= label_tag(:game_room_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:laundry_on_floor, 'Laundry On Floor *') %>
+      <%= f.radio_button(:laundry_on_floor, true) %>
+      <%= label_tag(:laundry_on_floor_true, "yes") %>
+      <%= f.radio_button(:laundry_on_floor, false) %>
+      <%= label_tag(:laundry_on_floor_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:laundry_ground_floor, 'Laundry Ground Floor *') %>
+      <%= f.radio_button(:laundry_ground_floor, true) %>
+      <%= label_tag(:laundry_ground_floor_true, "yes") %>
+      <%= f.radio_button(:laundry_ground_floor, false) %>
+      <%= label_tag(:laundry_ground_floor_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:quiet_study_area, 'Quiet Study Area *') %>
+      <%= f.radio_button(:quiet_study_area, true) %>
+      <%= label_tag(:quiet_study_area_true, "yes") %>
+      <%= f.radio_button(:quiet_study_area, false) %>
+      <%= label_tag(:quiet_study_area_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:community_kitchen, 'Community Kitchen *') %>
+      <%= f.radio_button(:community_kitchen, true) %>
+      <%= label_tag(:community_kitchen_true, "yes") %>
+      <%= f.radio_button(:community_kitchen, false) %>
+      <%= label_tag(:community_kitchen_false, "no") %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:iu_secure_wifi, 'IU Secure Wifi *') %>
+      <%= f.radio_button(:iu_secure_wifi, true) %>
+      <%= label_tag(:iu_secure_wifi_true, "yes") %>
+      <%= f.radio_button(:iu_secure_wifi, false) %>
+      <%= label_tag(:iu_secure_wifi_false, "no") %>
+    </div>
     
     <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
     	Add Property
