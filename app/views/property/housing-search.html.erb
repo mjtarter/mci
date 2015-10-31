@@ -63,3 +63,16 @@
         </div>
     </div>
 </section>
+
+<%= form_for(:property, :url => {:action => 'index'}) do |f| %>
+  
+  <div class="form-group">
+      <%= f.label(:property_type, 'Type *') %>
+      <%= f.select(:property_type, ['House', 'Apartment', 'Townhome', 'Dorm']) %>
+    </div>
+
+  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+    <span class="glyphicon glyphicon-pencil"></span> Create Playlist
+  <% end %>
+
+<% end %>

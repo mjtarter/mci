@@ -8,13 +8,16 @@ class PropertyController < ApplicationController
 		end
 	end
 
-	def index
+	def indexty
 		@disable_footer = true
 
+
 		#Create json file to be used for google map
-  		@properties = Property.all
+		@type = (params[:property][:property_type])
+  		@properties = Property.where(property_type: @type)
+
   		respond_to do |format|
-    		format.html # index.html.haml
+    		format.html
     		format.json { render :json => @properties }
   		end
 	end
