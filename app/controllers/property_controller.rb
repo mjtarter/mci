@@ -8,7 +8,15 @@ class PropertyController < ApplicationController
 		end
 	end
 
-	def scrape_coordinates
+	def index
+		@disable_footer = true
+
+		#Create json file to be used for google map
+  		@properties = Property.all
+  		respond_to do |format|
+    		format.html # index.html.haml
+    		format.json { render :json => @properties }
+  		end
 	end
 
 	private

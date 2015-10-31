@@ -1,0 +1,70 @@
+var map;
+	var customIcons = {
+		  house: {
+			icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|00CED1|000000',
+			shadow: 'http://labs.google.com/ridefinder/images/mm_20_shadow.png'
+		  },
+		  apartment: {
+			icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|D2B48C|000000',
+			shadow: 'http://labs.google.com/ridefinder/images/mm_20_shadow.png'
+		  },
+		  townhome: {
+			icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|8080E6|000000',
+			shadow: 'http://labs.google.com/ridefinder/images/mm_20_shadow.png'
+		  },
+		  "apartment, townhome": {
+			icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|D2B48C|000000',
+			shadow: 'http://labs.google.com/ridefinder/images/mm_20_shadow.png'
+		  }
+		};
+    var arrMarkers = [];
+    var arrInfoWindows = [];
+    var currentInfoWindow = null; 
+     
+    function mapInit(){
+        var centerCoord = new google.maps.LatLng(39.171385, -86.517715); 
+        var mapOptions = {
+            zoom: 14,
+            center: centerCoord,
+			mapTypeId: 'roadmap'
+        };
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+         
+        $.getJSON("/property.json", {}, function(json){
+            $.each(json, function(i,item){
+                $("#markers").append('<li><a href="#" rel="' + i + '">' + item.name + '</a></li>');
+                var icon = customIcons[item.location] || {};
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(item.lat, item.lng),
+                    map: map,
+                    icon: icon.icon,
+            		shadow: icon.shadow
+                });
+                arrMarkers[i] = marker;
+                var infowindow = new google.maps.InfoWindow({
+                    content: '<img src="assets/dorms/' + item.name + '-1.jpg" class="mtb-5" id="gmap-iw-img">' +
+		  			'<p class="m-0 text-center"><strong>' + item.name + '<strong></p>' +
+		  			'<a href="dorm-page.php?id=' + item.name + '" target=_blank class="button blue-button" id="listing-btn"><strong>More Info</strong></a>'  
+                });
+                arrInfoWindows[i] = infowindow;
+                google.maps.event.addListener(marker, 'click', function() {
+                    if (currentInfoWindow != null) { 
+        				currentInfoWindow.close(); 
+    				} 
+    				infowindow.open(map, marker); 
+    				currentInfoWindow = infowindow; 
+				}); 
+            });
+        });             
+    }
+    $(function(){
+        // initialize map (create markers, infowindows and list)
+        mapInit();
+         
+        // "live" bind click event
+        $("#markers a").live("click", function(){
+            var i = $(this).attr("rel");
+            arrInfoWindows[i].open(map, arrMarkers[i]);
+        });
+    });
+	
