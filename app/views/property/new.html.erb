@@ -308,6 +308,13 @@
       <%= f.radio_button(:elevator, false) %>
       <%= label_tag(:elevator_false, "no") %>
     </div>
+    <div class="form-group">
+      <%= f.label(:additional_amenities, 'Additional Amenities *') %>
+      <%= f.radio_button(:additional_amenities, true) %>
+      <%= label_tag(:additonal_amenities_true, "yes") %>
+      <%= f.radio_button(:additional_amenities, false) %>
+      <%= label_tag(:additional_amenites_false, "no") %>
+    </div>
     
     <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
     	Add Property

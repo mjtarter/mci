@@ -1,57 +1,14 @@
-
-        <div id="search-bar">
-            <ul class="container text-center" id="search-table">
-                <div class="row no-margin">
-                    <li id="search-bar-radio">
-                        <form action="mapping.php" method="GET">
-                            <p class="no-margin"><input type="radio" name="housing_availability" checked="checked" value="no"> Encyclopedia <abbr class="hidden-xs" title="All housing in the database, whether listed as currently available or not."><img src="img/icon-tooltip.png" height="16"></abbr></p>
-                            <p class="no-margin"><input type="radio" name="housing_availability" value="yes"> Listings <abbr class="hidden-xs" title="Housing that is listed as available for the current semester."><img src="img/icon-tooltip.png" height="16"> </abbr></p>
-                    </li>
-                    <li class="search-bar-dropdown">
-                        <p class="no-margin">Type:</p>
-                        <select name="house_type" class="form-box">
-                            <option value="e">Any</option>
-                            <option value="house"> House</option> 
-                            <option value="apartment"> Apartment</option>
-                            <option value="townhome"> Townhome</option>
-                        </select>
-                    </li>
-                    <li class="search-bar-dropdown">
-                        <p class="no-margin">Bedrooms:</p>
-                        <select name="number_bdrms" class="form-box">
-                            <option value="All">Any</option>
-                            <option value="S"> Studio</option>
-                            <option value="1"> 1</option>
-                            <option value="2"> 2</option>
-                            <option value="3"> 3</option>
-                            <option value="4"> 4</option> 
-                            <option value="5"> 5</option>
-                        </select>
-                    </li>
-                    <li class="search-bar-box">
-                        <p class="no-margin">Min Price:</p>
-                        <input type="number" name="min_price" value="0" class="form-box">
-                    </li>
-                    <li class="search-bar-box">
-                        <p class="no-margin text-center">Max Price:</p>
-                        <input type="number" name="max_price" value="10000" class="form-box">
-                    </li>
-                    <li class="search-bar-btn">
-                        <input type="submit" class="button blue-button" id="search-button" name="submit" value="Search"> 
-                    </form>
-                    </li>
-                </div>
-            </ul>
-        </div>        
-
-        <div id="map">
-        </div>
+    
+        <div id="map"></div>
 
         <%= javascript_include_tag('application-all') %>
         <% if (params[:controller] == 'dorm') %>
             <%= javascript_include_tag('application-dorms') %>
         <% end %>
         <% if (params[:controller] == 'property') %>
+             <%= javascript_tag do %>
+                var property_type = "<%= @type %>"
+             <% end %>
             <%= javascript_include_tag('application-properties') %>
         <% end %>
         

@@ -12,8 +12,8 @@ class PropertyController < ApplicationController
 		@disable_footer = true
 
 		#Create json file to be used for google map
-		@type = (params[:property][:property_type])
-  		@properties = Property.where(property_type: @type)
+		@type = params[:property_type] || property_params[:property_type] 
+  		@properties = Property.where(:property_type => @type)
 
   		respond_to do |format|
     		format.html
