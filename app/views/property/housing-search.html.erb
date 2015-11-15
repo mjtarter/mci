@@ -9,9 +9,16 @@
 <%= form_for(:property, :url => {:action => 'index'}) do |f| %>
   
   <div class="form-group">
-      <%= f.label(:property_type, 'Type *') %>
-      <%= f.select(:property_type, ['House', 'Apartment', 'Townhome', 'Dorm']) %>
-    </div>
+    <%= f.label(:property_type, 'Type *') %>
+    <%= f.select(:property_type, ['All', 'House', 'Apartment', 'Townhome']) %>
+  </div>
+
+	<div class="form-group">
+    <%= f.radio_button(:availability, 1, options = {checked: true}) %>
+    <%= label_tag(:encyclopedia, "Encyclopedia") %>
+    <%= f.radio_button(:availability, 0) %>
+    <%= label_tag(:listings, "Listings") %>
+  </div>
 
   <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
     <span class="glyphicon glyphicon-pencil"></span> Search

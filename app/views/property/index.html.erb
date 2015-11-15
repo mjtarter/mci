@@ -8,6 +8,7 @@
         <% if (params[:controller] == 'property') %>
              <%= javascript_tag do %>
                 var property_type = "<%= @type %>"
+                var availability = "<%= @availability %>"
              <% end %>
             <%= javascript_include_tag('application-properties') %>
         <% end %>

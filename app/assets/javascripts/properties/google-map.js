@@ -30,7 +30,7 @@ var map;
         };
         map = new google.maps.Map(document.getElementById("map"), mapOptions);
         
-        $.getJSON("/property.json?property_type=" + property_type, {}, function(json){
+        $.getJSON("/property.json?property_type=" + property_type + "&availability=" + availability, {}, function(json){
             $.each(json, function(i,item){
                 $("#markers").append('<li><a href="#" rel="' + i + '">' + item.address + '</a></li>');
                 var icon = customIcons[item.property_type] || {};
