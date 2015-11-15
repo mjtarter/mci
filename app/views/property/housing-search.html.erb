@@ -5,7 +5,7 @@
 @og_description = "The largest site of Indiana University student living including houses, apartments, and townhomes!"
 %>
 <!-- End Instance Variables !-->
-   
+
 <%= form_for(:property, :url => {:action => 'index'}) do |f| %>
   
   <div class="form-group">
@@ -14,10 +14,15 @@
   </div>
 
 	<div class="form-group">
-    <%= f.radio_button(:availability, 1, options = {checked: true}) %>
+    <%= f.radio_button(:availability, 'All', options = {checked: true}) %>
     <%= label_tag(:encyclopedia, "Encyclopedia") %>
     <%= f.radio_button(:availability, 0) %>
     <%= label_tag(:listings, "Listings") %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label(:bedrooms) %>
+    <%= f.select(:bedrooms, ['All','1', '2', '3', '4', '5']) %>
   </div>
 
   <%= button_tag(type: 'submit', class: "btn btn-primary") do %>

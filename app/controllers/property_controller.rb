@@ -13,14 +13,20 @@ class PropertyController < ApplicationController
 
 		@availability = params[:availability] || property_params[:availability]
 		@type = params[:property_type] || property_params[:property_type]
+		@bedrooms = params[:bedrooms] || property_params[:bedrooms]
 
 		if @type != 'All'
 			@query_type = {:property_type => @type}
 		end
-		@query_availability = {:availability => @availability}
+		if @availability != 'All'
+			@query_availability = {:availability => @availability}
+		end
+		if @bedrooms != 'All'
+			@query_bedrooms = "bedrooms LIKE ?", "%#{@bedrooms}%"
+		end
 
-  		@properties = Property.where(@query_type).where(@query_availability)
-		
+  		@properties = Property.where(@query_type).where(@query_availability).where(@query_bedrooms)
+			
 		#Create json file to be used for google map
   		respond_to do |format|
     		format.html
