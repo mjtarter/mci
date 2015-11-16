@@ -299,15 +299,11 @@ section#top-search {
 }
 
 #search-left-col {
-	padding:33px 0px;		/* vertical align middle */
+	padding:35px 0px;		/* vertical align middle */
 }
 
 #search-right-col {
 	padding:40px 0px;
-}
-
-.form-box-width {
-	width:60%;
 }
 
 #form-button {
@@ -319,85 +315,13 @@ section#top-search {
 	display:none;
 }
 
-/* align center */
-.radio-center {
-	width: 200px;
-	height: 1px;
-	margin: 0 auto;
+ #search-form .form-group {
+ 	margin:5px 0px;
  }
 
- #top-search .radio {
-	display:none;		/* Hide radio buttons*/
-}
-
-#top-search label {
-	width: 200px;
-	border-radius: 3px;
-	border: 1px solid #D1D3D4;
-	color:black;
-	text-align:left;
-	margin:0px;
-}
-
-/* hide input */
-#top-search input.radio:empty {
-	margin-left: -999px;
-}
-
-/* style label */
-#top-search input.radio:empty ~ label {
-	position: relative;
-	float: left;
-	line-height: 2em;
-	text-indent: 3.25em;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
-#top-search input.radio:empty ~ label:before {
-	position: absolute;
-	display: block;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	content: '';
-	width: 2.5em;
-	background: #D1D3D4;
-	border-radius: 3px 0 0 3px;
-}
-
-/* toggle hover */
-#top-search input.radio:hover:not(:checked) ~ label:before {
-	content:'\2714';
-	text-indent: .9em;
-	color: white;
-}
-
-#top-search input.radio:hover:not(:checked) ~ label {
-	color: black;
-}
-
-/* toggle on */
-#top-search input.radio:checked ~ label:before {
-	content:'\2714';
-	text-indent: .9em;
-	color: white;
-	border-right:1px solid white;
-	background-color: #00ced1;
-}
-
-#top-search input.radio:checked ~ label {
-	color: white;
-	background-color:#00ced1;
-}
-
-/* radio focus */
-#top-search input.radio:focus ~ label:before {
-	box-shadow: 0 0 0 3px #999;
-}
+ #search-form label {
+ 	margin:0px;
+ }
 
 /* Media Queries
    ========================================================================== */
@@ -415,7 +339,7 @@ section#top-search {
 	}
 
 	#search-left-col {
-		height:70px;
+		height:55px;
 		padding:10px 0px;
 	}
 

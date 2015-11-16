@@ -6,27 +6,53 @@
 %>
 <!-- End Instance Variables !-->
 
-<%= form_for(:property, :url => {:action => 'index'}) do |f| %>
-  
-  <div class="form-group">
-    <%= f.label(:property_type, 'Type *') %>
-    <%= f.select(:property_type, ['All', 'House', 'Apartment', 'Townhome']) %>
+<section id="top-search">
+  <div id="table-container" class="container">
+    <div class="row vert-middle">
+      <h1 class="text-center" id="search-title">Search from 100's of Apartments &amp; Houses in Bloomington's Online Student Housing Database</h1>
+      
+      <%= form_for(:property, :url => {:action => 'index'}, :html => {:class => 'col-xs-12 col-md-10 col-md-offset-1', :id => 'search-form'}) do |f| %>
+
+        <div class="search-form-col col-sm-3 col-xs-12" id="search-left-col">
+          <div class="form-group">
+            <%= f.radio_button(:availability, 'All', options = {checked: true}) %>
+            <%= label_tag(:encyclopedia, "Encyclopedia") %><br>
+            <%= f.radio_button(:availability, 0) %>
+            <%= label_tag(:listings, "Listings") %>
+          </div>
+        </div>
+    
+        <div class="search-form-col col-sm-3 col-xs-12 ptb-10" id="mobile-p">
+          <div class="form-group">
+            <%= f.label(:property_type, 'Type:') %><br>
+           <%= f.select(:property_type, ['All', 'House', 'Apartment', 'Townhome'], {}, {:style => 'width:60%'}) %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label(:bedrooms, 'Bedrooms:') %><br>
+            <%= f.select(:bedrooms, ['All','1', '2', '3', '4', '5'], {}, {:style => 'width:60%'}) %>
+          </div>
+        </div>
+
+        <ul class="search-form-col col-sm-3 col-xs-12 ptb-10">
+          <li>Min Price:<br>
+            <input type="number" name="min_price" style="width:60%" value="0">
+          </li>
+          <li class="pad-vert-5">Max Price:<br>
+            <input type="number" name="max_price" style="width:60%" value="10000">
+          </li>
+        </ul>
+
+        <ul class="search-form-col col-sm-3 col-xs-12" id="search-right-col">
+          <li>
+            <%= button_tag(type: 'submit', class: "button blue-button", id: "form-button") do %>
+              Search
+            <% end %>
+          <li>
+        </ul>
+
+      <% end %>
+    
+    </div>
   </div>
-
-	<div class="form-group">
-    <%= f.radio_button(:availability, 'All', options = {checked: true}) %>
-    <%= label_tag(:encyclopedia, "Encyclopedia") %>
-    <%= f.radio_button(:availability, 0) %>
-    <%= label_tag(:listings, "Listings") %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label(:bedrooms) %>
-    <%= f.select(:bedrooms, ['All','1', '2', '3', '4', '5']) %>
-  </div>
-
-  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-    <span class="glyphicon glyphicon-pencil"></span> Search
-  <% end %>
-
-<% end %>
+</section>

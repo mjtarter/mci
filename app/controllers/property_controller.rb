@@ -11,6 +11,7 @@ class PropertyController < ApplicationController
 	def index
 		@disable_footer = true
 
+		#Property Serch Form Params
 		@availability = params[:availability] || property_params[:availability]
 		@type = params[:property_type] || property_params[:property_type]
 		@bedrooms = params[:bedrooms] || property_params[:bedrooms]
@@ -25,6 +26,7 @@ class PropertyController < ApplicationController
 			@query_bedrooms = "bedrooms LIKE ?", "%#{@bedrooms}%"
 		end
 
+		#Query DB for matching properties
   		@properties = Property.where(@query_type).where(@query_availability).where(@query_bedrooms)
 			
 		#Create json file to be used for google map
