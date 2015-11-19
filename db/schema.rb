@@ -54,8 +54,10 @@ ActiveRecord::Schema.define(version: 20151029021500) do
   create_table "properties", force: :cascade do |t|
     t.string   "property_type",        limit: 255,                         null: false
     t.string   "address",              limit: 255,                         null: false
-    t.decimal  "lat",                              precision: 8, scale: 6
-    t.decimal  "lng",                              precision: 8, scale: 6
+    t.string   "city",                 limit: 255,                         null: false
+    t.string   "state",                limit: 255,                         null: false
+    t.float    "lat",                  limit: 24
+    t.float    "lng",                  limit: 24
     t.string   "bedrooms",             limit: 255
     t.string   "baths",                limit: 255
     t.decimal  "price",                            precision: 6, scale: 2

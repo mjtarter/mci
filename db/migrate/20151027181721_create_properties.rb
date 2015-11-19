@@ -3,8 +3,10 @@ class CreateProperties < ActiveRecord::Migration
     create_table :properties do |t|
     	t.string :property_type, :null => false
     	t.string :address, :null => false
-    	t.decimal :lat
-    	t.decimal :lng
+        t.string :city, :null => false
+        t.string :state, :null => false
+    	t.float :lat
+    	t.float :lng
     	t.string :bedrooms
     	t.string :baths
     	t.decimal :price, :precision => 6, :scale => 2
