@@ -29,6 +29,14 @@ var map;
 			mapTypeId: 'roadmap'
         };
         map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+        //Add price range to IW when applicable
+        function priceRange(price_two) {
+            if (price_two !== null) {
+                return ' - $' + price_two } else {
+                    return ''
+                };
+            };
         
         var params = {
             property_type: property_type,
@@ -52,7 +60,7 @@ var map;
                 var infowindow = new google.maps.InfoWindow({
                     content: '<div id="img-container">' + 
                             '<span class="glyphicon glyphicon-map-marker pad-hor-5" style="height:10px;"></span>' +
-                            '<strong>' + item.address + '<span class="pull-right pad-hor-5"> $' + item.price + item.price_two + '</span>' + "</strong> <br/>"  + 
+                            '<strong>' + item.address + '<span class="pull-right pad-hor-5"> $' + item.price + priceRange(item.price_two) + '</span>' + "</strong> <br/>"  + 
                             '<img src="assets/properties/' + item.id + '.jpg" id="gmap-iw-img">' + 
                             '<div id="iw-overlay">' + 
                                 '<table class="text-center" id="iw-overlay-table">' +

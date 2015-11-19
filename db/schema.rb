@@ -52,16 +52,16 @@ ActiveRecord::Schema.define(version: 20151029021500) do
   end
 
   create_table "properties", force: :cascade do |t|
-    t.string   "property_type",        limit: 255,                         null: false
-    t.string   "address",              limit: 255,                         null: false
-    t.string   "city",                 limit: 255,                         null: false
-    t.string   "state",                limit: 255,                         null: false
+    t.string   "property_type",        limit: 255,               null: false
+    t.string   "address",              limit: 255,               null: false
+    t.string   "city",                 limit: 255,               null: false
+    t.string   "state",                limit: 255,               null: false
     t.float    "lat",                  limit: 24
     t.float    "lng",                  limit: 24
     t.string   "bedrooms",             limit: 255
     t.string   "baths",                limit: 255
-    t.decimal  "price",                            precision: 6, scale: 2
-    t.decimal  "price_two",                        precision: 6, scale: 2
+    t.decimal  "price",                            precision: 6
+    t.decimal  "price_two",                        precision: 6
     t.boolean  "availability"
     t.date     "date_available"
     t.integer  "floors",               limit: 4
@@ -110,8 +110,8 @@ ActiveRecord::Schema.define(version: 20151029021500) do
     t.boolean  "on_bus_route"
     t.boolean  "elevator"
     t.boolean  "additional_amenities"
-    t.datetime "created_at",                                               null: false
-    t.datetime "updated_at",                                               null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
 end
