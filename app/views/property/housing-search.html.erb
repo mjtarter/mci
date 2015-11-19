@@ -11,49 +11,7 @@
     <div class="row vert-middle">
       <h1 class="text-center" id="search-title">Search from 100's of Apartments &amp; Houses in Bloomington's Online Student Housing Database</h1>
       
-      <%= form_for(:property, :url => {:action => 'index'}, :html => {:class => 'col-xs-12 col-md-10 col-md-offset-1', :id => 'search-form'}) do |f| %>
-
-        <div class="search-form-col col-sm-3 col-xs-12" id="search-left-col">
-          <div class="form-group">
-            <%= f.radio_button(:availability, 'All', options = {checked: true}) %>
-            <%= label_tag(:encyclopedia, "Encyclopedia") %><br>
-            <%= f.radio_button(:availability, 0) %>
-            <%= label_tag(:listings, "Listings") %>
-          </div>
-        </div>
-    
-        <div class="search-form-col col-sm-3 col-xs-12 ptb-10" id="mobile-p">
-          <div class="form-group">
-            <%= f.label(:property_type, 'Type:') %><br>
-           <%= f.select(:property_type, ['All', 'House', 'Apartment', 'Townhome'], {}, {:style => 'width:60%'}) %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label(:bedrooms, 'Bedrooms:') %><br>
-            <%= f.select(:bedrooms, ['All','1', '2', '3', '4', '5'], {}, {:style => 'width:60%'}) %>
-          </div>
-        </div>
-        
-        <div class="search-form-col col-sm-3 col-xs-12 ptb-5">
-          <div class="form-group">
-            <%= f.label(:min_price, 'Min Price:') %><br>
-            <%= f.number_field(:min_price, :value => 0) %>
-          </div>
-          <div class="form-group">
-            <%= f.label(:max_price, 'Max Price:') %><br>
-            <%= f.number_field(:max_price, :value => 10000) %>
-          </div>
-        </div>
-
-        <ul class="search-form-col col-sm-3 col-xs-12" id="search-right-col">
-          <li>
-            <%= button_tag(type: 'submit', class: "button blue-button", id: "form-button") do %>
-              Search
-            <% end %>
-          <li>
-        </ul>
-
-      <% end %>
+      <%= render(:partial => "/property/property_search_form") %>
     
     </div>
   </div>

@@ -1,0 +1,39 @@
+<%= form_for(:property, :url => {:action => 'index'}) do |f| %>
+    <li id="search-bar-radio">
+        <div class="form-group">
+            <%= f.radio_button(:availability, 'All', options = {checked: true}) %>
+            <%= label_tag(:encyclopedia, "Encyclopedia") %><br>
+            <%= f.radio_button(:availability, 0) %>
+            <%= label_tag(:listings, "Listings") %>
+        </div>
+    </li>
+    <li class="search-bar-dropdown">
+        <div class="form-group">
+            <%= f.label(:property_type, 'Type:') %><br>
+            <%= f.select(:property_type, ['All', 'House', 'Apartment', 'Townhome'], {}, {:style => 'width:60%'}) %>
+        </div>
+    </li>
+    <li class="search-bar-dropdown">
+        <div class="form-group">
+            <%= f.label(:bedrooms, 'Bedrooms:') %><br>
+            <%= f.select(:bedrooms, ['All','1', '2', '3', '4', '5'], {}, {:style => 'width:60%'}) %>
+        </div>
+    </li>
+    <li class="search-bar-box">
+        <div class="form-group">
+            <%= f.label(:min_price, 'Min Price:') %><br>
+            <%= f.number_field(:min_price, :value => 0, :style => 'width:60%') %>
+        </div>
+    </li>
+    <li class="search-bar-box">
+        <div class="form-group">
+            <%= f.label(:max_price, 'Max Price:') %><br>
+            <%= f.number_field(:max_price, :value => 10000, :style => 'width:60%') %>
+        </div>
+    </li>
+    <li class="search-bar-btn">
+        <%= button_tag(type: 'submit', class: "button blue-button", id: "search-button") do %>
+            Search
+        <% end %>
+    </li>
+<% end %>
