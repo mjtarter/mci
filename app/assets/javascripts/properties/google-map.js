@@ -30,7 +30,15 @@ var map;
         };
         map = new google.maps.Map(document.getElementById("map"), mapOptions);
         
-        $.getJSON("/property.json?property_type=" + property_type + "&availability=" + availability + "&bedrooms=" + bedrooms, {}, function(json){
+        var params = {
+            property_type: property_type,
+            availability: availability,
+            bedrooms: bedrooms,
+            min_price: min_price,
+            max_price: max_price
+        }
+
+        $.getJSON("/property.json", params, function(json){
             $.each(json, function(i,item){
                 $("#markers").append('<li><a href="#" rel="' + i + '">' + item.address + '</a></li>');
                 var icon = customIcons[item.property_type] || {};

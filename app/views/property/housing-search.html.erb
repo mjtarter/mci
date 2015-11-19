@@ -33,15 +33,17 @@
             <%= f.select(:bedrooms, ['All','1', '2', '3', '4', '5'], {}, {:style => 'width:60%'}) %>
           </div>
         </div>
-
-        <ul class="search-form-col col-sm-3 col-xs-12 ptb-10">
-          <li>Min Price:<br>
-            <input type="number" name="min_price" style="width:60%" value="0">
-          </li>
-          <li class="pad-vert-5">Max Price:<br>
-            <input type="number" name="max_price" style="width:60%" value="10000">
-          </li>
-        </ul>
+        
+        <div class="search-form-col col-sm-3 col-xs-12 ptb-5">
+          <div class="form-group">
+            <%= f.label(:min_price, 'Min Price:') %><br>
+            <%= f.number_field(:min_price, :value => 0) %>
+          </div>
+          <div class="form-group">
+            <%= f.label(:max_price, 'Max Price:') %><br>
+            <%= f.number_field(:max_price, :value => 10000) %>
+          </div>
+        </div>
 
         <ul class="search-form-col col-sm-3 col-xs-12" id="search-right-col">
           <li>
