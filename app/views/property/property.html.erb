@@ -78,27 +78,9 @@
 		</div>
 	</section>
 
-	<section class="container hidden-xs" id="link-boxes">
-		<hr>
-		<ul class="col-sm-12" id="property-boxes">
-			<a href="gallery.php?id=<?php $id = $field_db['id']; echo $id; ?>">
-				<li class="col-sm-4" id="gallery-box" style="background-image:url(/assets/properties/<%= @property.id %>.jpg)">
-					<p class="box-list-title">Gallery</p>
-					<span class="glyphicon glyphicon-circle-arrow-right ptb-10"></span>
-				</li>
-			</a>
-			<a href="amenities.php?id=<?php $id = $field_db['id']; echo $id; ?>">
-	    		<li class="col-sm-4" id="amenities-box">
-					<p class="box-list-title">Amenities</p>
-	    			<span class="glyphicon glyphicon-circle-arrow-right ptb-10"></span>
-	    		</li>
-			</a>
-			<a href="location.php?id=<?php $id = $field_db['id']; echo $id; ?>">
-	    		<li class="col-sm-4" id="map-box">
-					<p class="box-list-title">Map</p>
-	    			<span class="glyphicon glyphicon-circle-arrow-right ptb-10"></span>
-	    		</li>
-			</a>	    	
-		</ul>
-	</section>
+	<section class="container">
+		
+	    <%= render(:partial => "/property/amenities/additional_features") %>
+	    
+    </section>
 </div>

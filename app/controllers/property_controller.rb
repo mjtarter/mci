@@ -1,4 +1,10 @@
 class PropertyController < ApplicationController
+	
+	#Change main navigation to property navigation
+	before_filter :set_nav
+	def set_nav
+		@property_nav = true
+	end
 
 	def create
 		if @property = Property.create(property_params)

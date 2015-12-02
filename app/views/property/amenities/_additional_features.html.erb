@@ -1,0 +1,12 @@
+<div class="col-xs-12 col-sm-6 ptb-20">
+    <div class="title-box">
+        <p class="m-0">ADDITIONAL</p>
+    </div>
+    <ul class="amenities-list">
+        <li>
+            <% if @property.additional_amenities.present? %>
+                <span class="glyphicon glyphicon-ok-circle" style="color:green"></span><%= @property.additional_amenities %>
+            <% end %>
+        </li>
+    </ul>
+</div>
