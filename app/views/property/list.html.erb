@@ -1,0 +1,37 @@
+<!-- Search Bar for google map -->
+<div id="search-bar">
+    <ul class="container text-center" id="search-table">
+        <div class="row no-margin">
+            <%= render(:partial => "/property/property_search_bar") %>
+        </div>
+    </ul>
+</div> 
+
+<section id="list-results">
+	<div class="container">
+		<div class="row" id="display-buttons">
+	        <!-- Search Bar Toggle -->
+	        <button class="button blue-button" onclick="toggle()">
+	            <span id="toggle-text"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Refine Search</span>
+	        </button>
+
+	        <!-- Map View Button -->
+       		<%= form_for(:property, :url => {:action => 'index'}, :html => {:id => 'view-form'}) do |f| %>
+	            <% f.hidden_field(:availability) %>
+	            <% f.hidden_field(:property_type) %>
+	            <% f.hidden_field(:bedrooms) %>
+	            <% f.hidden_field(:min_price) %>
+	            <% f.hidden_field(:max_price) %>
+	            <%= button_tag(type: 'submit', class: "button blue-button") do %>
+	                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Map View
+	            <% end %>
+	        <% end %>
+	    </div>
+        <div class="row">   
+			<div class="col-xs-12 text-center" id="results-title">
+				<strong>SEARCH RESULTS</strong>
+				<%= @this %>
+			</div>
+	    </div>
+	</div>
+</section>

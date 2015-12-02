@@ -800,12 +800,16 @@ img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
 	height:100%; 
 	float:none;
 	font-weight:400;
-	font-size:1.3em;
+	font-size:1.2em;
 	color:white;
 }
 
 #property-page .button {
 	margin-top:0px;
+}
+
+#property-page {
+	background-color:tan;
 }
 
 .overlay-btn, .overlay-btn a:visited {
@@ -881,11 +885,11 @@ ul#property-boxes span.glyphicon {
 }
 
 #amenities-box {
-  background-image: url('../img/pool.jpg');
+  background-image: url('../assets/pool.jpg');
 }
 
 #map-box {
-  background-image: url('../img/map.jpg');
+  background-image: url('../assets/map.jpg');
 }
 
 .box-list-title {

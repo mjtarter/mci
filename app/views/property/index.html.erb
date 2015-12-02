@@ -16,16 +16,16 @@
         </button>
         
         <!-- List View Button -->
-        <form action="list.php" method="GET">
-            <input type='hidden' name='housing_availability' value="<?php echo $_GET['housing_availability']; ?>" />
-            <input type='hidden' name='house_type' value="<?php echo $_GET['house_type']; ?>" />
-            <input type='hidden' name='number_bdrms' value="<?php echo $_GET['number_bdrms']; ?>" />
-            <input type='hidden' name='min_price' value="<?php echo $_GET['min_price']; ?>" />
-            <input type='hidden' name='max_price' value="<?php echo $_GET['max_price']; ?>" />
-            <button id="view-btn" class="button blue-button" onclick="submit();">
-                <span id="#"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> List View</span>
-            </button>
-         </form>
+        <%= form_for(:property, :url => {:action => 'list'}) do |f| %>
+            <% f.hidden_field(:availability) %>
+            <% f.hidden_field(:property_type) %>
+            <% f.hidden_field(:bedrooms) %>
+            <% f.hidden_field(:min_price) %>
+            <% f.hidden_field(:max_price) %>
+            <%= button_tag(type: 'submit', class: "button blue-button", :id => "view-btn") do %>
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> List View
+            <% end %>
+        <% end %>
 
         <%= javascript_include_tag('application-all') %>
         <% if (params[:controller] == 'dorm') %>
