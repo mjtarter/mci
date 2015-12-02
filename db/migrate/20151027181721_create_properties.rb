@@ -17,7 +17,7 @@ class CreateProperties < ActiveRecord::Migration
         t.integer :term_number
     	t.string :term
     	t.integer :sqft
-    	t.string :description
+    	t.text :description, :limit => 75535
     	t.string :facility_name
     	t.string :property_manager
     	t.string :office_address

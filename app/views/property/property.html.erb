@@ -1,105 +1,104 @@
 <div id="property-page">
-<div id="top-container">
-	<img src="/assets/properties/<%= @property.id %>.jpg" id="main-photo">
-	
-	<div class="info-overlay">
-		<div class="container" id="overlay-tbl">
-			<div class="col-xs-8 col-md-6 col-lg-5 col-lg-offset-1 overlay-text">
-				<span class="glyphicon glyphicon-map-marker plr-5" aria-hidden="true"></span> <%= @property.address %><span class="hidden-xs">, Bloomington, IN</span>
-				<br><span class="glyphicon glyphicon-home plr-5" aria-hidden="true"></span> Available: <%= @property.availability %>
-				<abbr title="Availability for upcoming school year">
-					<span class="glyphicon glyphicon-info-sign" style="color:white"></span> 
-				</abbr> 
-			</div>
-			<div class="col-md-4 col-lg-3 text-right hidden-sm hidden-xs overlay-text">
-				<p class="m-0">
-					<% if @property.property_manager.present? == true %>
-				      	<%= @property.property_manager + "<br>" + @property.phone %>
-				    <% end %>
-				</p>
-			</div>					
-			<div class="col-xs-4 col-md-2 col-lg-offset-1 text-right overlay-btn">
-				<% if @property.email.present? == true %>
-			     	<a href="#textModal" data-toggle="modal" class="button blue-button">Contact Us!</a>
-			    <% end %>
-			</div>
-		</div>
-	</div>
-</div>
-
-<section class="container" id="property-info">
-	<div class="row">
-		<div class="col-sm-6" id="at-a-glance">
-			<div class="title-box col-xs-10 col-xs-offset-1">
-				<p class="m-0">AT A GLANCE</p>
-			</div>
-			<ul id="basic-info" class="col-lg-10 col-lg-offset-1 clearfix">
-				<li>Rent (Total):</li>
-				<li>
-					<% if @property.price_two.present? == false %>
-				     	$ <%= @property.price %>
-				      	<% else %>
-				      	<%= @property.price + " - " + @property.price_two %>
-				    <% end %>
-        		</li>
-				<% if @property.price_two.present? == false %>
-					<li>Rent (Per Person):</li>
-					<li>$ <%= @property.price / @property.bedrooms.to_i %></li>
-				<% end %>
-				<li>Type:</li>
-				<li><%= @property.property_type %></li>
-				<li>Available:</li>
-				<li><%= @property.availability %></li>
-				<li>Bedrooms:</li>
-				<li><%= @property.bedrooms %></li>
-				<li>Bathrooms:</li>
-				<li><%= @property.baths %></li>
-				<% if @property.sqft.present? == true %>
-			      <li>Sqft:</li>
-			      <li><%= @property.sqft %></li>
-			    <% end %>
-				<% if @property.floors.present? == true %>
-			      <li>Floors:</li>
-			      <li><%= @property.floors %></li>
-			    <% end %>
-				<% if @property.property_manager.present? == true %>
-			      <li>Property Manager:</li>
-			      <li><%= @property.property_manager %></li>
-			    <% end %>
-
-			</ul>
-		</div>
+	<div id="top-container">
+		<img src="/assets/properties/<%= @property.id %>.jpg" id="main-photo">
 		
-		<div class="col-sm-6 clearfix property-about">
-			<div class="title-box col-xs-10 col-xs-offset-1">
-				<p class="m-0">ABOUT US</p>
+		<div class="info-overlay">
+			<div class="container" id="overlay-tbl">
+				<div class="col-xs-8 col-md-6 col-lg-5 col-lg-offset-1 overlay-text">
+					<span class="glyphicon glyphicon-map-marker plr-5" aria-hidden="true"></span> <%= @property.address %><span class="hidden-xs">, Bloomington, IN</span>
+					<br><span class="glyphicon glyphicon-home plr-5" aria-hidden="true"></span> Available: <%= @property.availability %>
+					<abbr title="Availability for upcoming school year">
+						<span class="glyphicon glyphicon-info-sign" style="color:white"></span> 
+					</abbr> 
+				</div>
+				<div class="col-md-4 col-lg-3 text-right hidden-sm hidden-xs overlay-text">
+					<p class="m-0">
+						<% if @property.property_manager.present? == true %>
+					      	<%= @property.property_manager %> <br> <%= @property.phone %>
+					    <% end %>
+					</p>
+				</div>					
+				<div class="col-xs-4 col-md-2 col-lg-offset-1 text-right overlay-btn">
+					<% if @property.email.present? == true %>
+				     	<a href="#textModal" data-toggle="modal" class="button blue-button">Contact Us!</a>
+				    <% end %>
+				</div>
 			</div>
-			<p><%= @property.description %></p>				
 		</div>
 	</div>
-</section>
 
-<section class="container hidden-xs" id="link-boxes">
-	<hr>
-	<ul class="col-sm-12" id="property-boxes">
-		<a href="gallery.php?id=<?php $id = $field_db['id']; echo $id; ?>">
-			<li class="col-sm-4" id="gallery-box" style="background-image:url(/assets/properties/<%= @property.id %>.jpg)">
-				<p class="box-list-title">Gallery</p>
-				<span class="glyphicon glyphicon-circle-arrow-right ptb-10"></span>
-			</li>
-		</a>
-		<a href="amenities.php?id=<?php $id = $field_db['id']; echo $id; ?>">
-    		<li class="col-sm-4" id="amenities-box">
-				<p class="box-list-title">Amenities</p>
-    			<span class="glyphicon glyphicon-circle-arrow-right ptb-10"></span>
-    		</li>
-		</a>
-		<a href="location.php?id=<?php $id = $field_db['id']; echo $id; ?>">
-    		<li class="col-sm-4" id="map-box">
-				<p class="box-list-title">Map</p>
-    			<span class="glyphicon glyphicon-circle-arrow-right ptb-s10"></span>
-    		</li>
-		</a>	    	
-	</ul>
-</section>
+	<section class="container" id="property-info">
+		<div class="row">
+			<div class="col-sm-6" id="at-a-glance">
+				<div class="title-box col-xs-10 col-xs-offset-1">
+					<p class="m-0">AT A GLANCE</p>
+				</div>
+				<ul id="basic-info" class="col-lg-10 col-lg-offset-1 clearfix">
+					<li>Rent (Total):</li>
+					<li>
+						<% if @property.price_two.present? == false %>
+					     	$ <%= @property.price %>
+					      	<% else %>
+					      	<%= @property.price + " - " + @property.price_two %>
+					    <% end %>
+	        		</li>
+					<% if @property.price_two.present? == false %>
+						<li>Rent (Per Person):</li>
+						<li>$ <%= @property.price / @property.bedrooms.to_i %></li>
+					<% end %>
+					<li>Type:</li>
+					<li><%= @property.property_type %></li>
+					<li>Available:</li>
+					<li><%= @property.availability %></li>
+					<li>Bedrooms:</li>
+					<li><%= @property.bedrooms %></li>
+					<li>Bathrooms:</li>
+					<li><%= @property.baths %></li>
+					<% if @property.sqft.present? == true %>
+				      <li>Sqft:</li>
+				      <li><%= @property.sqft %></li>
+				    <% end %>
+					<% if @property.floors.present? == true %>
+				      <li>Floors:</li>
+				      <li><%= @property.floors %></li>
+				    <% end %>
+					<% if @property.property_manager.present? == true %>
+				      <li>Property Manager:</li>
+				      <li><%= @property.property_manager %></li>
+				    <% end %>
+				</ul>
+			</div>
+			
+			<div class="col-sm-6 clearfix property-about">
+				<div class="title-box col-xs-10 col-xs-offset-1">
+					<p class="m-0">ABOUT US</p>
+				</div>
+				<p><%= @property.description %></p>				
+			</div>
+		</div>
+	</section>
+
+	<section class="container hidden-xs" id="link-boxes">
+		<hr>
+		<ul class="col-sm-12" id="property-boxes">
+			<a href="gallery.php?id=<?php $id = $field_db['id']; echo $id; ?>">
+				<li class="col-sm-4" id="gallery-box" style="background-image:url(/assets/properties/<%= @property.id %>.jpg)">
+					<p class="box-list-title">Gallery</p>
+					<span class="glyphicon glyphicon-circle-arrow-right ptb-10"></span>
+				</li>
+			</a>
+			<a href="amenities.php?id=<?php $id = $field_db['id']; echo $id; ?>">
+	    		<li class="col-sm-4" id="amenities-box">
+					<p class="box-list-title">Amenities</p>
+	    			<span class="glyphicon glyphicon-circle-arrow-right ptb-10"></span>
+	    		</li>
+			</a>
+			<a href="location.php?id=<?php $id = $field_db['id']; echo $id; ?>">
+	    		<li class="col-sm-4" id="map-box">
+					<p class="box-list-title">Map</p>
+	    			<span class="glyphicon glyphicon-circle-arrow-right ptb-10"></span>
+	    		</li>
+			</a>	    	
+		</ul>
+	</section>
 </div>
