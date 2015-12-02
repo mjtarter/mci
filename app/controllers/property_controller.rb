@@ -51,6 +51,7 @@ class PropertyController < ApplicationController
 	def property
 		@id = params[:id]
 		@property = Property.find(@id)
+		@unit_features = [:ac, :microwave]
 	end
 
 	private
