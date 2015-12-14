@@ -51,7 +51,7 @@ class PropertyController < ApplicationController
 	def property
 		@id = params[:id]
 		@property = Property.find(@id)
-		@unit_features = [:ac, :microwave]
+		@unit_features = ["AC", @property.ac], ["Patio / Balcony", @property.patio_balcony], ["Microwave", @property.microwave], ["Walk-In Closets", @property.walk_in_closets], ["Refrigerator", @property.refrigerator], ["Locking Room Doors", @property.locking_room_doors], ["Washer / Dryer", @property.washer_dryer], ["Storage Space", @property.storage_space], ["Dishwasher", @property.dishwasher], ["Furnished", @property.furnished], ["Garbage Disposal", @property.garbage_disposal], ["Ceiling Fans", @property.ceiling_fans]
 	end
 
 	private
