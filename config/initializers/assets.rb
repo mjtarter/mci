@@ -12,3 +12,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( application-all.js )
 Rails.application.config.assets.precompile += %w( application-dorms.js )
 Rails.application.config.assets.precompile += %w( application-properties.js )
+Rails.application.config.assets.precompile += %w( application-individual-properties.js )
