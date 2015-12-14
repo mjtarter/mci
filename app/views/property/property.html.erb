@@ -79,12 +79,12 @@
 	</section>
 
 	<section class="container">
-		<% if @property.property_type == "Apartment" || @property.property_type == "townhome" %>
+		<% if @property.property_type == "Apartment" || @property.property_type == "Townhome" %>
 	     	<%= render(:partial => "/property/amenities/community_features") %>
 	    <% end %>
 	    <%= render(:partial => "/property/amenities/unit_features") %>
 	    <%= render(:partial => "/property/amenities/additional_features") %>
-	    <% if @property.property_type == "Apartment" || "townhome" %>
+	    <% if @property.property_type == "Apartment" || @property.property_type == "Townhome" %>
 	      	<%= render(:partial => "/property/amenities/utilities") %>
 	    <% end %>
     </section>

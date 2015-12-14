@@ -1,4 +1,9 @@
-<div class="col-xs-12 col-sm-6">
+<% if @property.property_type == 'House' %>
+    <div class="col-xs-12 col-sm-6">
+<% else %>
+    <div class="col-xs-12 col-sm-6 mtb-50">
+<% end %>
+
     <div class="title-box">
         <p class="m-0">ADDITIONAL</p>
     </div>

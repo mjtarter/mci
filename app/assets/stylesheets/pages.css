@@ -1048,6 +1048,10 @@ ul.amenities-list li {
 	padding:5px 0px;
 }
 
+.amenities {
+	padding:20px 0px;
+}
+
 ul.utilities-list {
 	width:50%;
 	float:left;
@@ -1055,10 +1059,6 @@ ul.utilities-list {
 
 ul.utilities-list li {
 	padding:5px 0px;
-}
-
-.amenities {
-	padding:20px 0px;
 }
 
 /* Media Queries

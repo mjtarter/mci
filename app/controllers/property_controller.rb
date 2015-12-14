@@ -51,6 +51,9 @@ class PropertyController < ApplicationController
 	def property
 		@id = params[:id]
 		@property = Property.find(@id)
+
+		@pets = ["Dogs Allowed", @property.dogs_allowed], ["Cats Allowed", @property.cats_allowed], ["Other Allowed", @property.other_pets_allowed]
+		@utilities = ["Electric / Gas", @property.electric_gas], ["Cable", @property.cable], ["Trash", @property.trash], ["Internet", @property.internet], ["Water", @property.water]
 		@community_features = ["Laundry Facilities", @property.laundry_facilities], ["Computer Lab", @property.computer_lab], ["Fitness Center", @property.fitness_center], ["Lounge", @property.lounge], ["Controlled Access", @property.controlled_access], ["Swimming Pool", @property.swimming_pool], ["On-site Maintenance", @property.on_site_maintenance], ["Courtyard", @property.courtyard], ["Parking", @property.parking], ["Resident Functions", @property.resident_functions], ["On Bus Route", @property.on_bus_route], ["Elevator", @property.elevator]
 		@unit_features = ["AC", @property.ac], ["Patio / Balcony", @property.patio_balcony], ["Microwave", @property.microwave], ["Walk-In Closets", @property.walk_in_closets], ["Refrigerator", @property.refrigerator], ["Locking Room Doors", @property.locking_room_doors], ["Washer / Dryer", @property.washer_dryer], ["Storage Space", @property.storage_space], ["Dishwasher", @property.dishwasher], ["Furnished", @property.furnished], ["Garbage Disposal", @property.garbage_disposal], ["Ceiling Fans", @property.ceiling_fans]
 	end
