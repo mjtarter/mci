@@ -58,7 +58,7 @@ class CreateProperties < ActiveRecord::Migration
     	t.boolean :resident_functions
     	t.boolean :on_bus_route
     	t.boolean :elevator
-    	t.boolean :additional_amenities
+    	t.string :additional_amenities
       t.timestamps null: false
     end
   end

@@ -10,6 +10,14 @@
       <%= f.text_field(:address) %>
     </div>
     <div class="form-group">
+      <%= f.label(:city, 'City *') %>
+      <%= f.text_field(:city) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:state, 'State *') %>
+      <%= f.text_field(:state) %>
+    </div>
+    <div class="form-group">
       <%= f.label(:bedrooms, 'Bedrooms *') %>
       <%= f.select(:bedrooms, 1..10) %>
     </div>
@@ -310,10 +318,7 @@
     </div>
     <div class="form-group">
       <%= f.label(:additional_amenities, 'Additional Amenities *') %>
-      <%= f.radio_button(:additional_amenities, true) %>
-      <%= label_tag(:additonal_amenities_true, "yes") %>
-      <%= f.radio_button(:additional_amenities, false) %>
-      <%= label_tag(:additional_amenites_false, "no") %>
+      <%= f.text_field(:additional_amenities) %>
     </div>
     
     <%= button_tag(type: 'submit', class: "btn btn-primary") do %>

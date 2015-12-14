@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 20151029021500) do
     t.boolean  "resident_functions"
     t.boolean  "on_bus_route"
     t.boolean  "elevator"
-    t.boolean  "additional_amenities"
+    t.string   "additional_amenities", limit: 255
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
   end
