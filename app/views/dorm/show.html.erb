@@ -1,2 +1,91 @@
-hello world
-<%= @dorm.location %>
+<div id="dorms-page">
+	
+	<div id="top-imgs">
+		<div class="col-xs-3 p-0 hidden-xs">
+			<%= image_tag('dorms/' + @dorm.name + '-2.jpg', :class => 'img-side') %>
+			<%= image_tag('dorms/' + @dorm.name + '-3.jpg', :class => 'img-side') %>
+		</div>
+		<div class="col-xs-12 col-sm-6 p-0" id="middle-img-wrapper">
+			<%= image_tag('dorms/' + @dorm.name + '-1.jpg', :id => 'img-middle') %>
+		</div>
+		<div class="col-xs-3 p-0 hidden-xs">
+			<%= image_tag('dorms/' + @dorm.name + '-4.jpg', :class => 'img-side') %>
+			<%= image_tag('dorms/' + @dorm.name + '-5.jpg', :class => 'img-side') %>
+		</div>
+		<div class="info-overlay">
+			<div class="container" id="overlay-tbl">
+				<div class="col-xs-8 col-md-6 col-lg-5 col-lg-offset-1 overlay-text">
+					<span class="glyphicon glyphicon-map-marker pad-hor-5" aria-hidden="true"></span> <%= @dorm.name %><span class="hidden-xs"> Dorm, Bloomington, IN</span>
+					<br><span class="glyphicon glyphicon-home pad-hor-5" aria-hidden="true"></span> Neighborhood: <%= @dorm.location %>
+				</div>
+				<div class="col-md-4 col-lg-3 text-right hidden-sm hidden-xs overlay-text">
+					<p class="m-0">
+							<%= @dorm.address %><br><%= @dorm.phone %>
+					</p>
+				</div>					
+				<div class="col-xs-4 col-md-2 col-lg-offset-1 text-right overlay-btn">
+					<a href="#textModal" data-toggle="modal" class="button blue-button">Contact Us!</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container mt-50" id="property-info">
+		<div class="row">
+			<div class="col-sm-6" id="at-a-glance">
+				<div class="title-box col-xs-10 col-xs-offset-1">
+					<p class="m-0">AT A GLANCE</p>
+				</div>
+				<ul id="basic-info" class="col-lg-10 col-lg-offset-1 clearfix">
+					<li>Type:</li>
+					<li><%= @dorm.dorm_type %></li>
+					<li>Floors:</li>
+					<li><%= @dorm.floors %></li>
+					<li>Beds:</li>
+					<li><%= @dorm.beds %></li>
+					<li>Rooms:</li>
+					<li><%= @dorm.rooms %></li>
+					<li>Bathrooms:</li>
+					<li><%= @dorm.bathrooms %></li>
+					<li>Gender on Floor:</li>
+					<li><%= @dorm.gender_on_floor %></li>
+					<li>Price</li>
+					<li><%= @dorm.price %></li>
+					<li>Parking Zone</li>
+					<li><%= @dorm.parking_zone %></li>
+				</ul>
+			</div>
+			
+			<div class="col-sm-6 clearfix property-about">
+				<div class="title-box col-xs-10 col-xs-offset-1">
+					<p class="m-0">DESCRIPTION</p>
+				</div>
+				<p><%= @dorm.description %></p>				
+			</div>
+		</div>
+	</div>
+	
+	<section class="container">
+		<div id="dorm-amenities-page" class="col-xs-12">
+		  <div class="title-box">
+		    <p class="m-0">DORM FEATURES</p>
+		  </div>
+		  <ul class="dorms-list">
+		    <% @dorm_features.each do |dorm_feature| %>
+
+		      <% if dorm_feature[1] == false %> <li style="color:#989898;">
+		        <span class="glyphicon glyphicon-remove-circle" style="color:red"></span>
+		      <% elsif dorm_feature[1] == true %>
+		        <li><span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
+		      <% else %>
+		        <li><span class="glyphicon glyphicon-question-sign"></span>
+		      <% end %>
+		      <%= dorm_feature[0] %>
+		      </li>
+		    
+		    <% end %>
+		  </ul>
+		</div>
+	</div>
+
+</div>

@@ -12,6 +12,7 @@ class DormController < ApplicationController
 	def show
 		@name = params[:name]
 		@dorm = Dorm.find_by_name(@name)
+		@dorm_features = ["Academic Support Center", @dorm.academic_support_center], ["Computer Lab", @dorm.computer_lab], ["Library", @dorm.library], ["UD Academic Advising", @dorm.ud_academic_advising], ["AC", @dorm.ac], ["Carpet in Room", @dorm.carpet_in_room], ["Dining Onsite", @dorm.dining_onsite], ["Music Practice Room", @dorm.music_practice_room], ["Piano", @dorm.piano], ["Dance Studio", @dorm.dance_studio], ["Exercise Room", @dorm.exercise_room], ["Game Room", @dorm.game_room], ["Laundry Room on Floor", @dorm.laundry_on_floor], ["Laundry Room Ground Floor", @dorm.laundry_ground_floor], ["Quiet Study Area", @dorm.quiet_study_area], ["Community Kitchen", @dorm.community_kitchen], ["IU Secure WIFI", @dorm.iu_secure_wifi]
 	end
 	
 	def create
