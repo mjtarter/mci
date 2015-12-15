@@ -8,6 +8,11 @@ class DormController < ApplicationController
     		format.json { render :json => @dorms }
   		end
 	end
+
+	def show
+		@name = params[:name]
+		@dorm = Dorm.find_by_name(@name)
+	end
 	
 	def create
 		if @dorm = Dorm.create(dorm_params)
