@@ -20,9 +20,11 @@ var map;
     var arrMarkers = [];
     var arrInfoWindows = [];
     var currentInfoWindow = null; 
+    var lat = lat
+    var lng = lng
      
     function mapInit(){
-        var centerCoord = new google.maps.LatLng(39.17093, -86.53486); 
+        var centerCoord = new google.maps.LatLng(lat, lng); 
         var mapOptions = {
             zoom: 17,
             center: centerCoord,
@@ -37,6 +39,9 @@ var map;
                     return ''
                 };
             };
+        
+        //Custom Marker at (lng,lat) of id# being viewed, Marker overlaps its original icon
+        var myMarker1 = new google.maps.Marker({position: new google.maps.LatLng(lat, lng), zIndex: 1000, map: map, icon: 'http://maps.google.com/mapfiles/kml/shapes/arrow.png' });
         
         var params = {
             property_type: property_type,
@@ -61,7 +66,7 @@ var map;
                     content: '<div id="img-container">' + 
                             '<span class="glyphicon glyphicon-map-marker pad-hor-5" style="height:10px;"></span>' +
                             '<strong>' + item.address + '<span class="pull-right pad-hor-5"> $' + item.price + priceRange(item.price_two) + '</span>' + "</strong> <br/>"  + 
-                            '<img src="assets/properties/' + item.id + '.jpg" id="gmap-iw-img">' + 
+                            '<img src="/assets/properties/' + item.id + '.jpg" id="gmap-iw-img">' + 
                             '<div id="iw-overlay">' + 
                                 '<table class="text-center" id="iw-overlay-table">' +
                                     '<tr>' +
