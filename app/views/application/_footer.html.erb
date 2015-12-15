@@ -38,8 +38,15 @@
         </footer>
 
         <%= javascript_include_tag('application-all') %>
-        <% if (params[:controller] == 'dorm') %>
+        <% if (params[:controller] == 'dorm') && (params[:action] != 'show') %>
             <%= javascript_include_tag('application-dorms') %>
+        <% end %>
+        <% if (params[:controller] == 'dorm') && (params[:action] == 'show') %>
+            <%= javascript_tag do %>
+                var lat = "<%= @lat %>"
+                var lng = "<%= @lng %>"
+            <% end %>
+            <%= javascript_include_tag('application-individual-dorms') %>
         <% end %>
         <% if (params[:controller] == 'property') %>
              <%= javascript_tag do %>
