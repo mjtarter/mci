@@ -28,7 +28,13 @@
     </head>
     <body>
     	<!--[if lte IE 7]><script src="js/ie6/warning.js"></script><script>window.onload=function(){e("js/ie6/")}</script><![endif]-->
-
+        
+        <% if !flash[:notice].blank? %>
+            <div class="notice">
+                <%= flash[:notice].html_safe %>
+            </div>
+        <% end %>
+        
         <nav id="main-nav">
             <div class="container">
                 <div id="logo">

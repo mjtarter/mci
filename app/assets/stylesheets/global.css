@@ -263,6 +263,16 @@
 	vertical-align:middle;
 }
 
+/* Flash */
+.notice {
+	background-color:#0099ff;
+	border-top:2px solid black;
+	text-align:center;
+	color:white;
+	font-weight:bold;
+	padding:10px 0px;
+}
+
 /* Bootstrap overwrite styles
    ========================================================================== */
 
