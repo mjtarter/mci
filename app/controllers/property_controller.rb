@@ -62,6 +62,16 @@ class PropertyController < ApplicationController
 		end
 	end
 
+	def contact 
+		first_name = params[:first_name]
+		last_name = params[:last_name]
+		email = params[:email]
+		message = params[:message]
+
+		ContactMailer.sample_email(first_name, last_name, email, message).deliver
+		render(:controller => 'property', :action => 'new')
+	end
+
 	private
 
 		def property_params
