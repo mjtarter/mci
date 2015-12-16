@@ -5,6 +5,8 @@
 %>
 <!-- End Meta !-->
 
+<%= render(:partial => "/property/contact_landlord_modal") %>
+
 <div id="property-page">
 	<div id="top-container">
 		<img src="/assets/properties/<%= @property.id %>.jpg" id="main-photo">
@@ -32,7 +34,7 @@
 				</div>					
 				<div class="col-xs-4 col-md-2 col-lg-offset-1 text-right overlay-btn">
 					<% if @property.email.present? == true %>
-				     	<a href="#textModal" data-toggle="modal" class="button blue-button">Contact Us!</a>
+				     	<%= link_to "Contact Us!", "#textModal", :class => "button blue-button", "data-toggle" => "modal" %>
 				    <% end %>
 				</div>
 			</div>
