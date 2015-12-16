@@ -39,6 +39,14 @@ var map;
                     return ''
                 };
             };
+
+        //Output sqft if not null
+        function sqftOutput(sqft) {
+            if (sqft !== null) {
+                return sqft } else {
+                    return ''
+                };
+            };
         
         //Custom Marker at (lng,lat) of id# being viewed, Marker overlaps its original icon
         var myMarker1 = new google.maps.Marker({position: new google.maps.LatLng(lat, lng), zIndex: 1000, map: map, icon: 'http://maps.google.com/mapfiles/kml/shapes/arrow.png' });
@@ -64,8 +72,8 @@ var map;
                 arrMarkers[i] = marker;
                 var infowindow = new google.maps.InfoWindow({
                     content: '<div id="img-container">' + 
-                            '<span class="glyphicon glyphicon-map-marker pad-hor-5" style="height:10px;"></span>' +
-                            '<strong>' + item.address + '<span class="pull-right pad-hor-5"> $' + item.price + priceRange(item.price_two) + '</span>' + "</strong> <br/>"  + 
+                            '<span class="glyphicon glyphicon-map-marker plr-5" style="height:10px;"></span>' +
+                            '<strong>' + item.address + '<span class="pull-right plr-5"> $' + item.price + priceRange(item.price_two) + '</span>' + "</strong> <br/>"  + 
                             '<img src="/assets/properties/' + item.id + '.jpg" id="gmap-iw-img">' + 
                             '<div id="iw-overlay">' + 
                                 '<table class="text-center" id="iw-overlay-table">' +
@@ -79,11 +87,11 @@ var map;
                             '<li class="ie-nth-child-odd"><strong>Bedrooms:</strong><br>' + item.bedrooms + '</li>' + 
                             '<li class="text-center ie-nth-child-even"><strong>Baths:</strong><br>' + item.baths + '</li>' + 
                             '<li class="text-right ie-nth-child-odd"><strong>Type:</strong><br>' + item.property_type +'</li>' +
-                            '<li class="ie-nth-child-even"><strong>Sqft:</strong><br>' + item.sqft + '</li>' + 
+                            '<li class="ie-nth-child-even"><strong>Sqft:</strong><br>' + sqftOutput(item.sqft) + '</li>' + 
                             '<li class="text-center ie-nth-child-odd"><strong>Floors:</strong><br>' + item.floors + '</li>' +
                             '<li class="text-right ie-nth-child-even"></li>' +
                         '</ul>' +
-                        '<a href=property/property?id=' + item.id  + ' target=_blank class="button blue-button" id="listing-btn"><strong>View Listing</strong></a>' 
+                        '<a href=show?id=' + item.id  + ' target=_blank class="button blue-button" id="listing-btn"><strong>View Listing</strong></a>' 
                 });
                 arrInfoWindows[i] = infowindow;
                 google.maps.event.addListener(marker, 'click', function() {

@@ -43,7 +43,7 @@ var map;
                 var infowindow = new google.maps.InfoWindow({
                     content: '<img src="/assets/dorms/' + item.name + '-1.jpg" class="mtb-5" id="gmap-iw-img">' +
 		  			'<p class="m-0 text-center"><strong>' + item.name + '<strong></p>' +
-		  			'<a href="dorm-page.php?id=' + item.name + '" target=_blank class="button blue-button" id="listing-btn"><strong>More Info</strong></a>'  
+		  			'<a href="show?name=' + item.name + '" target=_blank class="button blue-button" id="listing-btn"><strong>More Info</strong></a>'  
                 });
                 arrInfoWindows[i] = infowindow;
                 google.maps.event.addListener(marker, 'click', function() {
