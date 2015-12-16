@@ -78,7 +78,7 @@ var map;
                             '<li class="text-center ie-nth-child-odd"><strong>Floors:</strong><br>' + item.floors + '</li>' +
                             '<li class="text-right ie-nth-child-even"></li>' +
                         '</ul>' +
-                        '<a href=property/property?id=' + item.id  + ' target=_blank class="button blue-button" id="listing-btn"><strong>View Listing</strong></a>' 
+                        '<a href=property/show?id=' + item.id  + ' target=_blank class="button blue-button" id="listing-btn"><strong>View Listing</strong></a>' 
                 });
                 arrInfoWindows[i] = infowindow;
                 google.maps.event.addListener(marker, 'click', function() {

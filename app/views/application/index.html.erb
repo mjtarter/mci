@@ -10,7 +10,7 @@
         <h1 class="p-0">B-Town Student Housing Database</h1>
         <p id="top-content-text">Hundreds of properties each with their own individual pages!</p>
         <p>
-            <%= link_to('&raquo; &nbsp; Housing Properties'.html_safe, {:controller => 'application', :action => 'housing-search'}, {:class => 'button button-left blue-button'}) %>
+            <%= link_to('&raquo; &nbsp; Housing Properties'.html_safe, {:controller => 'property', :action => 'housing-search'}, {:class => 'button button-left blue-button'}) %>
             <%= link_to('&raquo; &nbsp; Dorms'.html_safe, {:controller => 'dorm', :action => 'index'}, {:class => 'button blue-button'}) %>
         </p>
     </div>
@@ -54,7 +54,7 @@
             <div class="col-md-6 text-center" id="housing-info">
                 <h2 id="info-title"><i>Revolutionary Housing Information</i></h2>
                 <p id="info-text">MyCampus Island is bringing an immersive platform filled with all the data you can imagine to allow you to make informed decisions about where to spend your college years. Our data is constantly updated and every single property has it's own page allowing for property comparisons. Don't be overwhelmed though, everything is easy to find.<br> 
-                <%= link_to('&#187; &nbsp; Get Started!'.html_safe, {:controller => 'application', :action => 'housing-search'}, {:class => 'button', :id => 'tan-button'}) %></p>
+                <%= link_to('&#187; &nbsp; Get Started!'.html_safe, {:controller => 'property', :action => 'housing-search'}, {:class => 'button', :id => 'tan-button'}) %></p>
             </div>
         </div>
         <ul class="clearfix" id="features">
@@ -76,8 +76,8 @@
         <p><em>Listings are great for students who do things last minute or those in need of a place right now, but what about those who plan ahead? What if you want detailed information about any property or to contact a landlord before the unit is available?</em></p>
         <p>We combine listings with our proprietary Student Housing Encyclopedia that allows you to get the low down on <strong><u>ANY</u></strong> property. View images, step inside to take a tour, examine detailed property information, and contact the landlord without ever leaving your couch!</p><br>
         <p class="text-center">
-            <%= link_to('&raquo; &nbsp; Listings'.html_safe, {:controller => 'application', :action => 'housing-search'}, {:class => 'button button-left blue-button'}) %>
-            <%= link_to('&raquo; &nbsp; Encyclopedia'.html_safe, {:controller => 'application', :action => 'housing-search'}, {:class => 'button blue-button'}) %>
+            <%= link_to('&raquo; &nbsp; Listings'.html_safe, {:controller => 'property', :action => 'housing-search'}, {:class => 'button button-left blue-button'}) %>
+            <%= link_to('&raquo; &nbsp; Encyclopedia'.html_safe, {:controller => 'property', :action => 'housing-search'}, {:class => 'button blue-button'}) %>
         </p>
     </div>
 </section>

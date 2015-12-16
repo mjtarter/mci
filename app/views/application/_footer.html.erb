@@ -7,7 +7,7 @@
                         <p class="footer-title" id="search-icon">Search</p>
                         <ul>
                             <li><%= link_to('Home', {:controller => 'application', :action => 'index'}) %></li>
-                            <li><%= link_to('Housing Properties', {:controller => 'application', :action => 'housing-search'}) %></li>
+                            <li><%= link_to('Housing Properties', {:controller => 'property', :action => 'housing-search'}) %></li>
                             <li><%= link_to('Dorms', {:controller => 'dorm', :action => 'index'}) %></li>
                         </ul>
                     </div>
@@ -60,7 +60,7 @@
              <% end %>
             <%= javascript_include_tag('application-properties') %>
         <% end %>
-        <% if (params[:controller] == 'property') && (params[:action] == 'property') %>
+        <% if (params[:controller] == 'property') && (params[:action] == 'show') %>
             <%= javascript_include_tag('application-individual-properties') %>
         <% end %>
         
