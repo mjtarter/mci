@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20151029021500) do
     t.integer  "term_number",          limit: 4
     t.string   "term",                 limit: 255
     t.integer  "sqft",                 limit: 4
+    t.integer  "sqft_two",             limit: 4
     t.text     "description",          limit: 16777215
     t.string   "facility_name",        limit: 255
     t.string   "property_manager",     limit: 255
