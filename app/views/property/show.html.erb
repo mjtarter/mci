@@ -6,7 +6,12 @@
 			<div class="container" id="overlay-tbl">
 				<div class="col-xs-8 col-md-6 col-lg-5 col-lg-offset-1 overlay-text">
 					<span class="glyphicon glyphicon-map-marker plr-5" aria-hidden="true"></span> <%= @property.address %><span class="hidden-xs">, Bloomington, IN</span>
-					<br><span class="glyphicon glyphicon-home plr-5" aria-hidden="true"></span> Available: <%= @property.availability %>
+					<br><span class="glyphicon glyphicon-home plr-5" aria-hidden="true"></span> Availability: 
+					<% if @property.availability == false %>
+						Currently Unavailable
+					<% else %>
+						Currently Available!
+					<% end %>
 					<abbr title="Availability for upcoming school year">
 						<span class="glyphicon glyphicon-info-sign" style="color:white"></span> 
 					</abbr> 
@@ -49,7 +54,12 @@
 					<li>Type:</li>
 					<li><%= @property.property_type %></li>
 					<li>Available:</li>
-					<li><%= @property.availability %></li>
+					<li>
+						<% if @property.availability == true %> Currently Available!
+						<% elsif @property.date_available.present?%><%= @property.date_available.strftime("%B %d, %Y") %> 
+						<% else %> Currently Unavailable
+						<% end %>
+					</li>
 					<li>Bedrooms:</li>
 					<li><%= @property.bedrooms %></li>
 					<li>Bathrooms:</li>
