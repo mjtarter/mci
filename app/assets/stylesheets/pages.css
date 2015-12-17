@@ -808,7 +808,7 @@ img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
 	margin-top:0px;
 }
 
-#property-page, #dorms-page {
+#property-page, #dorms-page, #list-page {
 	background-color:tan;
 }
 

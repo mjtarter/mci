@@ -6,42 +6,70 @@
 %>
 <!-- End Meta !-->
 
-<!-- Search Bar for google map -->
-<div id="search-bar">
-    <ul class="container text-center" id="search-table">
-        <div class="row no-margin">
-            <%= render(:partial => "/property/property_search_bar") %>
-        </div>
-    </ul>
-</div> 
+<div id="list-page">
 
-<section id="list-results">
+	<!-- Search Bar for google map -->
+	<div id="search-bar">
+	    <ul class="container text-center" id="search-table">
+	        <div class="row m-0">
+	            <%= render :partial => 'property/property_search_bar', :view => 'list' %>
+	        </div>
+	    </ul>
+	</div> 
+
+	<section id="list-results">
+		<div class="container">
+			<div class="row" id="display-buttons">
+		        <!-- Search Bar Toggle -->
+		        <button class="button blue-button" onclick="toggle()">
+		            <span id="toggle-text"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Refine Search</span>
+		        </button>
+
+		        <!-- Map View Button -->
+		        <%= form_for(:property, :url => {:action => 'index'}, :html => {:id => 'view-form'}) do |f| %>
+	            	<%= f.hidden_field :availability, :value => @availability %>
+	            	<%= f.hidden_field :property_type, :value => @type %>
+	            	<%= f.hidden_field :bedrooms, :value => @bedrooms %>
+	            	<%= f.hidden_field :min_price, :value => @min_price %>
+	            	<%= f.hidden_field :max_price, :value => @max_price %>
+	            	<%= button_tag(type: 'submit', class: "button blue-button") do %>
+	                	<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Map View
+	            	<% end %>
+	        	<% end %>
+		    </div>
+	        <div class="row">   
+				<div class="col-xs-12 text-center" id="results-title">
+					<strong>SEARCH RESULTS</strong>
+				</div>
+		    </div>
+		</div>
+	</section>
+
 	<div class="container">
-		<div class="row" id="display-buttons">
-	        <!-- Search Bar Toggle -->
-	        <button class="button blue-button" onclick="toggle()">
-	            <span id="toggle-text"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Refine Search</span>
-	        </button>
-
-	        <!-- Map View Button -->
-	        <%= form_for(:property, :url => {:action => 'index'}, :html => {:id => 'view-form'}) do |f| %>
-            	<%= f.hidden_field :availability, :value => @availability %>
-            	<%= f.hidden_field :property_type, :value => @type %>
-            	<%= f.hidden_field :bedrooms, :value => @bedrooms %>
-            	<%= f.hidden_field :min_price, :value => @min_price %>
-            	<%= f.hidden_field :max_price, :value => @max_price %>
-            	<%= button_tag(type: 'submit', class: "button blue-button") do %>
-                	<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Map View
-            	<% end %>
-        	<% end %>
-	    </div>
-        <div class="row">   
-			<div class="col-xs-12 text-center" id="results-title">
-				<strong>SEARCH RESULTS</strong>
-				<% @properties.each do |song| %>
-				<%= song.id %>
-				<% end %>
+		<% @properties.each do |property| %>
+		
+			<div class="row" id="results"> 
+				<div class="col-xs-12 col-md-4 pt-5 pb-5 results-col">
+					<%= image_tag("properties/#{property.id}.jpg", :id => 'list-photo') %>
+				</div>
+				<div class='col-xs-12 col-md-6 pt-10 pb-10 results-col'>
+					<div class='text-center'>
+						<span class='glyphicon glyphicon-map-marker' style="color:<%=color_by_property(property.property_type)%>"></span>
+						<strong><%= link_to(property.facility_name || property.address, {:action => 'show', :id => property.id}, target: '_blank') %></strong>
+					</div>
+					<p class='m-0' id='description'><%= property.description %></p>
+					<p class='text-center m-0'>
+						<%= link_to("<button class='button blue-button mlr-10' style='background-color:".html_safe+color_by_property(property.property_type)+"'> <span class='glyphicon glyphicon-circle-arrow-right'></span> More Info</button>".html_safe, {:action => 'show', :id => property.id}, target: '_blank') %>
+					</p>
+				</div>
+				<ul class='col-xs-12 col-md-2 results-col pt-10 pb-10' id='basic-info-list'>
+					<li><span class='glyphicon glyphicon-chevron-right' style='color:<%=color_by_property(property.property_type)%>'></span>&nbsp;&nbsp;<strong><%= property.property_type %></strong></li>
+					<li><span class='glyphicon glyphicon-chevron-right' style='color:<%=color_by_property(property.property_type)%>'></span>&nbsp;&nbsp;<strong><%= price_range(property.price, property.price_two) %></strong></li>  
+					<li><span class='glyphicon glyphicon-chevron-right' style='color:<%=color_by_property(property.property_type)%>'></span>&nbsp;&nbsp;<strong><%= property.baths %> Baths</strong></li>
+					<li><span class='glyphicon glyphicon-chevron-right' style='color:<%=color_by_property(property.property_type)%>'></span>&nbsp;&nbsp;<strong><%= property.bedrooms %> Bedrooms</strong></li>
+				</ul>	
 			</div>
-	    </div>
+
+		<% end %>
 	</div>
-</section>
+</div>

@@ -1,4 +1,6 @@
-<%= form_for(:property, :url => {:action => 'index'}) do |f| %>
+<% @view = 'list' if params[:view] == "list" %>
+
+<%= form_for(:property, :url => {:action => 'index', :view => @view}) do |f| %>
     <li id="search-bar-radio">
         <div class="form-group">
             <%= f.radio_button(:availability, 'All', options = {checked: true}) %>
