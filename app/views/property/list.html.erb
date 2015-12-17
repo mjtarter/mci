@@ -24,21 +24,23 @@
 	        </button>
 
 	        <!-- Map View Button -->
-       		<%= form_for(:property, :url => {:action => 'index'}, :html => {:id => 'view-form'}) do |f| %>
-	            <% f.hidden_field(:availability) %>
-	            <% f.hidden_field(:property_type) %>
-	            <% f.hidden_field(:bedrooms) %>
-	            <% f.hidden_field(:min_price) %>
-	            <% f.hidden_field(:max_price) %>
-	            <%= button_tag(type: 'submit', class: "button blue-button") do %>
-	                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Map View
-	            <% end %>
-	        <% end %>
+	        <%= form_for(:property, :url => {:action => 'index'}, :html => {:id => 'view-form'}) do |f| %>
+            	<%= f.hidden_field :availability, :value => @availability %>
+            	<%= f.hidden_field :property_type, :value => @type %>
+            	<%= f.hidden_field :bedrooms, :value => @bedrooms %>
+            	<%= f.hidden_field :min_price, :value => @min_price %>
+            	<%= f.hidden_field :max_price, :value => @max_price %>
+            	<%= button_tag(type: 'submit', class: "button blue-button") do %>
+                	<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Map View
+            	<% end %>
+        	<% end %>
 	    </div>
         <div class="row">   
 			<div class="col-xs-12 text-center" id="results-title">
 				<strong>SEARCH RESULTS</strong>
-				<%= @this %>
+				<% @properties.each do |song| %>
+				<%= song.id %>
+				<% end %>
 			</div>
 	    </div>
 	</div>

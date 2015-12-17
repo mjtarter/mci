@@ -24,12 +24,12 @@
         </button>
         
         <!-- List View Button -->
-        <%= form_for(:property, :url => {:action => 'list'}) do |f| %>
-            <% f.hidden_field(:availability) %>
-            <% f.hidden_field(:property_type) %>
-            <% f.hidden_field(:bedrooms) %>
-            <% f.hidden_field(:min_price) %>
-            <% f.hidden_field(:max_price) %>
+        <%= form_for(:property, :url => {:action => 'list'}) do |f| %>                    
+            <%= f.hidden_field :availability, :value => @availability %>
+            <%= f.hidden_field :property_type, :value => @type %>
+            <%= f.hidden_field :bedrooms, :value => @bedrooms %>
+            <%= f.hidden_field :min_price, :value => @min_price %>
+            <%= f.hidden_field :max_price, :value => @max_price %>
             <%= button_tag(type: 'submit', class: "button blue-button", :id => "view-btn") do %>
                 <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> List View
             <% end %>
