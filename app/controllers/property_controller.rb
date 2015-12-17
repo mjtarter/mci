@@ -67,7 +67,7 @@ class PropertyController < ApplicationController
 		last_name = params[:last_name]
 		email = params[:email]
 		message = params[:message]
-		ContactMailer.sample_email(first_name, last_name, email, message).deliver
+		ContactMailer.contact_mci(first_name, last_name, email, message).deliver
 		
 		flash[:notice] = '<span class="glyphicon glyphicon-envelope"></span> Your message has been sent!'
 		redirect_to(:controller => 'application', :action => 'index')

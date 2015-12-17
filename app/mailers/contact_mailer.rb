@@ -1,6 +1,6 @@
 class ContactMailer < ActionMailer::Base
   default from: "from@example.com"
-def sample_email(first_name, last_name, email, message)
+def contact_mci(first_name, last_name, email, message)
 		@first_name = first_name
 		@last_name = last_name
 		@email = email

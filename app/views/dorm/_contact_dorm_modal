@@ -1,0 +1,15 @@
+<div class="modal fade" id="textModal">
+	<div class="modal-dialog">
+        <div class="modal-content text-center">
+            <div class="modal-header">
+            	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h1 class="m-0 p-0"><i>Contact</i></h1>
+            </div>
+			<div class="modal-body">
+					<p class="text-left col-md-offset-1"><span class="glyphicon glyphicon-map-marker"></span> <%= @dorm.address %></p>
+				<p class="text-left col-md-offset-1"><span class="glyphicon glyphicon-phone"></span> <%= @dorm.phone %></p>
+				<p class="text-left col-md-offset-1"><span class="glyphicon glyphicon-envelope"></span> General Information: <%= @dorm.email %></p>
+            </div>
+        </div>          
+    </div>
+</div>
