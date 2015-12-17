@@ -1,7 +1,9 @@
 class PropertyController < ApplicationController
 
 	def index
-		@disable_footer = true
+		if params[:view] != "list" 
+			@disable_footer = true
+		end
 
 		#Property Serch Form Params
 		@availability = params[:availability] || property_params[:availability]
@@ -32,32 +34,6 @@ class PropertyController < ApplicationController
     		format.html
     		format.json { render :json => @properties }
   		end
-	end
-
-	def list
-		@availability = property_params[:availability]
-		@type = property_params[:property_type]
-		@bedrooms = property_params[:bedrooms]
-		@min_price = property_params[:min_price]
-		@max_price = property_params[:max_price]
-
-		#Query DB for matching properties
-		if @type != 'All'
-			@query_type = {:property_type => @type}
-		end
-		if @availability != 'All'
-			@query_availability = {:availability => @availability}
-		end
-		if @bedrooms != 'All'
-			@query_bedrooms = "bedrooms LIKE ?", "%#{@bedrooms}%"
-		end
-
-		#Query DB for matching properties
-  		@properties = Property
-  			.where(@query_type)
-  			.where(@query_availability)
-  			.where(@query_bedrooms)
-  			.by_price(@min_price, @max_price)
 	end
 
 	def show
