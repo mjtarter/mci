@@ -33,6 +33,7 @@
 				        <%= label_tag :message, 'Message *' %>
 				        <%= text_area_tag :message, 'Hello! I was searching for student housing on MyCampusIsland.com and found information about ' + (@property.facility_name || @property.address) + '. Please respond at your earliest convenience to discuss availability. Thank you!', rows: 5, class: "form-control" %>
 				    </div>
+				    <%= hidden_field_tag 'id', @property.id %>
 				    <div class="form-group">
 				        <%= button_tag("Submit", type: 'submit', class: "button blue-button")  %>
 				    </div>

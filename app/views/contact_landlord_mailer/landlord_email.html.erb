@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Property Interest</h1>
+    <p>
+      <%= @message %><br><br>
+      <%= @first_name + ' ' + @last_name %><br>
+      <%= @email %><br>
+      <% if @phone.present? %>
+        <%= @phone %>
+      <% end %>
+    </p>
+  </body>
+</html>

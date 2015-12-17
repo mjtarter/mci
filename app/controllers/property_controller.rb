@@ -73,6 +73,19 @@ class PropertyController < ApplicationController
 		redirect_to(:controller => 'application', :action => 'index')
 	end
 
+	def contact_landlord
+		first_name = params[:first_name]
+		last_name = params[:last_name]
+		email = params[:email]
+		phone = params[:phone]
+		message = params[:message]
+		@id = params[:id]
+		ContactLandlordMailer.landlord_email(first_name, last_name, phone, email, message).deliver
+
+		flash[:notice] = '<span class="glyphicon glyphicon-envelope"></span> Your message has been sent!'
+		redirect_to(:action => 'show', :id => @id)
+	end
+
 	private
 
 		def property_params
