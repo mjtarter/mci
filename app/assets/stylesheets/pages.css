@@ -681,11 +681,15 @@ img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
 .pagination {
 	background-color: #00ced1;
 	margin-top:0;
-	margin-bottom:20px;
 	border:1px solid black;
 	border-radius:0px;
-	padding-right:15px;
-	padding-left:15px;
+	padding:10px 15px;
+	width:100%;
+	text-align:center;
+}
+
+.pagination .current {
+	text-decoration: underline;
 }
 
 /* Media Queries

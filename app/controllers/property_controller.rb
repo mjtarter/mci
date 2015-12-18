@@ -30,7 +30,7 @@ class PropertyController < ApplicationController
   			.by_price(@min_price, @max_price)
 
   		if params[:view] == "list" 
-			@properties = @properties.paginate(page: params[:page], per_page: 1)
+			@properties = @properties.paginate(page: params[:page], per_page: 10)
 		end
 			
 		#Create json file to be used for google map
