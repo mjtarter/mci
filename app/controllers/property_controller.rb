@@ -28,6 +28,10 @@ class PropertyController < ApplicationController
   			.where(@query_availability)
   			.where(@query_bedrooms)
   			.by_price(@min_price, @max_price)
+
+  		if params[:view] == "list" 
+			@properties = @properties.paginate(page: params[:page], per_page: 1)
+		end
 			
 		#Create json file to be used for google map
   		respond_to do |format|
