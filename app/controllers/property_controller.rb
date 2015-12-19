@@ -65,7 +65,7 @@ class PropertyController < ApplicationController
 	end
 
 	def create
-		if @property = Property.create(property_params)
+		if @property = current_user.properties.create(property_params)
 			redirect_to(:controller => 'property', :action => 'new')
 		else
 			render('new')
