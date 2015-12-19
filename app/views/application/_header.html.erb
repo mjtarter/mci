@@ -36,6 +36,12 @@
             </div>
         <% end %>
         
+        <% if user_signed_in? %>
+            <div class="container text-right">
+                <%= link_to 'Log out', destroy_user_session_path, :method => :delete %> 
+            </div>
+        <% end %>
+
         <nav id="main-nav">
             <div class="container">
                 <div id="logo">
@@ -47,11 +53,6 @@
                     <li><%= link_to('Housing Search', {:controller => 'property', :action => 'housing-search'}) %></li>
                     <li><%= link_to('Dorms', {:controller => 'dorm', :action => 'index'}) %></li>
                     <li><%= link_to('Landlords', {:controller => 'application', :action => 'landlords'}) %></li>
-                    <li><% if user_signed_in? %>
-                            <%= link_to 'Log out', destroy_user_session_path, :method => :delete %> 
-                        <% else %>
-                            <%= link_to 'Log in', new_user_session_path %> | <%= link_to 'Signup', new_user_registration_path %>
-                        <% end %></li>
                 </ul>
             </div>
         </nav>
