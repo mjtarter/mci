@@ -1,4 +1,5 @@
 class PropertyController < ApplicationController
+	before_action :authenticate_user!, only: [:new]
 
 	def index
 		if params[:view] != "list" 
@@ -58,6 +59,9 @@ class PropertyController < ApplicationController
         @bedrooms = "All"
         @min_price = 0
         @max_price = 100000
+	end
+
+	def new
 	end
 
 	def create
