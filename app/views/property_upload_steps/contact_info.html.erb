@@ -1,0 +1,30 @@
+<div class="container">
+  <%= form_for(@property, :url => wizard_path, :html => {:class => 'ptb-50'}) do |f| %>
+
+    <div class="form-group">
+      <%= f.label(:office_address, 'Office Address') %>
+      <%= f.text_field(:office_address) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:phone, 'Phone *') %>
+      <%= f.text_field(:phone) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:email, 'Email *') %>
+      <%= f.text_field(:email) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:website, 'Website *') %>
+      <%= f.text_field(:website) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:facebook, 'Facebook *') %>
+      <%= f.text_field(:facebook) %>
+    </div>
+    
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+    	Continue
+    <% end %>
+
+  <% end %>
+</div>

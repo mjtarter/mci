@@ -1,0 +1,14 @@
+<div class="container">
+  <%= form_for(@property, :url => wizard_path, :html => {:class => 'ptb-50'}) do |f| %>
+
+    <div class="form-group">
+      <%= f.label(:additional_amenities, 'Additional Amenities *') %>
+      <%= f.text_field(:additional_amenities) %>
+    </div>
+    
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+      Add Property
+    <% end %>
+
+  <% end %>
+</div> 
