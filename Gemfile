@@ -8,6 +8,7 @@ gem 'mysql2', '~> 0.3.18'
 gem 'geocoder'
 gem 'will_paginate', '~> 3.0'
 gem 'devise'
+gem 'wicked'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

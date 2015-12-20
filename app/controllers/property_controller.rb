@@ -62,11 +62,14 @@ class PropertyController < ApplicationController
 	end
 
 	def new
+		@property = Property.new
 	end
 
 	def create
-		if @property = current_user.properties.create(property_params)
-			redirect_to(:controller => 'property', :action => 'new')
+		@property = Property.new(property_params)
+		if @property.save
+			redirect_to property_upload_steps_path(:property_id => @property.id)
+			flash[:notice] = "Property successfully created"
 		else
 			render('new')
 		end
