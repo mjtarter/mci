@@ -1,6 +1,49 @@
 <div class="container">
   <%= form_for(@property, :url => wizard_path, :html => {:class => 'ptb-50'}) do |f| %>
 
+    <div class="form-group">
+      <%= f.label(:bedrooms, 'Bedrooms *') %>
+      <%= f.select(:bedrooms, 1..10) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:baths, 'Baths *') %>
+      <%= f.select(:baths, 1..10) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:price, 'Rent *') %>
+      <%= f.text_field(:price) %> 
+      <div id="price-range">-
+        <%= f.text_field(:price_two) %>
+      </div>
+      <!-- Toggle Price Range Option !-->
+      <a id="price-range-remove" onclick="hideDiv('price-range'); showDivBlock('price-range-add'); hideDiv('price-range-remove')">remove range</a>
+      <a id="price-range-add" onclick="showDivBlock('price-range-remove'); showDiv('price-range'); hideDiv('price-range-add');">add range</a>
+      <!-- End Toggle !-->
+    </div>
+    <div class="form-group">
+      <%= f.label(:availability, 'Currently Available *') %>
+      <%= f.radio_button(:availability, true, onclick: "hideDiv('date');") %>
+      <%= label_tag(:availability_true, "yes") %>
+      <%= f.radio_button(:availability, false, onclick: "showDiv('date');") %>
+      <%= label_tag(:availability_false, "no") %>
+    </div>
+    <div id ="date" class="form-group">
+      <%= f.label(:date_available, 'Date Available *') %>
+      <%= f.date_select(:date_available, {:start_year => Time.now.year, :order => [:month, :day, :year]}) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:floors, 'Floors *') %>
+      <%= f.select(:floors, 1..15) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:term, 'Term *') %>
+      <%= f.select(:term_number, 1..24) %>
+      <%= f.select(:term, ['year(s)', 'month(s)']) %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:sqft, 'Sqft') %>
+      <%= f.text_field(:sqft) %>
+    </div>
      <div class="form-group">
       <%= f.label(:description, 'Description') %>
       <%= f.text_area(:description, :size => "50x5") %>
@@ -33,8 +76,6 @@
       <%= f.label(:facebook, 'Facebook *') %>
       <%= f.text_field(:facebook) %>
     </div>
-
-    <%= f.hidden_field :property_id, :value => @property.id %>
     
     <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
     	Continue

@@ -10,4 +10,7 @@ class Property < ActiveRecord::Base
 	scope :approved, -> {where(approved: true)}
 
 	belongs_to :user
+
+	validates_acceptance_of :agreement
+
 end
