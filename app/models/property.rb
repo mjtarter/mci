@@ -7,6 +7,7 @@ class Property < ActiveRecord::Base
 	end
 
 	scope :by_price, -> (min, max)  { where("price > ? AND price < ?", min, max)}
+	scope :approved, -> {where(approved: true)}
 
 	belongs_to :user
 end
