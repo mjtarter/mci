@@ -3,6 +3,6 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
  		:recoverable, :rememberable, :trackable, :validatable
-  enum role: [ :landlord, :student ]
+  enum role: [ :landlord, :student, :mci ]
 		has_many :properties
 end

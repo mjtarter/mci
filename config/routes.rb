@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :property_upload_steps
+  get '/property/housing-search' => 'property#housing-search'
+  get '/property/index' => 'property#index'
   resources :property do
     resources :property_upload_steps
   end

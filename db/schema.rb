@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151219175157) do
+ActiveRecord::Schema.define(version: 20151220024256) do
 
   create_table "dorms", force: :cascade do |t|
     t.string   "name",                    limit: 255,                           null: false
@@ -52,10 +52,10 @@ ActiveRecord::Schema.define(version: 20151219175157) do
   end
 
   create_table "properties", force: :cascade do |t|
-    t.string   "property_type",        limit: 255,                    null: false
-    t.string   "address",              limit: 255,                    null: false
-    t.string   "city",                 limit: 255,                    null: false
-    t.string   "state",                limit: 255,                    null: false
+    t.string   "property_type",        limit: 255,                                    null: false
+    t.string   "address",              limit: 255,                                    null: false
+    t.string   "city",                 limit: 255,                                    null: false
+    t.string   "state",                limit: 255,                                    null: false
     t.float    "lat",                  limit: 24
     t.float    "lng",                  limit: 24
     t.string   "bedrooms",             limit: 255
@@ -111,9 +111,10 @@ ActiveRecord::Schema.define(version: 20151219175157) do
     t.boolean  "on_bus_route"
     t.boolean  "elevator"
     t.string   "additional_amenities", limit: 255
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+    t.datetime "created_at",                                                          null: false
+    t.datetime "updated_at",                                                          null: false
     t.integer  "user_id",              limit: 4
+    t.boolean  "approved",                                            default: false
   end
 
   create_table "users", force: :cascade do |t|
