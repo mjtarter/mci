@@ -812,7 +812,7 @@ img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
 	margin-top:0px;
 }
 
-#property-page, #dorms-page, #list-page {
+#property-page, #dorms-page, #list-page, #property-upload-page {
 	background-color:tan;
 }
 
@@ -1283,3 +1283,34 @@ body#contact-form {
 	display:block;
 }
 
+/* ==========================================================================
+ 	Property Uploads
+   ========================================================================== */
+.property-upload-sidebar {
+	color:white; 
+	height:100%; 
+	border-right:4px solid black; 
+	background-color:#484848; 
+	margin-bottom: -99999px; 
+	padding-bottom: 99999px; 
+	padding-left:0px; 
+	padding-right:0px;
+}
+
+	.property-upload-sidebar ul {
+		background-color:#484848 ;
+		height:100%;
+	}
+
+		.property-upload-sidebar ul li {
+			padding:7px 10px;
+			border-bottom:1px black solid;
+		}
+
+			.property-upload-sidebar ul li:hover {
+				background-color:#282828;
+			}
+
+.sidebar-active {
+	background-color:#282828;
+}

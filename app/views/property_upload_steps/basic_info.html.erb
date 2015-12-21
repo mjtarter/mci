@@ -1,62 +1,108 @@
-<div class="container">
-  <%= form_for(@property, :url => wizard_path, :html => {:class => 'ptb-50'}) do |f| %>
-
-    <div class="form-group">
-      <%= f.label(:bedrooms, 'Bedrooms *') %>
-      <%= f.select(:bedrooms, 1..10) %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:baths, 'Baths *') %>
-      <%= f.select(:baths, 1..10) %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:price, 'Rent *') %>
-      <%= f.text_field(:price) %> 
-      <div id="price-range">-
-        <%= f.text_field(:price_two) %>
-      </div>
-      <!-- Toggle Price Range Option !-->
-      <a id="price-range-remove" onclick="hideDiv('price-range'); showDivBlock('price-range-add'); hideDiv('price-range-remove')">remove range</a>
-      <a id="price-range-add" onclick="showDivBlock('price-range-remove'); showDiv('price-range'); hideDiv('price-range-add');">add range</a>
-      <!-- End Toggle !-->
-    </div>
-    <div class="form-group">
-      <%= f.label(:availability, 'Currently Available *') %>
-      <%= f.radio_button(:availability, true, onclick: "hideDiv('date');") %>
-      <%= label_tag(:availability_true, "yes") %>
-      <%= f.radio_button(:availability, false, onclick: "showDiv('date');") %>
-      <%= label_tag(:availability_false, "no") %>
-    </div>
-    <div id ="date" class="form-group">
-      <%= f.label(:date_available, 'Date Available *') %>
-      <%= f.date_select(:date_available, {:start_year => Time.now.year, :order => [:month, :day, :year]}) %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:floors, 'Floors *') %>
-      <%= f.select(:floors, 1..15) %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:term, 'Term *') %>
-      <%= f.select(:term_number, 1..24) %>
-      <%= f.select(:term, ['year(s)', 'month(s)']) %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:sqft, 'Sqft') %>
-      <%= f.text_field(:sqft) %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:facility_name, 'Facility Name') %>
-      <%= f.text_field(:facility_name) %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:property_manager, 'Property Manager') %>
-      <%= f.text_field(:property_manager) %>
-    </div>
+<div id="property-upload-page">
+  <div class="container-fluid">
+    <div class="row of-hidden">
     
-    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-    	Continue
-    <% end %>
+      <div class="col-sm-3 property-upload-sidebar">
+        <ul>
+          <li class="text-center sidebar-active"><b><%= @property.address %></b></li>
+          <%= link_to '<li class="sidebar-active"><span class="glyphicon glyphicon-info-sign"></span> Basic Info</li>'.html_safe, wizard_path(:basic_info) %>
+          <%= link_to '<li><span class="glyphicon glyphicon-phone"></span> Contact Info</li>'.html_safe, wizard_path(:contact_info) %>
+          <%= link_to '<li><span class="glyphicon glyphicon-pencil"></span> Description</li>'.html_safe, wizard_path(:description) %>
+          <%= link_to '<li><span class="glyphicon glyphicon-ok"></span> Amenities</li>'.html_safe, wizard_path(:amenities) %>
+          <%= link_to '<li><span class="glyphicon glyphicon-check"></span> Additional Amenities</li>'.html_safe, wizard_path(:additional_amenities) %>
+          <%= link_to '<li><i class="fa fa-power-off"></i> Utilities / Pets</li>'.html_safe, wizard_path(:utilities) %>
+        </ul>
+      </div>
 
-  <% end %>
+      <div class="col-sm-9 ptb-50">
+        <h1 class="text-center p-0">Basic Info</h1>
+        <%= form_for(@property, :url => wizard_path, :html => {:class => "plr-20"}) do |f| %>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <%= f.label(:bedrooms, 'Bedrooms *') %><br>
+                <%= f.select(:bedrooms, 1..10) %>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <%= f.label(:baths, 'Baths *') %><br>
+                <%= f.select(:baths, 1..10) %>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <%= f.label(:floors, 'Floors *') %><br>
+                <%= f.select(:floors, 1..15) %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <%= f.label(:sqft, 'Sqft') %><br>
+                <%= f.text_field(:sqft) %>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <%= f.label(:facility_name, 'Facility Name') %><br>
+                <%= f.text_field(:facility_name) %>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <%= f.label(:property_manager, 'Property Manager') %><br>
+                <%= f.text_field(:property_manager) %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <%= f.label(:price, 'Rent *') %><br>
+                <%= f.text_field(:price) %> 
+                <div id="price-range">
+                  <%= f.text_field(:price_two, placeholder: 'Max Rent') %>
+                </div>
+                <!-- Toggle Price Range Option !-->
+                <a id="price-range-remove" onclick="hideDiv('price-range'); showDivBlock('price-range-add'); hideDiv('price-range-remove')">remove range</a>
+                <a id="price-range-add" onclick="showDivBlock('price-range-remove'); showDiv('price-range'); hideDiv('price-range-add');">add range</a>
+                <!-- End Toggle !-->
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <%= f.label(:term, 'Term *') %><br>
+                <%= f.select(:term_number, 1..24) %>
+                <%= f.select(:term, ['year(s)', 'month(s)']) %>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <%= f.label(:availability, 'Currently Available *') %><br>
+                <%= f.radio_button(:availability, true, onclick: "hideDiv('date');") %>
+                <%= label_tag(:availability_true, "yes") %>
+                <%= f.radio_button(:availability, false, onclick: "showDiv('date');") %>
+                <%= label_tag(:availability_false, "no") %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div id ="date" class="form-group">
+                <%= f.label(:date_available, 'Date Available *') %><br>
+                <%= f.date_select(:date_available, {:start_year => Time.now.year, :order => [:month, :day, :year]}) %>
+              </div>
+            </div>
+          </div>
+          
+          <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+          	Continue
+          <% end %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-

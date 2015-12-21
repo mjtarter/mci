@@ -344,6 +344,10 @@ section {
  	z-index:-1;
 }
 
+.of-hidden {
+	overflow:hidden;
+}
+
 .button {
 	display: inline-block;
 	vertical-align: top;
