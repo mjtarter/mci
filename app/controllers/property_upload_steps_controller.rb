@@ -1,4 +1,5 @@
 class PropertyUploadStepsController < ApplicationController
+  layout "property_upload"
 
 	include Wicked::Wizard
   	steps :basic_info, :contact_info, :description, :amenities, :additional_amenities, :utilities

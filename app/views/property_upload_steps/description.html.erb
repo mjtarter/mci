@@ -1,15 +1,12 @@
-<div class="container">
-  <%= form_for(@property, :url => wizard_path, :html => {:class => 'ptb-50'}) do |f| %>
+<%= form_for(@property, :url => wizard_path, :html => {:class => 'plr-20'}) do |f| %>
 
-     <div class="form-group">
-      <%= f.label(:description, 'Description') %>
-      <%= f.text_area(:description, :size => "50x5") %>
-    </div>
-    
-    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-    	Continue
-    <% end %>
+	 <div class="form-group">
+	  	<%= f.label(:description, 'Description') %>
+	  	<%= f.text_area(:description, :size => "50x5") %>
+	</div>
 
-  <% end %>
-</div>
+	<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+		Continue
+	<% end %>
 
+<% end %>

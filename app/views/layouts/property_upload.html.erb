@@ -1,0 +1,29 @@
+<%= render(:partial => "/application/header") %>
+
+<div id="property-upload-page">
+  <div class="container-fluid">
+    <div class="row of-hidden">
+    
+      <div class="col-sm-3 property-upload-sidebar">
+        <ul>
+          <li class="text-center sidebar-active"><b><%= @property.address %></b></li>
+          <%= link_to '<li class="sidebar-active"><span class="glyphicon glyphicon-info-sign"></span> Basic Info</li>'.html_safe, wizard_path(:basic_info) %>
+          <%= link_to '<li><span class="glyphicon glyphicon-phone"></span> Contact Info</li>'.html_safe, wizard_path(:contact_info) %>
+          <%= link_to '<li><span class="glyphicon glyphicon-pencil"></span> Description</li>'.html_safe, wizard_path(:description) %>
+          <%= link_to '<li><span class="glyphicon glyphicon-ok"></span> Amenities</li>'.html_safe, wizard_path(:amenities) %>
+          <%= link_to '<li><span class="glyphicon glyphicon-check"></span> Additional Amenities</li>'.html_safe, wizard_path(:additional_amenities) %>
+          <%= link_to '<li><i class="fa fa-power-off"></i> Utilities / Pets</li>'.html_safe, wizard_path(:utilities) %>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 ptb-50">
+        <h1 class="text-center p-0">Basic Info</h1>
+
+				<%= yield %>
+
+			</div>
+    </div>
+  </div>
+</div>
+
+<%= render :partial => "/application/footer" %>
