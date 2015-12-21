@@ -2,12 +2,19 @@ class PropertyUploadStepsController < ApplicationController
   layout "property_upload"
 
 	include Wicked::Wizard
-  	steps :basic_info, :contact_info, :description, :amenities, :additional_amenities, :utilities
+  	steps :location, :basic_info, :contact_info, :description, :amenities, :additional_amenities, :utilities
 
   	def show
-  		@property = Property.find(params[:property_id])
-    	render_wizard
-  	end
+      @property = Property.find(params[:property_id])
+      @skip = params[:skip]
+      if @skip == 'location_step'
+        case step
+        when :location
+          @friends = jump_to(:basic_info)
+        end
+      end
+        render_wizard
+    end
 
   	def update
 	    @property = Property.find(params[:property_id])

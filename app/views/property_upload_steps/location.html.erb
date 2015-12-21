@@ -1,0 +1,26 @@
+<h1 class="text-center">Location</h1>
+
+<%= form_for(@property, :url => wizard_path, :html => {:class => 'plr-20'}) do |f| %>
+
+	<div class="form-group">
+    <%= f.label(:address, 'Address *') %>
+    <%= f.text_field(:address) %>
+  </div>
+  <div class="form-group">
+    <%= f.label(:city, 'City *') %>
+    <%= f.text_field(:city) %>
+  </div>
+  <div class="form-group">
+    <%= f.label(:state, 'State *') %>
+    <%= f.text_field(:state) %>
+  </div>
+  <div class="form-group">
+    <%= f.label(:property_type, 'Type *') %>
+    <%= f.select(:property_type, ['House', 'Apartment', 'Townhome']) %>
+  </div>
+
+	<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+	  Add Property
+	<% end %>
+
+<% end %>

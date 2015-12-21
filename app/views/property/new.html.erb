@@ -22,6 +22,8 @@
       <%= f.label(:agreement, 'I am the rightful owner of this property or have been given permission by the owner to post this information on their behalf. I agree that all information provided is accurate to the best of my knowledge and understand that I am subject to ban from the site and further legal action for false information or impersonating the rightful property owner.') %>
     </div>
 
+    <%= hidden_field_tag :skip, 'location_step' %>
+
     <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
       Continue
     <% end %>
