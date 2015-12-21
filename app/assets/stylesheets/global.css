@@ -383,6 +383,11 @@ section {
 		color:white;
 	}
 
+/* Make validation errors horizontal */
+.field_with_errors {
+    display: inline-block;
+}
+
 /* Nav
    ========================================================================== */
 

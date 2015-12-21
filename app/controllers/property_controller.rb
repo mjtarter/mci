@@ -72,7 +72,6 @@ class PropertyController < ApplicationController
 		if @property.save
 			@skip = params[:skip]
 			redirect_to property_upload_steps_path(:property_id => @property.id, :skip => @skip)
-			flash[:notice] = "Property successfully created"
 		else
 			render('new')
 		end
