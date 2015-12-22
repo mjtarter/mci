@@ -1,3 +1,9 @@
+<!-- Show Date Available form option if the property is not available !-->
+<% if @property.availability == false %>
+  <%= "<script> showDiv('date'); </script>".html_safe %>
+<% end %>
+<!-- End JS !-->
+
 <h1 class="text-center">Basic Info</h1>
 
 <%= form_for(@property, :url => wizard_path, :html => {:class => "plr-20"}) do |f| %>
@@ -8,19 +14,19 @@
     <div class="col-sm-4">
       <div class="form-group">
         <%= f.label(:bedrooms, 'Bedrooms *') %><br>
-        <%= f.select(:bedrooms, 1..10) %>
+        <%= f.select(:bedrooms, 1..10, :prompt => "Select") %>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="form-group">
         <%= f.label(:baths, 'Baths *') %><br>
-        <%= f.select(:baths, 1..10) %>
+        <%= f.select(:baths, 1..10, :prompt => "Select") %>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="form-group">
-        <%= f.label(:floors, 'Floors *') %><br>
-        <%= f.select(:floors, 1..15) %>
+        <%= f.label(:floors, 'Floors') %><br>
+        <%= f.select(:floors, 1..15, :prompt => "Select") %>
       </div>
     </div>
   </div>
@@ -47,6 +53,22 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">
+        <%= f.label(:availability, 'Currently Available *') %><br>
+        <%= f.radio_button(:availability, true, onclick: "hideDiv('date');") %>
+        <%= label_tag(:availability_true, "yes") %>
+        <%= f.radio_button(:availability, false, onclick: "showDiv('date');") %>
+        <%= label_tag(:availability_false, "no") %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= f.label(:term, 'Term *') %><br>
+        <%= f.select(:term_number, 1..24, :prompt => "Select") %>
+        <%= f.select(:term, ['year(s)', 'month(s)'], :prompt => "Select") %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
         <%= f.label(:price, 'Rent *') %><br>
         <%= f.text_field(:price) %> 
         <div id="price-range">
@@ -58,28 +80,12 @@
         <!-- End Toggle !-->
       </div>
     </div>
-    <div class="col-sm-4">
-      <div class="form-group">
-        <%= f.label(:term, 'Term *') %><br>
-        <%= f.select(:term_number, 1..24) %>
-        <%= f.select(:term, ['year(s)', 'month(s)']) %>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="form-group">
-        <%= f.label(:availability, 'Currently Available *') %><br>
-        <%= f.radio_button(:availability, true, onclick: "hideDiv('date');") %>
-        <%= label_tag(:availability_true, "yes") %>
-        <%= f.radio_button(:availability, false, onclick: "showDiv('date');") %>
-        <%= label_tag(:availability_false, "no") %>
-      </div>
-    </div>
   </div>
   <div class="row">
     <div class="col-sm-4">
       <div id ="date" class="form-group">
-        <%= f.label(:date_available, 'Date Available *') %><br>
-        <%= f.date_select(:date_available, {:start_year => Time.now.year, :order => [:month, :day, :year]}) %>
+        <%= f.label(:date_available, 'Date Available') %><br>
+        <%= f.date_select(:date_available, {:start_year => Time.now.year, :order => [:month, :day, :year], :prompt => true}) %>
       </div>
     </div>
   </div>

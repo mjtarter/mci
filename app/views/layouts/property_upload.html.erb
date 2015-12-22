@@ -6,14 +6,14 @@
     
       <div class="col-sm-3 property-upload-sidebar">
         <ul>
-          <li class="text-center sidebar-active"><b><%= @property.address %></b></li>
-          <%= link_to '<li class='.html_safe + active_step(:location) + '><i class="fa fa-location-arrow"></i> Location</li>'.html_safe, wizard_path(:location) %>
-          <%= link_to '<li class='.html_safe + active_step(:basic_info) + '><span class="glyphicon glyphicon-info-sign"></span> Basic Info</li>'.html_safe, wizard_path(:basic_info) %>
-          <%= link_to '<li class='.html_safe + active_step(:contact_info) + '><span class="glyphicon glyphicon-phone"></span> Contact Info</li>'.html_safe, wizard_path(:contact_info) %>
-          <%= link_to '<li class='.html_safe + active_step(:description) + '><span class="glyphicon glyphicon-pencil"></span> Description</li>'.html_safe, wizard_path(:description) %>
-          <%= link_to '<li class='.html_safe + active_step(:amenities) + '><span class="glyphicon glyphicon-ok"></span> Amenities</li>'.html_safe, wizard_path(:amenities) %>
-          <%= link_to '<li class='.html_safe + active_step(:additional_amenities) + '><span class="glyphicon glyphicon-check"></span> Additional Amenities</li>'.html_safe, wizard_path(:additional_amenities) %>
-          <%= link_to '<li class='.html_safe + active_step(:utilities) + '><i class="fa fa-power-off"></i> Utilities / Pets</li>'.html_safe, wizard_path(:utilities) %>
+          <li class="text-center sidebar-active"><b><%= icon_by_property(@property.property_type).html_safe + ' ' +property_name(@property.facility_name, @property.address) %></b></li>
+          <%= link_to '<li class='.html_safe + active_step(:location) + '><i class="fa fa-location-arrow"></i> Location'.html_safe + location_step_complete? + '</li>'.html_safe, wizard_path(:location) %>
+          <%= link_to '<li class='.html_safe + active_step(:basic_info) + '><span class="glyphicon glyphicon-info-sign"></span> Basic Info'.html_safe + basic_info_step_complete? + '</li>'.html_safe, wizard_path(:basic_info) %>
+          <%= link_to '<li class='.html_safe + active_step(:contact_info) + '><span class="glyphicon glyphicon-phone"></span> Contact Info'.html_safe + contact_info_step_complete? + '</li>'.html_safe, wizard_path(:contact_info) %>
+          <%= link_to '<li class='.html_safe + active_step(:description) + '><span class="glyphicon glyphicon-pencil"></span> Description'.html_safe + description_step_complete? + '</li>'.html_safe, wizard_path(:description) %>
+          <%= link_to '<li class='.html_safe + active_step(:amenities) + '><span class="glyphicon glyphicon-ok"></span> Amenities'.html_safe + amenities_step_complete? + '</li>'.html_safe, wizard_path(:amenities) %>
+          <%= link_to '<li class='.html_safe + active_step(:additional_amenities) + '><span class="glyphicon glyphicon-check"></span> Additional Amenities'.html_safe + additional_amenities_step_complete? + '</li>'.html_safe, wizard_path(:additional_amenities) %>
+          <%= link_to '<li class='.html_safe + active_step(:utilities) + '><i class="fa fa-power-off"></i> Utilities / Pets'.html_safe + utilities_step_complete? + '</li>'.html_safe, wizard_path(:utilities) %>
           <%= link_to '<li class='.html_safe + active_step(:submit) + '>Submit</li>'.html_safe, wizard_path(:submit) %>
         </ul>
       </div>
