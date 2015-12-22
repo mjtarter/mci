@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220024256) do
+ActiveRecord::Schema.define(version: 20151222025703) do
 
   create_table "dorms", force: :cascade do |t|
     t.string   "name",                    limit: 255,                           null: false
@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(version: 20151220024256) do
     t.datetime "updated_at",                                                          null: false
     t.integer  "user_id",              limit: 4
     t.boolean  "approved",                                            default: false
+    t.string   "status",               limit: 255
   end
 
   create_table "users", force: :cascade do |t|

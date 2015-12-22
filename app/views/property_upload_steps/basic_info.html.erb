@@ -1,6 +1,9 @@
 <h1 class="text-center">Basic Info</h1>
 
 <%= form_for(@property, :url => wizard_path, :html => {:class => "plr-20"}) do |f| %>
+
+  <%= error_messages_for(@property) %>
+
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">

@@ -20,9 +20,25 @@ class Property < ActiveRecord::Base
 	validates_acceptance_of :agreement
 	validates_presence_of :lat
 
+	validates :facility_name, :presence => true, :if => :active_or_basic_info?
+
+	validates :phone, :presence => true, :if => :active_or_contact_info?
+
   
 	before_save do |property|
 		property.city = property.city.downcase.titleize
 	end
+
+	def active?
+	  	status == 'active'
+	end
+
+	def active_or_basic_info?
+    	status.include?('basic_info') || active?
+  	end
+
+  	def active_or_contact_info?
+    	status.include?('contact_info') || active?
+  	end
 
 end
