@@ -23,10 +23,10 @@ en:
   activerecord:
     attributes:
       property:
-        lat: "Not a valid"
+        lat: "Location"
     errors:
       models:
         property:
           attributes:
             lat:
-              blank: 'address'
+              blank: 'cannot be found. Please enter a valid address and city.'

@@ -9,11 +9,11 @@
     </div>
     <div class="form-group">
       <%= f.label(:city, 'City *') %>
-      <%= f.text_field(:city) %>
+      <%= f.text_field(:city, :value => "Bloomington") %>
     </div>
     <div class="form-group">
       <%= f.label(:state, 'State *') %>
-      <%= f.select :state, options_for_select(us_states) %>
+      <%= f.select :state, options_for_select(us_states, "IN") %>
     </div>
     <div class="form-group">
       <%= f.label(:property_type, 'Type *') %>
