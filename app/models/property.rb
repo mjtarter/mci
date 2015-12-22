@@ -1,15 +1,12 @@
 class Property < ActiveRecord::Base
-	geocoded_by :full_address, :latitude => :lat, :longitude => :lng
-	before_validation :geocode
-
-	def full_address
-  		[address, city, state].compact.join(', ')
-	end
+	
+	belongs_to :user
 
 	scope :by_price, -> (min, max)  { where("price > ? AND price < ?", min, max)}
 	scope :approved, -> {where(approved: true)}
 
-	belongs_to :user
+	geocoded_by :full_address, :latitude => :lat, :longitude => :lng
+	before_validation :geocode
 
 	validates_presence_of :address
 	validates_presence_of :city
@@ -19,16 +16,18 @@ class Property < ActiveRecord::Base
 	validates_presence_of :property_type
 	validates_acceptance_of :agreement
 	validates_presence_of :lat
-
 	validates :facility_name, :presence => true, :if => :active_or_basic_info?
-
 	validates :phone, :presence => true, :if => :active_or_contact_info?
-
   
 	before_save do |property|
 		property.city = property.city.downcase.titleize
 	end
 
+	def full_address
+  		[address, city, state].compact.join(', ')
+	end
+	
+	#Run Validation if status is active or if current page == the step listed. Necessary for validations of multi-step form.  
 	def active?
 	  	status == 'active'
 	end

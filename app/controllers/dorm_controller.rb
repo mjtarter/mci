@@ -4,7 +4,7 @@ class DormController < ApplicationController
 		#Create json file to be used for google map
   		@dorms = Dorm.all
   		respond_to do |format|
-    		format.html # index.html.haml
+    		format.html
     		format.json { render :json => @dorms }
   		end
 	end

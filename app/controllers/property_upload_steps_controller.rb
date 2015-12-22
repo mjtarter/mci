@@ -10,7 +10,7 @@ class PropertyUploadStepsController < ApplicationController
       if @skip == 'location_step'
         case step
         when :location
-          @friends = jump_to(:basic_info)
+          jump_to(:basic_info)
         end
       end
         render_wizard

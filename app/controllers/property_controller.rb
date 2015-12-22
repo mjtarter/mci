@@ -68,6 +68,7 @@ class PropertyController < ApplicationController
 	end
 
 	def create
+		#status of 'inactive' stops any validations that require "active" from running.
 		params[:property][:status] = 'inactive'
 		@property = Property.new(property_params)
 		if @property.save
