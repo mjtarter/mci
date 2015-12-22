@@ -40,4 +40,8 @@ class Property < ActiveRecord::Base
     	status.include?('contact_info') || active?
   	end
 
+  	def active_or_submit?
+    	status.include?('submit') || active?
+  	end
+
 end

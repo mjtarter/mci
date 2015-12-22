@@ -1,0 +1,14 @@
+<h1 class="text-center">Submit Property</h1>
+
+<%= form_for(@property, :url => wizard_path, :html => {:class => 'plr-20'}) do |f| %>
+
+  <%= error_messages_for(@property) %>
+
+  <!-- Must pass at least one property field for form to work - Passes bedrooms selected in previous step and submits again !-->
+  <%= f.hidden_field :bedrooms, :value => @property.bedrooms %>
+  
+  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+  	Submit
+  <% end %>
+
+<% end %>

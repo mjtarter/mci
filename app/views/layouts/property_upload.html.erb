@@ -14,6 +14,7 @@
           <%= link_to '<li class='.html_safe + active_step(:amenities) + '><span class="glyphicon glyphicon-ok"></span> Amenities</li>'.html_safe, wizard_path(:amenities) %>
           <%= link_to '<li class='.html_safe + active_step(:additional_amenities) + '><span class="glyphicon glyphicon-check"></span> Additional Amenities</li>'.html_safe, wizard_path(:additional_amenities) %>
           <%= link_to '<li class='.html_safe + active_step(:utilities) + '><i class="fa fa-power-off"></i> Utilities / Pets</li>'.html_safe, wizard_path(:utilities) %>
+          <%= link_to '<li class='.html_safe + active_step(:submit) + '>Submit</li>'.html_safe, wizard_path(:submit) %>
         </ul>
       </div>
 
