@@ -2,6 +2,8 @@
 
 <%= form_for(@property, :url => wizard_path, :html => {:class => 'plr-20'}) do |f| %>
 
+  <%= error_messages_for(@property) %>
+
 	<div class="form-group">
     <%= f.label(:address, 'Address *') %>
     <%= f.text_field(:address) %>
@@ -12,11 +14,11 @@
   </div>
   <div class="form-group">
     <%= f.label(:state, 'State *') %>
-    <%= f.text_field(:state) %>
+    <%= f.select :state, options_for_select(us_states, @property.state) %>
   </div>
   <div class="form-group">
     <%= f.label(:property_type, 'Type *') %>
-    <%= f.select(:property_type, ['House', 'Apartment', 'Townhome']) %>
+    <%= f.select(:property_type, ['House', 'Apartment', 'Townhome'], :prompt => "Select") %>
   </div>
 
 	<%= button_tag(type: 'submit', class: "btn btn-primary") do %>

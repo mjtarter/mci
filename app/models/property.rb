@@ -19,6 +19,7 @@ class Property < ActiveRecord::Base
 	validates_presence_of :property_type
 	validates_acceptance_of :agreement
 	validates_presence_of :lat
+
   
 	before_save do |property|
 		property.city = property.city.downcase.titleize
