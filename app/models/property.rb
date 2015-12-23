@@ -32,6 +32,24 @@ class Property < ActiveRecord::Base
 	validates :price_two, length: { in: 3..5 }, allow_blank: true
 	validates_numericality_of :price_two, :greater_than => :price, allow_blank: true
 	validate :date_available_cannot_be_in_the_past
+	validates_numericality_of :phone, :only_integer => true, allow_blank: true, :if => :active_or_contact_info?
+	validates :phone, length: { is: 10 }, :if => :active_or_contact_info?
+	validates_presence_of :email, :if => :active_or_contact_info?
+	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :if => :active_or_contact_info?
+	validates_presence_of :description, :if => :active_or_description?
+	validates :description, length: { in: 20..500 }, :if => :active_or_description?
+	validates_inclusion_of :ac, :in => [true, false], :if => :active_or_amenities?
+	validates_inclusion_of :microwave, :in => [true, false], :if => :active_or_amenities?
+	validates_inclusion_of :refrigerator, :in => [true, false], :if => :active_or_amenities?
+	validates_inclusion_of :washer_dryer, :in => [true, false], :if => :active_or_amenities?
+	validates_inclusion_of :dishwasher, :in => [true, false], :if => :active_or_amenities?
+	validates_inclusion_of :garbage_disposal, :in => [true, false], :if => :active_or_amenities?
+	validates_inclusion_of :patio_balcony, :in => [true, false], :if => :active_or_amenities?
+	validates_inclusion_of :walk_in_closets, :in => [true, false], :if => :active_or_amenities?
+	validates_inclusion_of :locking_room_doors, :in => [true, false], :if => :active_or_amenities?
+	validates_inclusion_of :storage_space, :in => [true, false], :if => :active_or_amenities?
+	validates_inclusion_of :furnished, :in => [true, false], :if => :active_or_amenities?
+	validates_inclusion_of :ceiling_fans, :in => [true, false], :if => :active_or_amenities?
 
 	before_save do |property|
 		property.city = property.city.downcase.titleize
@@ -57,6 +75,14 @@ class Property < ActiveRecord::Base
 
   	def active_or_contact_info?
     	status.include?('contact_info') || active?
+  	end
+
+  	def active_or_description?
+    	status.include?('description') || active?
+  	end
+
+  	def active_or_amenities?
+    	status.include?('amenities') || active?
   	end
 
 end
