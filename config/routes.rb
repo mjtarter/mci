@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :property_upload_steps
   get '/property/housing-search' => 'property#housing-search'
   get '/property/index' => 'property#index'
+  get '/property/show' => 'property#show'
   resources :property do
     resources :property_upload_steps
   end

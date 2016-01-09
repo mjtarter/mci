@@ -69,7 +69,7 @@ var map;
                     content: '<div id="img-container">' + 
                             '<span class="glyphicon glyphicon-map-marker plr-5" style="height:10px;"></span>' +
                             '<strong>' + item.address + '<span class="pull-right plr-5"> $' + item.price + priceRange(item.price_two) + '</span>' + "</strong> <br/>"  + 
-                            '<img src="assets/properties/' + item.id + '.jpg" id="gmap-iw-img">' + 
+                            '<img src="/assets/properties/' + item.id + '.jpg" id="gmap-iw-img">' + 
                             '<div id="iw-overlay">' + 
                                 '<table class="text-center" id="iw-overlay-table">' +
                                     '<tr>' +
@@ -86,7 +86,7 @@ var map;
                             '<li class="text-center ie-nth-child-odd"><strong>Floors:</strong><br>' + item.floors + '</li>' +
                             '<li class="text-right ie-nth-child-even"></li>' +
                         '</ul>' +
-                        '<a href=property/show?id=' + item.id  + ' target=_blank class="button blue-button" id="listing-btn"><strong>View Listing</strong></a>' 
+                        '<a href=/property/show?id=' + item.id  + ' target=_blank class="button blue-button" id="listing-btn"><strong>View Listing</strong></a>' 
                 });
                 arrInfoWindows[i] = infowindow;
                 google.maps.event.addListener(marker, 'click', function() {
