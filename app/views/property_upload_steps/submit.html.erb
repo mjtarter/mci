@@ -4,8 +4,8 @@
 
   <%= error_messages_for(@property) %>
 
-  <!-- Must pass at least one property field for form to work - Passes bedrooms selected in previous step and submits again !-->
-  <%= f.hidden_field :bedrooms, :value => @property.bedrooms %>
+  <!-- Must pass at least one property field for form to work - Passes property_type selected in previous step and submits again !-->
+  <%= f.hidden_field :propert_type, :value => @property.property_type %>
   
   <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
   	Submit

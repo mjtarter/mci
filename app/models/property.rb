@@ -50,6 +50,7 @@ class Property < ActiveRecord::Base
 	validates_inclusion_of :storage_space, :in => [true, false], :if => :active_or_amenities?
 	validates_inclusion_of :furnished, :in => [true, false], :if => :active_or_amenities?
 	validates_inclusion_of :ceiling_fans, :in => [true, false], :if => :active_or_amenities?
+	validate :work, :if => :active_or_amenities?
 
 	before_save do |property|
 		property.city = property.city.downcase.titleize
@@ -63,6 +64,12 @@ class Property < ActiveRecord::Base
     	errors.add(:date_available, "can't be in the past") if
     	!date_available.blank? and date_available < Date.today
   	end
+ 
+  def work
+    if :property_type == "Apartment"
+      errors.add(:laundry_facilities, "can't be in the past")
+    end
+  end
 	
 	#Run Validation if status is active or if current page == the step listed. Necessary for validations of multi-step form.  
 	def active?
