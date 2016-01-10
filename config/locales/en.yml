@@ -24,9 +24,64 @@ en:
     attributes:
       property:
         lat: "Location"
+        rent_two: "Max Rent"
+        washer_dryer: "Washer/Dryer"
+        patio_balcony: "Patio/Balcony"
     errors:
       models:
         property:
           attributes:
             lat:
-              blank: 'cannot be found. Please enter a valid address and city.'
+              blank: 'cannot be found. Please enter a valid address and city'
+            availability:
+              inclusion: "can't be blank"
+            rent_two:
+              greater_than: "must be greater than Min Rent"
+            ac:
+              inclusion: "can't be blank"
+            microwave:
+              inclusion: "can't be blank"
+            refrigerator:
+              inclusion: "can't be blank"
+            washer_dryer:
+              inclusion: "can't be blank"
+            dishwasher:
+              inclusion: "can't be blank"
+            garbage_disposal:
+              inclusion: "can't be blank"
+            patio_balcony:
+              inclusion: "can't be blank"
+            walk_in_closets:
+              inclusion: "can't be blank"
+            locking_room_doors:
+              inclusion: "can't be blank"
+            storage_space:
+              inclusion: "can't be blank"
+            furnished:
+              inclusion: "can't be blank"
+            ceiling_fans:
+              inclusion: "can't be blank"
+            laundry_facilities:
+              inclusion: "can't be blank"
+            computer_lab:
+              inclusion: "can't be blank"
+            fitness_center:
+              inclusion: "can't be blank"
+            lounge:
+              inclusion: "can't be blank"
+            controlled_access:
+              inclusion: "can't be blank"
+            swimming_pool:
+              inclusion: "can't be blank"
+            on_site_maintenance:
+              inclusion: "can't be blank"
+            courtyard:
+              inclusion: "can't be blank"
+            parking:
+              inclusion: "can't be blank"
+            resident_functions:
+              inclusion: "can't be blank"
+            on_bus_route:
+              inclusion: "can't be blank"
+            elevator:
+              inclusion: "can't be blank"

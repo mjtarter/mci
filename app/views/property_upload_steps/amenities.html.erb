@@ -91,11 +91,9 @@
 
   <!-- Must pass at least one property field for form to work - Passes property_type selected in previous step and submits again !-->
   <%= f.hidden_field :propert_type, :value => @property.property_type %>
-  
-  <% if @property.property_type == "Apartment" %>
-    <%= link_to 'save', next_wizard_path %>
-  <% else %>
-    <%= link_to 'save', wizard_path(:additional_amenities) %>
+
+  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+    Save
   <% end %>
 
 <% end %>  

@@ -13,7 +13,13 @@ class PropertyUploadStepsController < ApplicationController
           jump_to(:basic_info)
         end
       end
-        render_wizard
+      if @property.property_type != "Apartment"
+        case step
+        when :community_features
+          jump_to(:additional_amenities)
+        end
+      end
+      render_wizard
     end
 
   	def update

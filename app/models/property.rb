@@ -21,19 +21,17 @@ class Property < ActiveRecord::Base
 	validates :rent, :presence => true, :if => :active_or_basic_info?
 	validates :term, :presence => true, :if => :active_or_basic_info?
 	validates :term_number, :presence => true, :if => :active_or_basic_info?
-	validates_inclusion_of :availability, :in => [true, false], :if => :active_or_basic_info?
+	validates :availability, inclusion: { :in => [true, false], :if => :active_or_basic_info? }
 	validates_numericality_of :sqft, :only_integer => true, allow_blank: true
 	validates :sqft, length: { in: 3..5 }, allow_blank: true
 	validates :facility_name, length: { in: 2..25 }, allow_blank: true
 	validates :property_manager, length: { in: 2..25 }, allow_blank: true
 	validates_numericality_of :rent, :only_integer => true, allow_blank: true
-	validates_numericality_of :rent_two, :only_integer => true, allow_blank: true
+	validates_numericality_of :rent_two, :only_integer => true, :greater_than => :rent, allow_blank: true
 	validates :rent, length: { in: 3..5 }, allow_blank: true
 	validates :rent_two, length: { in: 3..5 }, allow_blank: true
-	validates_numericality_of :rent_two, :greater_than => :rent, allow_blank: true
 	validate :date_available_cannot_be_in_the_past
-	validates_numericality_of :phone, :only_integer => true, allow_blank: true, :if => :active_or_contact_info?
-	validates :phone, length: { is: 10 }, :if => :active_or_contact_info?
+	validates :phone, numericality: { only_integer: true }, length: { is: 10 }, allow_blank: true, :if => :active_or_contact_info?
 	validates_presence_of :email, :if => :active_or_contact_info?
 	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :if => :active_or_contact_info?
 	validates_presence_of :description, :if => :active_or_description?
@@ -75,12 +73,6 @@ class Property < ActiveRecord::Base
     	errors.add(:date_available, "can't be in the past") if
     	!date_available.blank? and date_available < Date.today
   	end
- 
-  def work
-    if :property_type == "Apartment"
-      errors.add(:laundry_facilities, "can't be in the past")
-    end
-  end
 	
 	#Run Validation if status is active or if current page == the step listed. Necessary for validations of multi-step form.  
 	def active?
