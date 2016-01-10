@@ -2,7 +2,7 @@ class PropertyUploadStepsController < ApplicationController
   layout "property_upload"
 
 	include Wicked::Wizard
-  	steps :location, :basic_info, :contact_info, :description, :amenities, :community_features, :additional_amenities, :utilities, :submit
+  	steps :location, :basic_info, :contact_info, :description, :amenities, :community_features, :additional_amenity, :utilities, :submit
 
   	def show
       @property = Property.find(params[:property_id])
@@ -16,7 +16,7 @@ class PropertyUploadStepsController < ApplicationController
       if @property.property_type != "Apartment"
         case step
         when :community_features
-          jump_to(:additional_amenities)
+          jump_to(:additional_amenity)
         end
       end
       render_wizard

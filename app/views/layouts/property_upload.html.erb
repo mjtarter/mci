@@ -15,7 +15,7 @@
           <% if @property.property_type == "Apartment" %>
             <%= link_to '<li class='.html_safe + active_step(:community_features) + '><i class="fa fa-plus"></i> Community Features'.html_safe + amenities_step_complete? + '</li>'.html_safe, wizard_path(:community_features) %>
           <% end %>
-          <%= link_to '<li class='.html_safe + active_step(:additional_amenities) + '><span class="glyphicon glyphicon-check"></span> Additional Amenities'.html_safe + additional_amenities_step_complete? + '</li>'.html_safe, wizard_path(:additional_amenities) %>
+          <%= link_to '<li class='.html_safe + active_step(:additional_amenity) + '><span class="glyphicon glyphicon-check"></span> Additional Amenities'.html_safe + additional_amenity_step_complete? + '</li>'.html_safe, wizard_path(:additional_amenity) %>
           <%= link_to '<li class='.html_safe + active_step(:utilities) + '><i class="fa fa-power-off"></i> Utilities / Pets'.html_safe + utilities_step_complete? + '</li>'.html_safe, wizard_path(:utilities) %>
           <%= link_to '<li class='.html_safe + active_step(:submit) + '>Submit</li>'.html_safe, wizard_path(:submit) %>
         </ul>

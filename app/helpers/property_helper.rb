@@ -59,18 +59,18 @@ module PropertyHelper
 	end
 
 	def amenities_step_complete?
-		if @property.property_type == "apartment"
-			if @property.ac != nil && @property.microwave != nil && @property.refrigerator != nil && @property.washer_dryer != nil && @property.dishwasher != nil && @property.garbage_disposal != nil && @property.patio_balcony != nil && @property.walk_in_closets != nil && @property.locking_room_doors != nil && @property.storage_space != nil && @property.furnished != nil && @property.ceiling_fans != nil && @property.laundry_facilities != nil && @property.computer_lab != nil && @property.fitness_center != nil && @property.lounge != nil && @property.controlled_access != nil && @property.swimming_pool != nil && @property.on_site_maintenance != nil && @property.courtyard != nil && @property.parking != nil && @property.resident_functions != nil && @property.on_bus_route != nil && @property.elevator != nil
-				return '<span class="glyphicon glyphicon-ok" style="color:#00ced1; float:right;"></span>'.html_safe
-			end
-		else
-			if @property.ac != nil && @property.microwave != nil && @property.refrigerator != nil && @property.washer_dryer != nil && @property.dishwasher != nil && @property.garbage_disposal != nil && @property.patio_balcony != nil && @property.walk_in_closets != nil && @property.locking_room_doors != nil && @property.storage_space != nil && @property.furnished != nil && @property.ceiling_fans != nil
-				return '<span class="glyphicon glyphicon-ok" style="color:#00ced1; float:right;"></span>'.html_safe
-			end
+		if @property.ac != nil && @property.microwave != nil && @property.refrigerator != nil && @property.washer_dryer != nil && @property.dishwasher != nil && @property.garbage_disposal != nil && @property.patio_balcony != nil && @property.walk_in_closets != nil && @property.locking_room_doors != nil && @property.storage_space != nil && @property.furnished != nil && @property.ceiling_fans != nil
+			return '<span class="glyphicon glyphicon-ok" style="color:#00ced1; float:right;"></span>'.html_safe
 		end
 	end
 
-	def additional_amenities_step_complete?
+	def community_features_step_complete?
+		if @property.laundry_facilities != nil && @property.computer_lab != nil && @property.fitness_center != nil && @property.lounge != nil && @property.controlled_access != nil && @property.swimming_pool != nil && @property.on_site_maintenance != nil && @property.courtyard != nil && @property.parking != nil && @property.resident_functions != nil && @property.on_bus_route != nil && @property.elevator != nil
+			return '<span class="glyphicon glyphicon-ok" style="color:#00ced1; float:right;"></span>'.html_safe
+		end
+	end
+
+	def additional_amenity_step_complete?
 		return '<span class="glyphicon glyphicon-ok" style="color:#00ced1; float:right;"></span>'.html_safe
 	end
 
