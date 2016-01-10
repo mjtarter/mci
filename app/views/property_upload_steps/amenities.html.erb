@@ -89,97 +89,13 @@
     <%= label_tag(:ceiling_fans_false, "no") %>
   </div>
 
-  <% if @property.property_type == "Apartment" %>
-
-    <div class="form-group">
-      <%= f.label(:laundry_facilities, 'Laundry Facilities *') %>
-      <%= f.radio_button(:laundry_facilities, true) %>
-      <%= label_tag(:laundry_facilities_true, "yes") %>
-      <%= f.radio_button(:laundry_facilities, false) %>
-      <%= label_tag(:laundry_facilities_false, "no") %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:computer_lab, 'Computer Lab *') %>
-      <%= f.radio_button(:computer_lab, true) %>
-      <%= label_tag(:computer_lab_true, "yes") %>
-      <%= f.radio_button(:computer_lab, false) %>
-      <%= label_tag(:computer_lab_false, "no") %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:fitness_center, 'Fitness Center *') %>
-      <%= f.radio_button(:fitness_center, true) %>
-      <%= label_tag(:fitness_center_true, "yes") %>
-      <%= f.radio_button(:fitness_center, false) %>
-      <%= label_tag(:fitness_center_false, "no") %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:lounge, 'Lounge *') %>
-      <%= f.radio_button(:lounge, true) %>
-      <%= label_tag(:lounge_true, "yes") %>
-      <%= f.radio_button(:lounge, false) %>
-      <%= label_tag(:lounge_false, "no") %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:controlled_access, 'Controlled Access *') %>
-      <%= f.radio_button(:controlled_access, true) %>
-      <%= label_tag(:controlled_access_true, "yes") %>
-      <%= f.radio_button(:controlled_access, false) %>
-      <%= label_tag(:controlled_access_false, "no") %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:swimming_pool, 'Swimming Pool *') %>
-      <%= f.radio_button(:swimming_pool, true) %>
-      <%= label_tag(:swimming_pool_true, "yes") %>
-      <%= f.radio_button(:swimming_pool, false) %>
-      <%= label_tag(:swimming_pool_false, "no") %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:on_site_maintenance, 'On-site Maintenance *') %>
-      <%= f.radio_button(:on_site_maintenance, true) %>
-      <%= label_tag(:on_site_maintenance_true, "yes") %>
-      <%= f.radio_button(:on_site_maintenance, false) %>
-      <%= label_tag(:on_site_maintenance_false, "no") %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:courtyard, 'Courtyard *') %>
-      <%= f.radio_button(:courtyard, true) %>
-      <%= label_tag(:courtyard_true, "yes") %>
-      <%= f.radio_button(:courtyard, false) %>
-      <%= label_tag(:courtyard_false, "no") %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:parking, 'Parking *') %>
-      <%= f.radio_button(:parking, true) %>
-      <%= label_tag(:parking_true, "yes") %>
-      <%= f.radio_button(:parking, false) %>
-      <%= label_tag(:parking_false, "no") %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:resident_functions, 'Resident Functions *') %>
-      <%= f.radio_button(:resident_functions, true) %>
-      <%= label_tag(:resident_functions_true, "yes") %>
-      <%= f.radio_button(:resident_functions, false) %>
-      <%= label_tag(:resident_functions_false, "no") %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:on_bus_route, 'On Bus Route *') %>
-      <%= f.radio_button(:on_bus_route, true) %>
-      <%= label_tag(:on_bus_route_true, "yes") %>
-      <%= f.radio_button(:on_bus_route, false) %>
-      <%= label_tag(:on_bus_route_false, "no") %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:elevator, 'Elevator *') %>
-      <%= f.radio_button(:elevator, true) %>
-      <%= label_tag(:elevator_true, "yes") %>
-      <%= f.radio_button(:elevator, false) %>
-      <%= label_tag(:elevator_false, "no") %>
-    </div>
-    
-  <% end %>
+  <!-- Must pass at least one property field for form to work - Passes property_type selected in previous step and submits again !-->
+  <%= f.hidden_field :propert_type, :value => @property.property_type %>
   
-  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-    Save
+  <% if @property.property_type == "Apartment" %>
+    <%= link_to 'save', next_wizard_path %>
+  <% else %>
+    <%= link_to 'save', wizard_path(:additional_amenities) %>
   <% end %>
 
 <% end %>  

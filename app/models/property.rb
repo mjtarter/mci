@@ -50,7 +50,18 @@ class Property < ActiveRecord::Base
 	validates_inclusion_of :storage_space, :in => [true, false], :if => :active_or_amenities?
 	validates_inclusion_of :furnished, :in => [true, false], :if => :active_or_amenities?
 	validates_inclusion_of :ceiling_fans, :in => [true, false], :if => :active_or_amenities?
-	validate :work, :if => :active_or_amenities?
+	validates_inclusion_of :laundry_facilities, :in => [true, false], :if => :active_or_community_features?
+	validates_inclusion_of :computer_lab, :in => [true, false], :if => :active_or_community_features?
+	validates_inclusion_of :fitness_center, :in => [true, false], :if => :active_or_community_features?
+	validates_inclusion_of :lounge, :in => [true, false], :if => :active_or_community_features?
+	validates_inclusion_of :controlled_access, :in => [true, false], :if => :active_or_community_features?
+	validates_inclusion_of :swimming_pool, :in => [true, false], :if => :active_or_community_features?
+	validates_inclusion_of :on_site_maintenance, :in => [true, false], :if => :active_or_community_features?
+	validates_inclusion_of :courtyard, :in => [true, false], :if => :active_or_community_features?
+	validates_inclusion_of :parking, :in => [true, false], :if => :active_or_community_features?
+	validates_inclusion_of :resident_functions, :in => [true, false], :if => :active_or_community_features?
+	validates_inclusion_of :on_bus_route, :in => [true, false], :if => :active_or_community_features?
+	validates_inclusion_of :elevator, :in => [true, false], :if => :active_or_community_features?
 
 	before_save do |property|
 		property.city = property.city.downcase.titleize
@@ -90,6 +101,12 @@ class Property < ActiveRecord::Base
 
   	def active_or_amenities?
     	status.to_s.include?('amenities') || active?
+  	end
+
+  	def active_or_community_features?
+  		if property_type == "Apartment"
+    		status.to_s.include?('community_features') || active?
+    	end
   	end
 
 end

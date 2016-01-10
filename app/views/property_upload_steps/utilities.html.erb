@@ -5,61 +5,64 @@
   <%= error_messages_for(@property) %>
 
    <div class="form-group">
-    <%= f.label(:electric_gas, 'Electric / Gas *') %>
+    <%= f.label(:electric_gas, 'Electric / Gas') %>
     <%= f.radio_button(:electric_gas, true) %>
     <%= label_tag(:electric_gas_true, "yes") %>
     <%= f.radio_button(:electric_gas, false) %>
     <%= label_tag(:electric_gas_false, "no") %>
   </div>
   <div class="form-group">
-    <%= f.label(:cable, 'Cable *') %>
+    <%= f.label(:cable, 'Cable') %>
     <%= f.radio_button(:cable, true) %>
     <%= label_tag(:cable_true, "yes") %>
     <%= f.radio_button(:cable, false) %>
     <%= label_tag(:cable_false, "no") %>
   </div>
   <div class="form-group">
-    <%= f.label(:water, 'Water *') %>
+    <%= f.label(:water, 'Water') %>
     <%= f.radio_button(:water, true) %>
     <%= label_tag(:water_true, "yes") %>
     <%= f.radio_button(:water, false) %>
     <%= label_tag(:water_false, "no") %>
   </div>
   <div class="form-group">
-    <%= f.label(:trash, 'Trash *') %>
+    <%= f.label(:trash, 'Trash') %>
     <%= f.radio_button(:trash, true) %>
     <%= label_tag(:trash_true, "yes") %>
     <%= f.radio_button(:trash, false) %>
     <%= label_tag(:trash_false, "no") %>
   </div>
   <div class="form-group">
-    <%= f.label(:internet, 'Internet *') %>
+    <%= f.label(:internet, 'Internet') %>
     <%= f.radio_button(:internet, true) %>
     <%= label_tag(:internet_true, "yes") %>
     <%= f.radio_button(:internet, false) %>
     <%= label_tag(:internet_false, "no") %>
   </div>
   <div class="form-group">
-    <%= f.label(:dogs_allowed, 'Dogs Allowed *') %>
+    <%= f.label(:dogs_allowed, 'Dogs Allowed') %>
     <%= f.radio_button(:dogs_allowed, true) %>
     <%= label_tag(:dogs_allowed_true, "yes") %>
     <%= f.radio_button(:dogs_allowed, false) %>
     <%= label_tag(:dogs_allowed_false, "no") %>
   </div>
   <div class="form-group">
-    <%= f.label(:cats_allowed, 'Cats Allowed *') %>
+    <%= f.label(:cats_allowed, 'Cats Allowed') %>
     <%= f.radio_button(:cats_allowed, true) %>
     <%= label_tag(:cats_allowed_true, "yes") %>
     <%= f.radio_button(:cats_allowed, false) %>
     <%= label_tag(:cats_allowed_false, "no") %>
   </div>
   <div class="form-group">
-    <%= f.label(:other_pets_allowed, 'Other Pets Allowed *') %>
+    <%= f.label(:other_pets_allowed, 'Other Pets Allowed') %>
     <%= f.radio_button(:other_pets_allowed, true) %>
     <%= label_tag(:other_pets_allowed_true, "yes") %>
     <%= f.radio_button(:other_pets_allowed, false) %>
     <%= label_tag(:other_pets_allowed_false, "no") %>
   </div>
+
+  <!-- Must pass at least one property field for form to work - Passes property_type selected in previous step and submits again !-->
+  <%= f.hidden_field :propert_type, :value => @property.property_type %>
   
   <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
   	Save

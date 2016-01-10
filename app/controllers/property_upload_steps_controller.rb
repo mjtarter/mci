@@ -2,7 +2,7 @@ class PropertyUploadStepsController < ApplicationController
   layout "property_upload"
 
 	include Wicked::Wizard
-  	steps :location, :basic_info, :contact_info, :description, :amenities, :additional_amenities, :utilities, :submit
+  	steps :location, :basic_info, :contact_info, :description, :amenities, :community_features, :additional_amenities, :utilities, :submit
 
   	def show
       @property = Property.find(params[:property_id])
