@@ -24,6 +24,10 @@ class PropertyUploadStepsController < ApplicationController
 
   	def update
 	    @property = Property.find(params[:property_id])
+      case step
+      when :additional_amenity
+        @property.additional_amenities = params[:additional_amenities]
+      end
       params[:property][:status] = step
       params[:property][:status] = 'active' if step == steps.last
 	    @property.attributes = property_params
