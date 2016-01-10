@@ -1,5 +1,5 @@
 class PropertyController < ApplicationController
-	before_action :authenticate_user!, only: [:new]
+	before_action :authenticate_user!, only: [:new, :create]
 
 	def index
 		if params[:view] != "list" 
@@ -71,6 +71,7 @@ class PropertyController < ApplicationController
 		#status of 'inactive' stops any validations that require "active" from running.
 		params[:property][:status] = 'inactive'
 		@property = Property.new(property_params)
+		@property.user_id = current_user.id
 		if @property.save
 			@skip = params[:skip]
 			redirect_to property_upload_steps_path(:property_id => @property.id, :skip => @skip)

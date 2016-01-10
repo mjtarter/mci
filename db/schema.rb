@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222025703) do
+ActiveRecord::Schema.define(version: 20160110203742) do
 
   create_table "dorms", force: :cascade do |t|
     t.string   "name",                    limit: 255,                           null: false
@@ -113,10 +113,12 @@ ActiveRecord::Schema.define(version: 20151222025703) do
     t.string   "additional_amenities", limit: 255
     t.datetime "created_at",                                                          null: false
     t.datetime "updated_at",                                                          null: false
-    t.integer  "user_id",              limit: 4
     t.boolean  "approved",                                            default: false
     t.string   "status",               limit: 255
+    t.integer  "user_id",              limit: 4
   end
+
+  add_index "properties", ["user_id"], name: "index_properties_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
