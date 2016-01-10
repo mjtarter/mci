@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 20151222025703) do
     t.float    "lng",                  limit: 24
     t.string   "bedrooms",             limit: 255
     t.string   "baths",                limit: 255
-    t.decimal  "price",                                 precision: 6
-    t.decimal  "price_two",                             precision: 6
+    t.decimal  "rent",                                  precision: 6
+    t.decimal  "rent_two",                              precision: 6
     t.boolean  "availability"
     t.date     "date_available"
     t.integer  "floors",               limit: 4

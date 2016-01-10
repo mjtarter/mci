@@ -9,8 +9,8 @@ class CreateProperties < ActiveRecord::Migration
     	t.float :lng
     	t.string :bedrooms
     	t.string :baths
-    	t.decimal :price, :precision => 6, :scale => 0
-    	t.decimal :price_two, :precision => 6, :scale => 0
+    	t.decimal :rent, :precision => 6, :scale => 0
+    	t.decimal :rent_two, :precision => 6, :scale => 0
     	t.boolean :availability
         t.date :date_available
     	t.integer :floors

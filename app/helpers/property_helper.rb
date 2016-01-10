@@ -18,11 +18,11 @@ module PropertyHelper
 		 end 
 	 end 
 
-	 def price_range(price_one, price_two)
-		if price_two.present?
-			return "$ #{price_one} - #{price_two}"
+	 def price_range(rent_one, rent_two)
+		if rent_two.present?
+			return "$ #{rent_one} - #{rent_two}"
 		else
-			return "$ #{price_one}"
+			return "$ #{rent_one}"
 		end
 	end
 
@@ -41,7 +41,7 @@ module PropertyHelper
 	end
 
 	def basic_info_step_complete?
-		if @property.bedrooms.present? == true && @property.baths.present? == true && @property.availability != nil && @property.price.present? == true && @property.term.present? == true && @property.term_number.present? == true
+		if @property.bedrooms.present? == true && @property.baths.present? == true && @property.availability != nil && @property.rent.present? == true && @property.term.present? == true && @property.term_number.present? == true
 			return '<span class="glyphicon glyphicon-ok" style="color:#00ced1; float:right;"></span>'.html_safe
 		end
 	end

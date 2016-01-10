@@ -10,8 +10,8 @@ class PropertyController < ApplicationController
 		@availability = params[:availability] || property_params[:availability]
 		@type = params[:property_type] || property_params[:property_type]
 		@bedrooms = params[:bedrooms] || property_params[:bedrooms]
-		@min_price = params[:min_price] || property_params[:min_price]
-		@max_price = params[:max_price] || property_params[:max_price]
+		@min_rent = params[:min_rent] || property_params[:min_rent]
+		@max_rent = params[:max_rent] || property_params[:max_rent]
 
 		if @type != 'All'
 			@query_type = {:property_type => @type}
@@ -28,7 +28,7 @@ class PropertyController < ApplicationController
   			.where(@query_type)
   			.where(@query_availability)
   			.where(@query_bedrooms)
-  			.by_price(@min_price, @max_price)
+  			.by_rent(@min_rent, @max_rent)
   			.approved
 
   		if params[:view] == "list" 
@@ -58,8 +58,8 @@ class PropertyController < ApplicationController
 	        @type = "All"
 	        @availability = "All"
 	        @bedrooms = "All"
-	        @min_price = 0
-	        @max_price = 100000
+	        @min_rent = 0
+	        @max_rent = 100000
     	end
 	end
 
@@ -106,7 +106,7 @@ class PropertyController < ApplicationController
 	private
 
 		def property_params
-			params.require(:property).permit(:id, :status, :property_type, :address, :city, :state, :lat, :lng, :bedrooms, :baths, :price, :price_two, :min_price, :max_price, :availability, :date_available, :floors, :term_number, :term, :sqft, :description, :facility_name, :property_manager, :office_address, :phone, :email, :website, :facebook, :ac, :microwave, :refrigerator, :washer_dryer, :dishwasher, :garbage_disposal, :patio_balcony, :walk_in_closets, :locking_room_doors, :storage_space, :furnished, :ceiling_fans, :electric_gas, :trash, :water, :cable, :internet, :dogs_allowed, :cats_allowed, :other_pets_allowed, :laundry_facilities, :computer_lab, :fitness_center, :lounge, :controlled_access, :swimming_pool, :on_site_maintenance, :courtyard, :parking, :resident_functions, :on_bus_route, :elevator, :additional_amenities, :agreement)
+			params.require(:property).permit(:id, :status, :property_type, :address, :city, :state, :lat, :lng, :bedrooms, :baths, :rent, :rent_two, :min_rent, :max_rent, :availability, :date_available, :floors, :term_number, :term, :sqft, :description, :facility_name, :property_manager, :office_address, :phone, :email, :website, :facebook, :ac, :microwave, :refrigerator, :washer_dryer, :dishwasher, :garbage_disposal, :patio_balcony, :walk_in_closets, :locking_room_doors, :storage_space, :furnished, :ceiling_fans, :electric_gas, :trash, :water, :cable, :internet, :dogs_allowed, :cats_allowed, :other_pets_allowed, :laundry_facilities, :computer_lab, :fitness_center, :lounge, :controlled_access, :swimming_pool, :on_site_maintenance, :courtyard, :parking, :resident_functions, :on_bus_route, :elevator, :additional_amenities, :agreement)
 		end
 
 end

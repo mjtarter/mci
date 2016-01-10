@@ -30,8 +30,8 @@
 	            	<%= f.hidden_field :availability, :value => @availability %>
 	            	<%= f.hidden_field :property_type, :value => @type %>
 	            	<%= f.hidden_field :bedrooms, :value => @bedrooms %>
-	            	<%= f.hidden_field :min_price, :value => @min_price %>
-	            	<%= f.hidden_field :max_price, :value => @max_price %>
+	            	<%= f.hidden_field :min_rent, :value => @min_rent %>
+	            	<%= f.hidden_field :max_rent, :value => @max_remt %>
 	            	<%= button_tag(type: 'submit', class: "button blue-button") do %>
 	                	<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Map View
 	            	<% end %>
@@ -64,7 +64,7 @@
 				</div>
 				<ul class='col-xs-12 col-md-2 results-col pt-10 pb-10' id='basic-info-list'>
 					<li><span class='glyphicon glyphicon-chevron-right' style='color:<%=color_by_property(property.property_type)%>'></span>&nbsp;&nbsp;<strong><%= property.property_type %></strong></li>
-					<li><span class='glyphicon glyphicon-chevron-right' style='color:<%=color_by_property(property.property_type)%>'></span>&nbsp;&nbsp;<strong><%= price_range(property.price, property.price_two) %></strong></li>  
+					<li><span class='glyphicon glyphicon-chevron-right' style='color:<%=color_by_property(property.property_type)%>'></span>&nbsp;&nbsp;<strong><%= price_range(property.rent, property.rent_two) %></strong></li>  
 					<li><span class='glyphicon glyphicon-chevron-right' style='color:<%=color_by_property(property.property_type)%>'></span>&nbsp;&nbsp;<strong><%= property.baths %> Baths</strong></li>
 					<li><span class='glyphicon glyphicon-chevron-right' style='color:<%=color_by_property(property.property_type)%>'></span>&nbsp;&nbsp;<strong><%= property.bedrooms %> Bedrooms</strong></li>
 				</ul>	

@@ -69,10 +69,10 @@
     </div>
     <div class="col-sm-4">
       <div class="form-group">
-        <%= f.label(:price, 'Rent *') %><br>
-        <%= f.text_field(:price) %> 
+        <%= f.label(:rent, 'Rent *') %><br>
+        <%= f.text_field(:rent) %> 
         <div id="price-range">
-          <%= f.text_field(:price_two, placeholder: 'Max Rent') %>
+          <%= f.text_field(:rent_two, placeholder: 'Max Rent') %>
         </div>
         <!-- Toggle Price Range Option !-->
         <a id="price-range-remove" onclick="hideDiv('price-range'); showDivBlock('price-range-add'); hideDiv('price-range-remove')">remove range</a>

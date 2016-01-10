@@ -49,15 +49,15 @@
 				<ul id="basic-info" class="col-lg-10 col-lg-offset-1 clearfix">
 					<li>Rent (Total):</li>
 					<li>
-						<% if @property.price_two.present? == false %>
-					     	$ <%= @property.price %>
+						<% if @property.rent_two.present? == false %>
+					     	$ <%= @property.rent %>
 					      	<% else %>
-					      	<%= @property.price %> - <%= @property.price_two %>
+					      	<%= @property.rent %> - <%= @property.rent_two %>
 					    <% end %>
 	        		</li>
-					<% if @property.price_two.present? == false %>
+					<% if @property.rent_two.present? == false %>
 						<li>Rent (Per Person):</li>
-						<li>$ <%= @property.price / @property.bedrooms.to_i %></li>
+						<li>$ <%= @property.rent / @property.bedrooms.to_i %></li>
 					<% end %>
 					<li>Type:</li>
 					<li><%= @property.property_type %></li>

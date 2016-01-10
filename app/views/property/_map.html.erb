@@ -28,8 +28,8 @@
             <%= f.hidden_field :availability, :value => @availability %>
             <%= f.hidden_field :property_type, :value => @type %>
             <%= f.hidden_field :bedrooms, :value => @bedrooms %>
-            <%= f.hidden_field :min_price, :value => @min_price %>
-            <%= f.hidden_field :max_price, :value => @max_price %>
+            <%= f.hidden_field :min_rent, :value => @min_rent %>
+            <%= f.hidden_field :max_rent, :value => @max_rent %>
             <%= hidden_field_tag :view, 'list' %>
             <%= button_tag(type: 'submit', class: "button blue-button", :id => "view-btn") do %>
                 <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> List View
@@ -42,8 +42,8 @@
                 var property_type = "<%= @type %>"
                 var availability = "<%= @availability %>"
                 var bedrooms = "<%= @bedrooms %>"
-                var min_price = "<%= @min_price %>"
-                var max_price = "<%= @max_price %>"
+                var min_rent = "<%= @min_rent %>"
+                var max_rent = "<%= @max_rent %>"
              <% end %>
         <%= javascript_include_tag('application-properties') %>
         
