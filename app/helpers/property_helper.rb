@@ -1,5 +1,21 @@
 module PropertyHelper
 
+	def property_upload_status(approved)
+		if approved == false 
+			return 'Waiting Approval'
+		 else 
+			 return 'Active'
+		 end 
+	 end
+
+	 def availability(availability)
+		if availability == true 
+			return 'Currently Available'
+		 else 
+			 return 'Available on #{date_available}'
+		 end 
+	 end
+
 	def icon_by_property(type)
 		if type == "Apartment" 
 			return '<i class="fa fa-building"></i>'

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/property/housing-search' => 'property#housing-search'
   get '/property/index' => 'property#index'
   get '/property/show' => 'property#show'
+  get '/property/index_landlord' => 'property#index_landlord'
   resources :property do
     resources :property_upload_steps
   end

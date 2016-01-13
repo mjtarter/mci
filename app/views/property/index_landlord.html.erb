@@ -1,0 +1,26 @@
+<div class="container">
+	<h1 class="text-center">Property Management</h1>
+	<div class="text-center"><%= link_to('Add New Property', {:controller => 'property', :action => 'new'}, :class => 'button blue-button mb-20') %></div>
+	
+	<% @properties.each do |property| %>
+		<div class="row ptb-10">
+			<div class="col-xs-3">
+				<img src="http://placehold.it/200x150">
+			</div>
+			<div class="col-xs-3">
+				<%= property_name(property.facility_name, property.address) %>
+			</div>
+			<div class="col-xs-2">
+				<%= availability(property.availability) %>
+			</div>
+			<div class="col-xs-2">
+				<%= property_upload_status(property.approved) %>
+			</div>
+			<div class="col-xs-2">
+				<%= link_to('Edit', {:controller => 'property', :action => 'edit'}, :class => 'button blue-button') %>
+				<%= link_to('Delete', {:controller => 'property', :action => 'edit'}, :class => 'button blue-button') %>
+			</div>
+		</div>
+	<% end %>
+
+</div>

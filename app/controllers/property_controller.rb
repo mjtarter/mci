@@ -1,5 +1,5 @@
 class PropertyController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create]
+	before_action :authenticate_user!, only: [:new, :create, :show_landlord]
 
 	def index
 		if params[:view] != "list" 
@@ -40,6 +40,10 @@ class PropertyController < ApplicationController
     		format.html
     		format.json { render :json => @properties }
   		end
+	end
+
+	def index_landlord
+		@properties = Property.where({user_id: current_user})
 	end
 
 	def show
