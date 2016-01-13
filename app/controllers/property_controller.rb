@@ -42,10 +42,6 @@ class PropertyController < ApplicationController
   		end
 	end
 
-	def index_landlord
-		@properties = Property.where({user_id: current_user})
-	end
-
 	def show
 		@id = params[:id]
 		@property = Property.find(@id)

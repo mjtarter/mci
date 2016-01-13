@@ -42,7 +42,7 @@ class PropertyUploadStepsController < ApplicationController
     end
 
     def finish_wizard_path
-      '/property/index_landlord'
+      '/profile/index'
     end
 
 end
