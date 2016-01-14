@@ -1,8 +1,24 @@
 class ProfileController < ApplicationController
+	before_action :authenticate_user!
 
 	def index
 		@properties = Property.where({user_id: current_user})
 	end
+
+	def delete
+		respond_to do |format|
+			format.html { redirect_to :index }
+			format.js
+		end
+	end
+
+	def destroy
+    	@properties.destroy
+    	respond_to do |format|
+      		format.html { redirect_to :index, notice: 'Property was successfully destroyed.' }
+      		format.json { head :no_content }
+    	end
+    end
 
 	private
 

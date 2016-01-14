@@ -1,3 +1,5 @@
+<%= render(:partial => "/profile/delete_property_modal") %>
+
 <div class="container">
 	<h1 class="text-center">Property Management</h1>
 	<div class="text-center"><%= link_to('Add New Property', {:controller => 'property', :action => 'new'}, :class => 'button blue-button mb-20') %></div>
@@ -11,14 +13,14 @@
 				<%= property_name(property.facility_name, property.address) %>
 			</div>
 			<div class="col-xs-2">
-				<%= availability(property.availability) %>
+				<%= availability(property.availability, property.date_available) %>
 			</div>
 			<div class="col-xs-2">
 				<%= property_upload_status(property.approved) %>
 			</div>
 			<div class="col-xs-2">
-				<%= link_to('Edit', {:controller => 'property', :action => 'edit'}, :class => 'button blue-button') %>
-				<%= link_to('Delete', {:controller => 'property', :action => 'edit'}, :class => 'button blue-button') %>
+				<%= link_to('Edit', property_upload_steps_path(:property_id => property.id, :skip => @skip), :class => 'button blue-button') %>
+				<%= link_to('Delete', 'profile#delete', :class => 'button blue-button', data: { toggle: "modal", target: "#delete-property-modal" }) %>
 			</div>
 		</div>
 	<% end %>

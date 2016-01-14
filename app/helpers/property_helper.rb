@@ -8,11 +8,13 @@ module PropertyHelper
 		 end 
 	 end
 
-	 def availability(availability)
+	 def availability(availability, date_available)
 		if availability == true 
 			return 'Currently Available'
-		 else 
+		elsif date_available.present? 
 			 return 'Available on #{date_available}'
+		else
+			return 'Availability info has not been provided!'
 		 end 
 	 end
 

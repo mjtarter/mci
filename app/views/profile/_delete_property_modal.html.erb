@@ -1,0 +1,27 @@
+<div class="modal fade" id="delete-property-modal">
+  <div class="modal-dialog">
+    <div class="modal-content main-content text-center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p class="h4 m-0 text-center" id="modal-header">
+          <span class="vert-middle">
+            <i><b> Delete Property</b></i>
+          </span>
+        </p>
+      </div>
+      <div class="modal-body">
+      
+        <p class="m-0 text-center"><b>Are you sure you want to delete this property?</b></p>
+      
+        <%= form_tag({:action => 'destroy'}) do %><br>
+
+          <%= button_tag(type: 'submit', class: "btn btn-danger") do %>
+            <span class="glyphicon glyphicon-remove"></span> Delete Property
+          <% end %>
+
+        <% end %>
+      
+      </div>
+    </div>          
+  </div>
+</div>

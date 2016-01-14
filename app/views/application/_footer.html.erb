@@ -36,8 +36,6 @@
                 </div>
             </div>
         </footer>
-
-        <%= javascript_include_tag('application-all') %>
         <% if (params[:controller] == 'dorm') && (params[:action] != 'show') %>
             <%= javascript_include_tag('application-dorms') %>
         <% end %>

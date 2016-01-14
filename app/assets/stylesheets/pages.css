@@ -1314,3 +1314,12 @@ body#contact-form {
 .sidebar-active {
 	background-color:#282828;
 }
+
+/* ==========================================================================
+ 	Property Profile Management
+   ========================================================================== */
+
+#modal-header {
+	margin:0 auto; 
+	display:table;
+}

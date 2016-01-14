@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :property_upload_steps
+  resources :profile, only: [:index, :delete]
   get '/property/housing-search' => 'property#housing-search'
   get '/property/index' => 'property#index'
   get '/property/show' => 'property#show'
