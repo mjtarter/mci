@@ -6,18 +6,15 @@ class ProfileController < ApplicationController
 	end
 
 	def delete
-		respond_to do |format|
-			format.html { redirect_to :index }
-			format.js
-		end
+		@properties = Property.where({user_id: current_user})
+		@id = params[:id]
+		render('index')
 	end
 
 	def destroy
-    	@properties.destroy
-    	respond_to do |format|
-      		format.html { redirect_to :index, notice: 'Property was successfully destroyed.' }
-      		format.json { head :no_content }
-    	end
+		Property.find(params[:id]).destroy
+    	flash[:notice] = 'Property Deleted!'
+		redirect_to(:action => 'index')
     end
 
 	private

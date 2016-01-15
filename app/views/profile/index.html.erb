@@ -1,5 +1,13 @@
 <%= render(:partial => "/profile/delete_property_modal") %>
 
+<% if (params[:action] == 'delete') %>
+	<script>
+		$(document).ready(function(){
+			$("#delete-property-modal").modal("show");
+		});
+	</script>
+<% end %>
+
 <div class="container">
 	<h1 class="text-center">Property Management</h1>
 	<div class="text-center"><%= link_to('Add New Property', {:controller => 'property', :action => 'new'}, :class => 'button blue-button mb-20') %></div>
@@ -20,7 +28,7 @@
 			</div>
 			<div class="col-xs-2">
 				<%= link_to('Edit', property_upload_steps_path(:property_id => property.id, :skip => @skip), :class => 'button blue-button') %>
-				<%= link_to('Delete', 'profile#delete', :class => 'button blue-button', data: { toggle: "modal", target: "#delete-property-modal" }) %>
+				<%= link_to('Delete', {:action => 'delete', :id => property.id}, :class => 'button blue-button') %>
 			</div>
 		</div>
 	<% end %>
