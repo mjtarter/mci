@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160110203742) do
+ActiveRecord::Schema.define(version: 20160122232801) do
 
   create_table "dorms", force: :cascade do |t|
     t.string   "name",                    limit: 255,                           null: false
@@ -52,32 +52,32 @@ ActiveRecord::Schema.define(version: 20160110203742) do
   end
 
   create_table "properties", force: :cascade do |t|
-    t.string   "property_type",        limit: 255,                                    null: false
-    t.string   "address",              limit: 255,                                    null: false
-    t.string   "city",                 limit: 255,                                    null: false
-    t.string   "state",                limit: 255,                                    null: false
-    t.float    "lat",                  limit: 24
-    t.float    "lng",                  limit: 24
-    t.string   "bedrooms",             limit: 255
-    t.string   "baths",                limit: 255
-    t.decimal  "rent",                                  precision: 6
-    t.decimal  "rent_two",                              precision: 6
+    t.string   "property_type",            limit: 255,                                    null: false
+    t.string   "address",                  limit: 255,                                    null: false
+    t.string   "city",                     limit: 255,                                    null: false
+    t.string   "state",                    limit: 255,                                    null: false
+    t.float    "lat",                      limit: 24
+    t.float    "lng",                      limit: 24
+    t.string   "bedrooms",                 limit: 255
+    t.string   "baths",                    limit: 255
+    t.decimal  "rent",                                      precision: 6
+    t.decimal  "rent_two",                                  precision: 6
     t.boolean  "availability"
     t.date     "date_available"
-    t.integer  "floors",               limit: 4
-    t.integer  "term_number",          limit: 4
-    t.string   "term",                 limit: 255
-    t.integer  "sqft",                 limit: 4
-    t.integer  "sqft_two",             limit: 4
-    t.text     "description",          limit: 16777215
-    t.string   "facility_name",        limit: 255
-    t.string   "property_manager",     limit: 255
-    t.string   "office_address",       limit: 255
-    t.string   "office_hours",         limit: 255
-    t.string   "phone",                limit: 255
-    t.string   "email",                limit: 255
-    t.string   "website",              limit: 255
-    t.string   "facebook",             limit: 255
+    t.integer  "floors",                   limit: 4
+    t.integer  "term_number",              limit: 4
+    t.string   "term",                     limit: 255
+    t.integer  "sqft",                     limit: 4
+    t.integer  "sqft_two",                 limit: 4
+    t.text     "description",              limit: 16777215
+    t.string   "facility_name",            limit: 255
+    t.string   "property_manager",         limit: 255
+    t.string   "office_address",           limit: 255
+    t.string   "office_hours",             limit: 255
+    t.string   "phone",                    limit: 255
+    t.string   "email",                    limit: 255
+    t.string   "website",                  limit: 255
+    t.string   "facebook",                 limit: 255
     t.boolean  "ac"
     t.boolean  "microwave"
     t.boolean  "refrigerator"
@@ -110,12 +110,21 @@ ActiveRecord::Schema.define(version: 20160110203742) do
     t.boolean  "resident_functions"
     t.boolean  "on_bus_route"
     t.boolean  "elevator"
-    t.string   "additional_amenities", limit: 255
-    t.datetime "created_at",                                                          null: false
-    t.datetime "updated_at",                                                          null: false
-    t.boolean  "approved",                                            default: false
-    t.string   "status",               limit: 255
-    t.integer  "user_id",              limit: 4
+    t.datetime "created_at",                                                              null: false
+    t.datetime "updated_at",                                                              null: false
+    t.boolean  "approved",                                                default: false
+    t.string   "status",                   limit: 255
+    t.integer  "user_id",                  limit: 4
+    t.string   "additional_amenity_one",   limit: 255
+    t.string   "additional_amenity_two",   limit: 255
+    t.string   "additional_amenity_three", limit: 255
+    t.string   "additional_amenity_four",  limit: 255
+    t.string   "additional_amenity_five",  limit: 255
+    t.string   "additional_amenity_six",   limit: 255
+    t.string   "additional_amenity_seven", limit: 255
+    t.string   "additional_amenity_eight", limit: 255
+    t.string   "additional_amenity_nine",  limit: 255
+    t.string   "additional_amenity_ten",   limit: 255
   end
 
   add_index "properties", ["user_id"], name: "index_properties_on_user_id", using: :btree

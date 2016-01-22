@@ -25,10 +25,6 @@ class PropertyUploadStepsController < ApplicationController
 
   	def update
 	    @property = Property.find(params[:property_id])
-      case step
-      when :additional_amenity
-        @property.additional_amenities = params[:additional_amenities]
-      end
       params[:property][:status] = step
       params[:property][:status] = 'active' if step == steps.last
 	    @property.attributes = property_params
@@ -38,7 +34,7 @@ class PropertyUploadStepsController < ApplicationController
   private
 
     def property_params
-		  params.require(:property).permit(:id, :status, :property_type, :address, :city, :state, :lat, :lng, :bedrooms, :baths, :rent, :rent_two, :min_rent, :max_rent, :availability, :date_available, :floors, :term_number, :term, :sqft, :description, :facility_name, :property_manager, :office_address, :phone, :email, :website, :facebook, :ac, :microwave, :refrigerator, :washer_dryer, :dishwasher, :garbage_disposal, :patio_balcony, :walk_in_closets, :locking_room_doors, :storage_space, :furnished, :ceiling_fans, :electric_gas, :trash, :water, :cable, :internet, :dogs_allowed, :cats_allowed, :other_pets_allowed, :laundry_facilities, :computer_lab, :fitness_center, :lounge, :controlled_access, :swimming_pool, :on_site_maintenance, :courtyard, :parking, :resident_functions, :on_bus_route, :elevator, :additional_amenities)
+		  params.require(:property).permit(:id, :status, :property_type, :address, :city, :state, :lat, :lng, :bedrooms, :baths, :rent, :rent_two, :min_rent, :max_rent, :availability, :date_available, :floors, :term_number, :term, :sqft, :description, :facility_name, :property_manager, :office_address, :phone, :email, :website, :facebook, :ac, :microwave, :refrigerator, :washer_dryer, :dishwasher, :garbage_disposal, :patio_balcony, :walk_in_closets, :locking_room_doors, :storage_space, :furnished, :ceiling_fans, :electric_gas, :trash, :water, :cable, :internet, :dogs_allowed, :cats_allowed, :other_pets_allowed, :laundry_facilities, :computer_lab, :fitness_center, :lounge, :controlled_access, :swimming_pool, :on_site_maintenance, :courtyard, :parking, :resident_functions, :on_bus_route, :elevator, :additional_amenity_one, :additional_amenity_two, :additional_amenity_three, :additional_amenity_four, :additional_amenity_five, :additional_amenity_six, :additional_amenity_seven, :additional_amenity_eight, :additional_amenity_nine, :additional_amenity_ten)
     end
 
     def finish_wizard_path

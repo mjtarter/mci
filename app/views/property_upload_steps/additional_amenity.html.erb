@@ -5,12 +5,44 @@
 	<%= error_messages_for(@property) %>
 
 	<div class="form-group">
-	  	<%= f.label(:additional_amenities, 'Additional Amenities *') %>
-	  	<%= text_field_tag "additional_amenities[0]", @property.additional_amenities %>
+	  	<%= f.label(:additional_amenity_one, 'Additional Amenity') %>
+	  	<%= f.text_field(:additional_amenity_one) %>
 	</div>
 	<div class="form-group">
-	  	<%= f.label(:additional_amenities, 'Additional Amenities *') %>
-	  	<%= text_field_tag "additional_amenities[1]" %>
+	  	<%= f.label(:additional_amenity_two, 'Additional Amenity') %>
+	  	<%= f.text_field(:additional_amenity_two) %>
+	</div>
+	<div class="form-group">
+	  	<%= f.label(:additional_amenity_three, 'Additional Amenity') %>
+	  	<%= f.text_field(:additional_amenity_three) %>
+	</div>
+	<div class="form-group">
+	  	<%= f.label(:additional_amenity_four, 'Additional Amenity') %>
+	  	<%= f.text_field(:additional_amenity_four) %>
+	</div>
+	<div class="form-group">
+	  	<%= f.label(:additional_amenity_five, 'Additional Amenity') %>
+	  	<%= f.text_field(:additional_amenity_five) %>
+	</div>
+	<div class="form-group">
+	  	<%= f.label(:additional_amenity_six, 'Additional Amenity') %>
+	  	<%= f.text_field(:additional_amenity_six) %>
+	</div>
+	<div class="form-group">
+	  	<%= f.label(:additional_amenity_seven, 'Additional Amenity') %>
+	  	<%= f.text_field(:additional_amenity_seven) %>
+	</div>
+	<div class="form-group">
+	  	<%= f.label(:additional_amenity_eight, 'Additional Amenity') %>
+	  	<%= f.text_field(:additional_amenity_eight) %>
+	</div>
+	<div class="form-group">
+	  	<%= f.label(:additional_amenity_nine, 'Additional Amenity') %>
+	  	<%= f.text_field(:additional_amenity_nine) %>
+	</div>
+	<div class="form-group">
+	  	<%= f.label(:additional_amenity_ten, 'Additional Amenity') %>
+	  	<%= f.text_field(:additional_amenity_ten) %>
 	</div>
 
 	<!-- Must pass at least one property field for form to work - Passes property_type selected in previous step and submits again !-->
