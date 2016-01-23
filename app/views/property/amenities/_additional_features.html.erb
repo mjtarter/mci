@@ -8,10 +8,10 @@
         <p class="m-0">ADDITIONAL</p>
     </div>
     <ul class="amenities-list">
-        <li>
-            <% if @property.additional_amenities.present? %>
-                <span class="glyphicon glyphicon-ok-circle" style="color:green"></span><%= @property.additional_amenities %>
+        <% @additional_amenities.each do |amenity| %> 
+            <% if amenity.present? == true %>
+                <li><span class="glyphicon glyphicon-ok-circle" style="color:green"></span> <%= amenity %></li>
             <% end %>
-        </li>
+        <% end %>
     </ul>
 </div>

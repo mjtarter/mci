@@ -89,7 +89,9 @@ module PropertyHelper
 	end
 
 	def additional_amenity_step_complete?
-		return '<span class="glyphicon glyphicon-ok" style="color:#00ced1; float:right;"></span>'.html_safe
+		if @property.additional_amenity_one != nil && @property.additional_amenity_two != nil && @property.additional_amenity_three != nil && @property.additional_amenity_four != nil
+			return '<span class="glyphicon glyphicon-ok" style="color:#00ced1; float:right;"></span>'.html_safe
+		end
 	end
 
 	def utilities_step_complete?
