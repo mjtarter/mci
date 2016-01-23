@@ -24,7 +24,7 @@
 				<%= availability(property.availability, property.date_available) %>
 			</div>
 			<div class="col-xs-2">
-				<%= property_upload_status(property.approved) %>
+				<%= property_upload_status(property, property.approved) %>
 			</div>
 			<div class="col-xs-2">
 				<%= link_to('Edit', property_upload_steps_path(:property_id => property.id, :skip => @skip), :class => 'button blue-button') %>

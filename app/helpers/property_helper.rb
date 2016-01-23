@@ -1,11 +1,23 @@
 module PropertyHelper
 
-	def property_upload_status(approved)
-		if approved == false 
-			return 'Waiting Approval'
-		 else 
-			 return 'Active'
-		 end 
+	def property_upload_status(property, approved)
+		if property.property_type == 'Apartment'
+			if approved == true
+				return 'Active'
+			 elsif property.laundry_facilities != nil && property.computer_lab != nil && property.fitness_center != nil && property.lounge != nil && property.controlled_access != nil && property.swimming_pool != nil && property.on_site_maintenance != nil && property.courtyard != nil && property.parking != nil && property.resident_functions != nil && property.on_bus_route != nil && property.elevator != nil && property.address.present? == true && property.property_type.present? == true && property.city.present? == true && property.state.present? == true && property.bedrooms.present? == true && property.baths.present? == true && property.availability != nil && property.rent.present? == true && property.term.present? == true && property.term_number.present? == true && property.email.present? == true && property.description.present? == true && property.ac != nil && property.microwave != nil && property.refrigerator != nil && property.washer_dryer != nil && property.dishwasher != nil && property.garbage_disposal != nil && property.patio_balcony != nil && property.walk_in_closets != nil && property.locking_room_doors != nil && property.storage_space != nil && property.furnished != nil && property.ceiling_fans != nil
+				return 'Waiting Approval'
+			else
+				return 'Profile Incomplete'
+			end
+		else 
+			if approved == true
+				return 'Active'
+			 elsif property.address.present? == true && property.property_type.present? == true && property.city.present? == true && property.state.present? == true && property.bedrooms.present? == true && property.baths.present? == true && property.availability != nil && property.rent.present? == true && property.term.present? == true && property.term_number.present? == true && property.email.present? == true && property.description.present? == true && property.ac != nil && property.microwave != nil && property.refrigerator != nil && property.washer_dryer != nil && property.dishwasher != nil && property.garbage_disposal != nil && property.patio_balcony != nil && property.walk_in_closets != nil && property.locking_room_doors != nil && property.storage_space != nil && property.furnished != nil && property.ceiling_fans != nil
+				return 'Waiting Approval'
+			else
+				return 'Profile Incomplete'
+			end
+		end
 	 end
 
 	 def availability(availability, date_available)
