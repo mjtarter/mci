@@ -29,6 +29,9 @@
 			<div class="col-xs-2">
 				<%= link_to('Edit', property_upload_steps_path(:property_id => property.id, :skip => @skip), :class => 'button blue-button') %>
 				<%= link_to('Delete', {:action => 'delete', :id => property.id}, :class => 'button blue-button') %>
+				<% if property.approved == true %>
+					<div><%= link_to('View live page on site', {:controller => 'property', :action => 'show', :id => property.id}, :style => 'color:blue') %></div>
+				<% end %>
 			</div>
 		</div>
 	<% end %>
